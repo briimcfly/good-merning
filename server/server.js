@@ -33,7 +33,7 @@ const startApolloServer = async() => {
 
     //Apollo's middleware for 'graphql' endpoint
     app.use('/graphql', expressMiddleware(server, {
-        // context: authMiddleware
+        context: authMiddleware
     }));
 
     //Serve static files in production from dist folder
