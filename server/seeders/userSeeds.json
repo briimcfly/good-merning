@@ -1,0 +1,53 @@
+[
+    {
+      "username": "PaulAtreides",
+      "email": "paul.atreides@arrakis.dev",
+      "password": "MuadDib101"
+    },
+    {
+      "username": "JessicaBeneGesserit",
+      "email": "lady.jessica@caladan.dev",
+      "password": "SpiceMelange"
+    },
+    {
+      "username": "DuncanIdaho",
+      "email": "duncan.idaho@swordmasters.dev",
+      "password": "GholaWarrior"
+    },
+    {
+      "username": "GurneyHalleck",
+      "email": "gurney.halleck@gurneymusic.dev",
+      "password": "BalisetMusic"
+    },
+    {
+      "username": "ThufirHawat",
+      "email": "thufir.hawat@mentat.dev",
+      "password": "TwistedMentat"
+    },
+    {
+      "username": "StilgarSietch",
+      "email": "stilgar@fremen.dev",
+      "password": "SietchLeader"
+    },
+    {
+      "username": "ChaniKynes",
+      "email": "chani.kynes@sietch.dev",
+      "password": "FremenWays08"
+    },
+    {
+      "username": "BaronHarkonnen",
+      "email": "baron.harkonnen@giedi-prime.dev",
+      "password": "HarkonnenRule"
+    },
+    {
+      "username": "LetoAtreides",
+      "email": "leto.atreides@duke.dev",
+      "password": "AtreidesDuke"
+    },
+    {
+      "username": "AliaAtreides",
+      "email": "alia.atreides@arrakis.dev",
+      "password": "Abomination"
+    }
+  ]
+  
