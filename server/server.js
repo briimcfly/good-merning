@@ -21,6 +21,8 @@ const app = express();
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    introspection: true, // Enables schema introspection
+    playground: true, // Enables Playground
 })
 
 //Function to start the Apollo Server & Set Middleware
