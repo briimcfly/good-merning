@@ -23,7 +23,10 @@ const resolvers = {
         },
         //Fetch all Listings
         listings: async(_, {city}) => {
-            return await Listing.find({city: new RegExp(city, 'i')});
+            return await Listing.find({
+                city: new RegExp(city, 'i'),
+                state: new RegExp(state, 'i')
+            });
         },
         //Fetch a listing
         listing: async(_, {id}) => {
@@ -56,6 +59,7 @@ const resolvers = {
             const newListing = new Listing({
                 address,
                 city,
+                state,
                 username,
                 postedAt: new Date().toISOString(),
                 rating,

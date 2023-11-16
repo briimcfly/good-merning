@@ -10,6 +10,10 @@ const listingSchema = new Schema({
         type: String,
         required: true,
     },
+    state: {
+        type: String,
+        required: true
+    },
     username: {
         type: String,
         required: true

@@ -14,6 +14,7 @@ const typeDefs = `
         _id: ID
         address: String!
         city: String!
+        state: String!
         username: String!
         rating: Int!
         postedAt: String
@@ -52,6 +53,7 @@ const typeDefs = `
         addListing(
             address: String!
             city: String!
+            state: String!
             username: String!
             rating: Int!
             review: String!
