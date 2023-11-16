@@ -2,7 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { VStack, Box, Text, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+
 import Login from '../components/Login';
+import CitySearch from '../components/CitySearch';
 
 const Landing = () => {
     //This code will be moved to the Navigation Component once we build it 
@@ -19,6 +21,7 @@ const Landing = () => {
         <Button colorScheme="green" onClick={handleOpenLogin}>Open Login Component</Button>
         <Button colorScheme="yellow">Open Signup Component</Button>
         <Button colorScheme="red" as={Link} to="/1325">Open Error Page</Button>
+        <CitySearch />
       </VStack>
       <Login isOpen={isLoginOpen} onClose={handleCloseLogin} />
     </Box>
