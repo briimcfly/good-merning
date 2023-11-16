@@ -8,6 +8,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import App from './App.jsx'
 import Landing from './pages/Landing'
 import Error from './pages/Error'
+import ListingPage from './pages/ListingPage.jsx'
 
 //Router
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
          // Default route (index) under the root path this should ne home element, used this for testing
         index: true,
         element: <Landing />
+      },
+      {
+        path:"listings/:city/:state",
+        element: <ListingPage />
       }
     ]
   },

@@ -38,7 +38,7 @@ const typeDefs = `
         me: User
 
         #Listings
-        listings(city: String!): [Listing]
+        listings(city: String!, state: String!): [Listing]
         listing(id: ID!): Listing
     }
 
@@ -57,7 +57,7 @@ const typeDefs = `
             username: String!
             rating: Int!
             review: String!
-            images [String]
+            images: [String]
             ) : Listing
     }
 `;

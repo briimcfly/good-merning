@@ -22,11 +22,11 @@ const resolvers = {
             throw AuthenticationError;
         },
         //Fetch all Listings
-        listings: async(_, {city}) => {
+        listings: async(_, {city, state}) => {
             return await Listing.find({
                 city: new RegExp(city, 'i'),
                 state: new RegExp(state, 'i')
-            });
+            }).populate('user');
         },
         //Fetch a listing
         listing: async(_, {id}) => {

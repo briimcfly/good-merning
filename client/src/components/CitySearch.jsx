@@ -9,8 +9,16 @@ const CitySearch = () => {
 
     const handlePlaceSelect = () => {
         const place = autocomplete.getPlace();
-        if (place.geometry) {
-            navigate(`/listings/${place.name}`); // Assuming you have a route for listings by city name
+        if (place.address_components) {
+            // Extract city and state from the address components
+            const cityComponent = place.address_components.find(component => component.types.includes('locality'));
+            const stateComponent = place.address_components.find(component => component.types.includes('administrative_area_level_1'));
+            const city = cityComponent ? cityComponent.long_name : '';
+            const state = stateComponent ? stateComponent.short_name : '';
+
+            if (city && state) {
+                navigate(`/listings/${city}/${state}`);
+            }
         } else {
             alert("No details available for input: '" + place.name + "'");
         }
