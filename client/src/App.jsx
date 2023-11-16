@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 import { Outlet } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
