@@ -39,6 +39,6 @@ const listingSchema = new Schema({
 });
 
 //Create the Listing model using schema 
-const User = model('Listing', listingSchema);
+const Listing = model('Listing', listingSchema);
 
 module.exports = Listing;
