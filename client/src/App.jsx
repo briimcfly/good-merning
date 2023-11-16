@@ -12,11 +12,12 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client = {client}>
-      <ChakraProvider>
-        <Outlet />
-      </ChakraProvider>
-    </ApolloProvider>
+    <ChakraProvider>
+      <ApolloProvider client = {client}>
+          <Outlet />
+      </ApolloProvider>
+    </ChakraProvider>
+
   )
 }
 

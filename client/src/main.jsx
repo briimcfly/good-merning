@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter,  } from 'react-router-dom'
 
 import App from './App.jsx'
 import Landing from './pages/Landing'
-import Login from './pages/Login'
+import Error from './pages/Error'
 
 //the router is created here,
 const router = createBrowserRouter([
