@@ -55,12 +55,18 @@ const resolvers = {
             return {token, user};
         },
         //Add a listing
-        addListing: async(_, {address, city, username, rating, review, images}) => {
+        addListing: async(_, {address, city, userId, rating, review, images}) => {
+            //Find the User by username 
+            const user = await User.findOne({userId});
+            if(!user) {
+                throw new Error('User Not Found');
+            }
+
             const newListing = new Listing({
                 address,
                 city,
                 state,
-                username,
+                user: userId,
                 postedAt: new Date().toISOString(),
                 rating,
                 review,

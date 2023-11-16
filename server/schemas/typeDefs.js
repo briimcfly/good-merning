@@ -15,7 +15,7 @@ const typeDefs = `
         address: String!
         city: String!
         state: String!
-        username: String!
+        user: User!
         rating: Int!
         postedAt: String
         review: String!

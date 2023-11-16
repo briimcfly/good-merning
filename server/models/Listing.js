@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 
-
 const listingSchema = new Schema({
     address: {
         type: String,
@@ -14,8 +13,9 @@ const listingSchema = new Schema({
         type: String,
         required: true
     },
-    username: {
-        type: String,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
     postedAt: {
