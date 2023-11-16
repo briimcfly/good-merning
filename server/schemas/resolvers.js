@@ -1,5 +1,5 @@
 //Import Models 
-const {User} = require('../models');
+const {User, Listing} = require('../models');
 //Import Utilities 
 const { signToken, AuthenticationError } = require('../utils/auth');
 
@@ -20,6 +20,14 @@ const resolvers = {
                 return User.findOne({_id: context.user._id});
             }
             throw AuthenticationError;
+        },
+        //Fetch all Listings
+        listings: async(_, {city}) => {
+            return await Listing.find({city: new RegExp(city, 'i')});
+        },
+        //Fetch a listing
+        listing: async(_, {id}) => {
+            return await Listing.findById(id);
         }
     },
 
@@ -42,6 +50,19 @@ const resolvers = {
             const token = signToken(user);
 
             return {token, user};
+        },
+        //Add a listing
+        addListing: async(_, {address, city, username, rating, review, images}) => {
+            const newListing = new Listing({
+                address,
+                city,
+                username,
+                postedAt: new Date().toISOString(),
+                rating,
+                review,
+                images
+            })
+            return await newListing.save();
         }
     }
 };
