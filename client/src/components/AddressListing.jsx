@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Text, Image, Badge, Stack} from '@chakra-ui/react';
 import { formatDate } from '../utils/date';
 
-const Listing = ({listings, averageRating}) => {
+const AddressListing = ({listings, averageRating}) => {
     const formattedDate = formatDate(listings[0].postedAt);
 
     return (
@@ -19,4 +19,4 @@ const Listing = ({listings, averageRating}) => {
     );
 }
 
-export default Listing;
+export default AddressListing;

@@ -1,13 +1,16 @@
+//This Page will be all the addresses in a city that have one or many reviews. 
+//Reviews will be compiled into one listing with an average rating. 
+
 import React, {useState, useEffect }  from 'react';
 import { useQuery } from '@apollo/client';
 import {Stack, Button, Box, Heading, SimpleGrid} from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { QUERY_LISTINGS } from '../utils/queries';
-import Listing from '../components/Listing';
+import Review from '../components/Review';
 import {useParams} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const ListingPage = () => {
+const CityAddressList = () => {
     const {city, state} = useParams();
 
     const { loading, error, data } = useQuery(QUERY_LISTINGS, {
@@ -21,9 +24,9 @@ const ListingPage = () => {
       return <p>Error...</p>;
     }
 
-    const listingsByAddress = data.listings.reduce((acc, listing) => {
-      acc[listing.address] = acc[listing.address] || [];
-      acc[listing.address].push(listing);
+    const reviewsByAddress = data.listings.reduce((acc, review) => {
+      acc[review.address] = acc[review.address] || [];
+      acc[review.address].push(review);
       return acc;
     }, {});
 
