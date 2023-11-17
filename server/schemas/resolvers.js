@@ -1,5 +1,5 @@
 //Import Models 
-const {User, Listing} = require('../models');
+const {User, Review} = require('../models');
 //Import Utilities 
 const { signToken, AuthenticationError } = require('../utils/auth');
 
@@ -21,10 +21,10 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
-        //Fetch all Listings
-        listings: async(_, {city, state}) => {
+        //Fetch all Rentals
+        rentals: async(_, {city, state}) => {
             try {
-                const listings = await Listing.aggregate([
+                const rentals = await Review.aggregate([
                     {
                         $match: {
                             city: new RegExp(city, 'i'),
@@ -43,23 +43,19 @@ const resolvers = {
                     },
                     {$sort: {_id:1}}
                 ]);
-                return listings.map(listing=> ({
-                    address: listing._id,
-                    city: listing.city,
-                    state: listing.state,
-                    averageRating: listing.averageRating,
-                    reviews: listing.reviews,
-                    count: listing.count
+                return rentals.map(rental=> ({
+                    address: rental._id,
+                    city: rental.city,
+                    state: rental.state,
+                    averageRating: rental.averageRating,
+                    reviews: rental.reviews,
+                    count: rental.count
                 }))
 
             } catch (e){
                 console.error(e);
                 throw new Error('Error fetching listings')
             }
-        },
-        //Fetch a listing
-        listing: async(_, {id}) => {
-            return await Listing.findById(id);
         }
     },
 
@@ -84,24 +80,24 @@ const resolvers = {
             return {token, user};
         },
         //Add a listing
-        addListing: async(_, {address, city, userId, rating, review, images}) => {
+        addReview: async(_, {address, city, userId, rating, comment, images}) => {
             //Find the User by username 
             const user = await User.findOne({userId});
             if(!user) {
                 throw new Error('User Not Found');
             }
 
-            const newListing = new Listing({
+            const newReview = new Review({
                 address,
                 city,
                 state,
                 user: userId,
                 postedAt: new Date().toISOString(),
                 rating,
-                review,
+                comment,
                 images
             })
-            return await newListing.save();
+            return await newReview.save();
         }
     }
 };
