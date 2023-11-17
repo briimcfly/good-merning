@@ -15,10 +15,17 @@ const typeDefs = `
         address: String!
         city: String!
         state: String!
-        user: User!
-        rating: Int!
+        averageRating: Float
+        count: Int
+        reviews: [Review!]!
+    }
+
+    # Review 
+    type Review {
+        user: User
         postedAt: String
-        review: String!
+        rating: Float
+        review: String
         images: [String]
     }
 

@@ -23,10 +23,39 @@ const resolvers = {
         },
         //Fetch all Listings
         listings: async(_, {city, state}) => {
-            return await Listing.find({
-                city: new RegExp(city, 'i'),
-                state: new RegExp(state, 'i')
-            }).populate('user');
+            try {
+                const listings = await Listing.aggregate([
+                    {
+                        $match: {
+                            city: new RegExp(city, 'i'),
+                            state: new RegExp(state,'i')
+                        }
+                    },
+                    {
+                        $group: {
+                            _id: '$address',
+                            city: {$first: '$city'},
+                            state: {$first: '$state'},
+                            averageRating: { $avg: '$rating' },
+                            reviews: { $push: '$$ROOT' },
+                            count: { $sum: 1 }
+                        }
+                    },
+                    {$sort: {_id:1}}
+                ]);
+                return listings.map(listing=> ({
+                    address: listing._id,
+                    city: listing.city,
+                    state: listing.state,
+                    averageRating: listing.averageRating,
+                    reviews: listing.reviews,
+                    count: listing.count
+                }))
+
+            } catch (e){
+                console.error(e);
+                throw new Error('Error fetching listings')
+            }
         },
         //Fetch a listing
         listing: async(_, {id}) => {
