@@ -12,7 +12,6 @@ import {
   FormLabel,
   Heading,
   Input,
-  Modal,
   ModalBody,
   ModalContent,
   ModalHeader,
@@ -54,71 +53,72 @@ const Signup = ({isOpen, onClose}) => {
 
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
-            {/*Overlay when the model is open*/}
-            <ModalOverlay />
-            <ModalContent>
-                {/*Header and close button*/}
-                <ModalHeader textAlign="left" borderBottomWidth="1px">
-                    <Box fontSize="lg">Sign Up</Box>
-                    {/* Close button 'x' */}
-                    <Button
-                        onClick={onClose}
-                        variant="unstyled"
-                        fontSize="lg"
-                        position="absolute"
-                        right="1rem"
-                        top="0.5rem"
-                    >
-                        X
-                    </Button>
-                </ModalHeader>
+        {/* Overlay when the model is open */}
+        <ModalOverlay />
+        <ModalContent>
+            {/* Header and close button */}
+            <ModalHeader textAlign="left" borderBottomWidth="1px">
+            <Box fontSize="lg">Sign Up</Box>
+            {/* Close button 'x' */}
+            <Button
+                onClick={onClose}
+                variant="unstyled"
+                fontSize="lg"
+                position="absolute"
+                right="1rem"
+                top="0.5rem"
+            >
+                X
+            </Button>
+            </ModalHeader>
             {/* Body */}
-                <ModalBody>
-                <form onSubmit={handleSubmit}>
-                    <Stack spacing={4}>
-                    {/* Email input */}
-                    <FormControl>
-                        <FormLabel>Email</FormLabel>
-                        <Input
-                        placeholder="Your email"
-                        name="email"
-                        type="email"
-                        value={formState.email}
-                        onChange={handleChange}
-                        />
-                    </FormControl>
-                    {/* Username input */}
-                    <FormControl>
-                        <FormLabel>Username</FormLabel>
-                        <Input
-                        placeholder="Your username"
-                        name="username"
-                        type="text"
-                        value={formState.username}
-                        onChange={handleChange}
-                        />
-                    </FormControl>
-                    {/* Password input */}
-                    <FormControl>
-                        <FormLabel>Password</FormLabel>
-                        <Input
-                        placeholder="******"
-                        name="password"
-                        type="password"
-                        value={formState.password}
-                        onChange={handleChange}
-                        />
-                    </FormControl>
-                    {/* Submit button */}
-                    <Button
-                        colorScheme="blue"
-                        variant="solid"
-                        w="100%"
-                        type="submit"
-                    >
-                        Sign Up
-                     {/* Cancel button */}
-                    <Button
+            <ModalBody>
+            <form onSubmit={handleFormSubmit}>
+                <Stack spacing={4}>
+                {/* Email input */}
+                <FormControl>
+                    <FormLabel>Email</FormLabel>
+                    <Input
+                    placeholder="Your email"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                    />
+                </FormControl>
+                {/* Username input */}
+                <FormControl>
+                    <FormLabel>Username</FormLabel>
+                    <Input
+                    placeholder="Your username"
+                    name="username"
+                    type="text"
+                    value={formState.username}
+                    onChange={handleChange}
+                    />
+                </FormControl>
+                {/* Password input */}
+                <FormControl>
+                    <FormLabel>Password</FormLabel>
+                    <Input
+                    placeholder="******"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                    />
+                </FormControl>
+                {/* Submit button */}
+                <Button
+                    colorScheme="blue"
+                    variant="solid"
+                    w="100%"
+                    type="submit"
+                >
+                    Sign Up
+                </Button>
+                {/* Cancel button */}
+                <Button
                     onClick={handleCancel}
                     variant="outline"
                     colorScheme="gray"
@@ -136,14 +136,10 @@ const Signup = ({isOpen, onClose}) => {
                 )}
                 </Stack>
             </form>
-                </Button>
-                    </ModalBody>
-
-            </ModalContent>
+            </ModalBody>
+        </ModalContent>
         </Modal>
     );
-};
+    };
 
 export default Signup;
-
-
