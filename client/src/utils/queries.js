@@ -22,9 +22,9 @@ query User($username: String!) {
 `
 
 // Fetch Listings with aggregated data
-export const QUERY_GROUPED_REVIEWS = gql`
-query GetReviews($city: String!, $state: String!) {
-    listings(city: $city, state: $state) {
+export const QUERY_RENTALS = gql`
+query GetRentals($city: String!, $state: String!) {
+    rentals(city: $city, state: $state) {
         address
         city
         state
