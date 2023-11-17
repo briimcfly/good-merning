@@ -9,6 +9,7 @@ import App from './App.jsx'
 import Landing from './pages/Landing'
 import Error from './pages/Error'
 import CityRentals from './pages/CityRentals'
+import RentalReviews from './pages/RentalReviews'
 
 
 //Router
@@ -25,7 +26,13 @@ const router = createBrowserRouter([
       },
       {
         path:"Locations/:city/:state",
-        element: <CityRentals />
+        element: <CityRentals />,
+        children: [
+          {
+            path: "rental/:rentalId",
+            element: <RentalReviews />
+          }
+        ]
       }
     ]
   },
