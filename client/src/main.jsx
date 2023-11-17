@@ -12,6 +12,7 @@ import CityRentals from './pages/CityRentals'
 import RentalReviews from './pages/RentalReviews'
 
 
+
 //Router
 const router = createBrowserRouter([
   {
