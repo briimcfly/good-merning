@@ -17,7 +17,7 @@ const CitySearch = () => {
             const state = stateComponent ? stateComponent.short_name : '';
 
             if (city && state) {
-                navigate(`/listings/${city}/${state}`);
+                navigate(`/Reviews/${city}/${state}`);
             }
         } else {
             alert("No details available for input: '" + place.name + "'");
