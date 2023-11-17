@@ -1,0 +1,60 @@
+[
+    {
+      "address": "123 Capitol Mall, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "PaulAtreides",
+      "postedAt": "2023-06-01T07:00:00.000Z",
+      "rating": 4,
+      "images": [
+        "https://via.placeholder.com/400x300?text=Listing+1"
+      ],
+      "review": "Great place in the heart of the city with a fantastic view of the Capitol."
+    },
+    {
+      "address": "456 K Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "JessicaBeneGesserit",
+      "postedAt": "2023-05-15T07:00:00.000Z",
+      "rating": 5,
+      "images": [
+        "https://via.placeholder.com/400x300?text=Listing+2"
+      ],
+      "review": "Modern amenities and close to great dining options. Highly recommended!"
+    },
+    {
+      "address": "789 L Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "DuncanIdaho",
+      "postedAt": "2023-04-20T07:00:00.000Z",
+      "rating": 3,
+      "images": [],
+      "review": "Decent place but noisy due to street traffic. Good for short stays."
+    },
+    {
+      "address": "101 J Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "GurneyHalleck",
+      "postedAt": "2023-03-30T07:00:00.000Z",
+      "rating": 2,
+      "images": [
+        "https://via.placeholder.com/400x300?text=Listing+3"
+    ],
+      "review": "The location is convenient but the building is quite old and needs renovation."
+    },
+    {
+      "address": "202 N Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "ThufirHawat",
+      "postedAt": "2023-02-10T07:00:00.000Z",
+      "rating": 5,
+      "images": [],
+      "review": "Fantastic spot! Quiet, cozy, and with a park nearby. Perfect for families."
+    }
+]
+
+  

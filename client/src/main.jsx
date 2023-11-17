@@ -1,48 +1,39 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 //imported the createBrowserRouter from react-router-dom to assist with routing
-import { createBrowserRouter,  } from 'react-router-dom'
-import App from './App.jsx'
+import { RouterProvider, createBrowserRouter,  } from 'react-router-dom'
+//Chakra
 import { ChakraProvider } from '@chakra-ui/react'
-import './index.css'
-import Login from './pages/Login.jsx'
+//Pages & Components
+import App from './App.jsx'
+import Landing from './pages/Landing'
+import Error from './pages/Error'
+import ListingPage from './pages/ListingPage.jsx'
 
-//the router is created here,
+//Router
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
          // Default route (index) under the root path this should ne home element, used this for testing
         index: true,
-        element: <Login />
+        element: <Landing />
+      },
+      {
+        path:"listings/:city/:state",
+        element: <ListingPage />
       }
     ]
   },
 ]);
 
-/*change to this: when we get login,home and signup pages and error page
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <Home />
-      }, {
-        path: '/login',
-        element: <Login />
-      }, {
-        path: '/signup',
-        element: <Signup />
-      }, */
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider>
-    <App />
+      <RouterProvider router = {router} />
     </ChakraProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
