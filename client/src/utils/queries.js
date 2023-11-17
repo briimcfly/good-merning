@@ -46,10 +46,12 @@ query GetRentals($city: String!, $state: String!) {
 export const QUERY_REVIEWS = gql`
 query Reviews($address: String!) {
     reviews(address: $address) {
-        user {
-            username
-        }
         rating
+        user {
+          username
+        }
+        postedAt
+        comment
 
     }
 }
