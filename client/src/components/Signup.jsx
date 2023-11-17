@@ -71,11 +71,41 @@ const Signup = ({isOpen, onClose}) => {
                     >
                         X
                     </Button>
-            </ModalHeader>
+                </ModalHeader>
+            {/* Body */}
+                <ModalBody>
+                <form onSubmit={handleSubmit}>
+                    <Stack spacing={4}>
+                    {/* Email input */}
+                    <FormControl>
+                        <FormLabel>Email</FormLabel>
+                        <Input
+                        placeholder="Your email"
+                        name="email"
+                        type="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                        />
+                    </FormControl>
+                    {/* Username input */}
+                    <FormControl>
+                        <FormLabel>Username</FormLabel>
+                        <Input
+                        placeholder="Your username"
+                        name="username"
+                        type="text"
+                        value={formState.username}
+                        onChange={handleChange}
+                        />
+                    </FormControl>
+                    {/* Password input */}
+                    </ModalBody>
+
             </ModalContent>
         </Modal>
     );
 };
+
 export default Signup;
 
 
