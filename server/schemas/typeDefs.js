@@ -1,7 +1,6 @@
 //GraphQL type definitions 
 
 const typeDefs = `
-    # User: Id, Username, Email, & Password 
     type User {
         _id: ID
         username: String
@@ -9,33 +8,29 @@ const typeDefs = `
         password: String
     }
 
-    # Listings
-    type Listing {
+    type Rental {
         _id: ID
-        address: String!
-        city: String!
-        state: String!
+        address: String
+        city: String
+        state: String
         averageRating: Float
         count: Int
-        reviews: [Review!]!
+        reviews: [Review!]
     }
 
-    # Review 
     type Review {
         user: User
         postedAt: String
         rating: Float
-        review: String
+        comment: String
         images: [String]
     }
 
-    # Authentication: Includes token and user object
     type Auth {
         token: ID!
         user: User
     }
 
-    # Root Query/Endpoint 
     type Query {
         # Return an array of user types 
         users: [User]
@@ -44,9 +39,8 @@ const typeDefs = `
         # Returns the currently authenticated user 
         me: User
 
-        #Listings
-        listings(city: String!, state: String!): [Listing]
-        listing(id: ID!): Listing
+        listings(city: String!, state: String!): [Review]
+        review(id: ID!): Review
     }
 
     type Mutation {
@@ -56,16 +50,15 @@ const typeDefs = `
         # Authenticate user with email and password for login 
         login(email: String!, password: String!): Auth
 
-        # Listing 
-        addListing(
+        addReview(
             address: String!
             city: String!
             state: String!
             username: String!
             rating: Int!
-            review: String!
+            comment: String!
             images: [String]
-            ) : Listing
+            ) : Review
     }
 `;
 
