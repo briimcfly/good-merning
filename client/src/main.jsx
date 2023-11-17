@@ -23,8 +23,8 @@ const router = createBrowserRouter([
         element: <Landing />
       },
       {
-        path:"listings/:city/:state",
-        element: <ListingPage />
+        path:"Reviews/:city/:state",
+        element: <CityAddressList />
       }
     ]
   },
