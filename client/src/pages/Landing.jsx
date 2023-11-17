@@ -5,12 +5,17 @@ import { Link } from 'react-router-dom';
 
 import Login from '../components/Login';
 import CitySearch from '../components/CitySearch';
+import Signup from '../components/Signup';
 
 const Landing = () => {
     //This code will be moved to the Navigation Component once we build it 
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const handleOpenLogin = () => setIsLoginOpen(true);
     const handleCloseLogin = () => setIsLoginOpen(false);
+
+    // //signup
+    // const [isSignupOpen, setIsSignupOpen] = useState(false);
+    // const handleOpenSignup = () => setIsSignupOpen(true);
 
     //Background Image 
     const backgroundImage = 'url(/images/city-bg.jpg)'
