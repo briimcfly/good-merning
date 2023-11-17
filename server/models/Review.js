@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const listingSchema = new Schema({
+const reviewSchema = new Schema({
     address: {
         type: String,
         required: true
@@ -32,13 +32,13 @@ const listingSchema = new Schema({
         type: [String],
         default: []
     },
-    review: {
+    comment: {
         type: String,
         required: true
     }
 });
 
 //Create the Listing model using schema 
-const Listing = model('Listing', listingSchema);
+const Listing = model('Review', reviewSchema);
 
 module.exports = Listing;
