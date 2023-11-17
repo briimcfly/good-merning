@@ -18,6 +18,23 @@ const Signup = ({isOpen, onClose}) => {
         setFormState({
             ...formState, [name]: value,
         });
-    }
+    };
+    //handle form submit
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+        console.log(formState);
+        try{
+            const {data} = await addUser(
+                {
+                    variables: {...formState},
+                });
+            Auth.login(data.addUser.token);
+        }
+        catch (e){
+            console.error(e);
+        }
+    };
 
-    
+    return (
+
+
