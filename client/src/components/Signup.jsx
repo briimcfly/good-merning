@@ -99,6 +99,25 @@ const Signup = ({isOpen, onClose}) => {
                         />
                     </FormControl>
                     {/* Password input */}
+                    <FormControl>
+                        <FormLabel>Password</FormLabel>
+                        <Input
+                        placeholder="******"
+                        name="password"
+                        type="password"
+                        value={formState.password}
+                        onChange={handleChange}
+                        />
+                    </FormControl>
+                    {/* Submit button */}
+                    <Button
+                        colorScheme="blue"
+                        variant="solid"
+                        w="100%"
+                        type="submit"
+                    >
+                        Sign Up
+                    </Button>
                     </ModalBody>
 
             </ModalContent>
