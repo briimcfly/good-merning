@@ -21,6 +21,16 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
+        reviews: async (_, { address }) => {
+            try {
+                return await Review.find({ 
+                    address: new RegExp(address, 'i') 
+                }).populate('user');
+            } catch (e) {
+                console.error('Error fetching reviews:', e);
+                throw new Error('Failed to fetch reviews');
+            }
+        },
         //Fetch all Rentals
         rentals: async(_, {city, state}) => {
             try {

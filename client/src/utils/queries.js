@@ -42,21 +42,15 @@ query GetRentals($city: String!, $state: String!) {
     }
 }
 `
-//Fetch Individual Reviews
+//Fetch Individual Reviews by Address
 export const QUERY_REVIEWS = gql`
-query GetReviews($city: String!, $state: String!) {
-    reviews(city: $city, state: $state) {
-        _id
-        address
-        city
-        state
+query Reviews($address: String!) {
+    reviews(address: $address) {
         user {
             username
         }
-        postedAt
         rating
-        comment
-        images
+
     }
 }
 `
