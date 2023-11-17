@@ -26,12 +26,6 @@ const CityRentals = () => {
 
     const rentals = data.rentals;
 
-    // const rentals = data.reviews.reduce((acc, review) => {
-    //   acc[review.address] = acc[review.address] || [];
-    //   acc[review.address].push(review);
-    //   return acc;
-    // }, {});
-
     return (
         <Box padding="4">
             <Stack direction='row' spacing={4}>
