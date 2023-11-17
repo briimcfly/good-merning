@@ -7,6 +7,7 @@ import { QUERY_REVIEWS } from '../utils/queries';
 import { Box, SimpleGrid, Heading, Stack, Button } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';    
+import Loader from '../components/Loader';
 
 const RentalReviews = () => {
     const { address } = useParams();
@@ -16,7 +17,7 @@ const RentalReviews = () => {
         variables: { address: decodedAddress }
     });
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loader />;
     if (error) return <p>Error...</p>;
 
     console.log(data);
