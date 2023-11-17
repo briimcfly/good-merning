@@ -4,6 +4,18 @@ const {ApolloServer} = require('@apollo/server');
 const {expressMiddleware} = require('@apollo/server/express4');
 const path = require('path');
 const {authMiddleware} = require('./utils/auth');
+//file management
+const multer = require('multer');
+const {uploadImageToStorage} = require('./utils/googleCloudStorage')
+
+const upload = multer({
+    //hey, keep the file in memory
+    storage: multer.memoryStorage(),
+    //but also, there's limits
+    limits: {
+        fileSize: 5 * 1024 * 1024 // no larger than 5mb
+    }
+})
 
 //GraphQL TypeDefs and Resolvers dependencies
 const {typeDefs, resolvers} = require('./schemas');
@@ -24,6 +36,20 @@ const server = new ApolloServer({
     introspection: true, // Enables schema introspection
     playground: true, // Enables Playground
 })
+
+//Image Upload Endpoint
+app.post('/upload-image', upload.single('image'), async(req,res) => {
+    try{
+        if(!req.file){
+            throw new Error('No image being uploaded');
+        }
+        const imageUrl = await uploadImageToStorage(req.file);
+        res.status(200).json({message: 'My Dune, the image has been uploaded!', imageUrl});
+    } catch (e) {
+        console.error('My Arrakis, Error uploading image:', e);
+        res.status(500).json({message: 'Internal Server Error'});
+    }
+});
 
 //Function to start the Apollo Server & Set Middleware
 const startApolloServer = async() => {
