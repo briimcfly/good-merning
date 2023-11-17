@@ -39,7 +39,7 @@ const typeDefs = `
         # Returns the currently authenticated user 
         me: User
 
-        listings(city: String!, state: String!): [Review]
+        rentals(city: String!, state: String!): [Rental]
         review(id: ID!): Review
     }
 

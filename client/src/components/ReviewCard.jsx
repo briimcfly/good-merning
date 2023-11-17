@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Text, Image, Badge, Stack} from '@chakra-ui/react';
 import { formatDate } from '../utils/date';
 
-const SingleReview = ({review}) => {
+const ReviewCard = ({review}) => {
     const formattedDate = formatDate(review.postedAt)
     return (
         <Box p={5} shadow="md" borderWidth="1px">
@@ -18,4 +18,4 @@ const SingleReview = ({review}) => {
     )
 }
 
-export default SingleReview;
+export default ReviewCard;
