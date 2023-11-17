@@ -9,14 +9,14 @@ const ReviewCard = ({review}) => {
     return (
         <Box p={5} shadow="md" borderWidth="1px">
             <Stack direction="row" mt={2}>
-            <FaUserCircle size={30}/>
+            <FaUserCircle size={30} />
             <Text fontSize="xl" fontWeight="bold">{review.user.username}</Text>
             </Stack>
             <Stack direction="row" mt={2}>
                 <StarRating rating={review.rating} />
             </Stack>
             <Text mt={2}>{review.comment}</Text>
-            <Text mt={2}>Posted on {formattedDate}</Text>
+            <Text mt={2} color ="grey">Posted on {formattedDate}</Text>
         </Box> 
     )
 }

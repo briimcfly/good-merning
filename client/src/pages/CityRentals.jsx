@@ -9,6 +9,7 @@ import { QUERY_RENTALS } from '../utils/queries';
 import RentalCard from '../components/RentalCard';
 import {useParams} from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Loader from '../components/Loader';
 
 const CityRentals = () => {
     const {city, state} = useParams();
@@ -17,8 +18,7 @@ const CityRentals = () => {
         variables: { city, state }
     });
 
-    if (loading) return <p>Loading...</p>;
-
+    if (loading) return <Loader />;
     if (error) {
       console.error(error);
       return <p>Error...</p>;
