@@ -117,7 +117,26 @@ const Signup = ({isOpen, onClose}) => {
                         type="submit"
                     >
                         Sign Up
-                    </Button>
+                     {/* Cancel button */}
+                    <Button
+                    onClick={handleCancel}
+                    variant="outline"
+                    colorScheme="gray"
+                    w="100%"
+                    borderRadius="full"
+                    borderColor="black"
+                    borderWidth="2px"
+                >
+                    Cancel
+                </Button>
+                {error && (
+                    <Box mt={4} p={3} bg="red.500" color="white">
+                    {error.message}
+                    </Box>
+                )}
+                </Stack>
+            </form>
+                </Button>
                     </ModalBody>
 
             </ModalContent>
