@@ -45,10 +45,14 @@ const Login = ({isOpen,onClose}) => {
         {
           variables: {...formState},
         });
+        if (data && data.login && data.login.token){
       Auth.login(data.login.token); 
+    } else {
+      console.log('no token');
     }
-    catch (e){
-      console.error(e);
+    }
+      catch (e){
+      console.error('Error during login:', e);
     }
 
     //clear form values
