@@ -22,8 +22,8 @@ query User($username: String!) {
 `
 
 // Fetch Listings with aggregated data
-export const QUERY_LISTINGS = gql`
-query GetListings($city: String!, $state: String!) {
+export const QUERY_GROUPED_REVIEWS = gql`
+query GetReviews($city: String!, $state: String!) {
     listings(city: $city, state: $state) {
         address
         city
@@ -33,12 +33,30 @@ query GetListings($city: String!, $state: String!) {
         reviews {
             postedAt
             rating
-            review
+            comment
             user {
                 username
             }
             images
         }
+    }
+}
+`
+//Fetch Individual Reviews
+export const QUERY_REVIEWS = gql`
+query GetReviews($city: String!, $state: String!) {
+    reviews(city: $city, state: $state) {
+        _id
+        address
+        city
+        state
+        user {
+            username
+        }
+        postedAt
+        rating
+        comment
+        images
     }
 }
 `
