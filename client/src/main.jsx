@@ -10,6 +10,7 @@ import Landing from './pages/Landing'
 import Error from './pages/Error'
 import CityRentals from './pages/CityRentals'
 
+
 //Router
 const router = createBrowserRouter([
   {
