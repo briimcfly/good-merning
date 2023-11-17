@@ -21,21 +21,24 @@ query User($username: String!) {
   }
 `
 
-//Fetch Listings 
+// Fetch Listings with aggregated data
 export const QUERY_LISTINGS = gql`
 query GetListings($city: String!, $state: String!) {
     listings(city: $city, state: $state) {
-        _id
         address
         city
         state
-        user {
-            username
+        averageRating
+        count
+        reviews {
+            postedAt
+            rating
+            review
+            user {
+                username
+            }
+            images
         }
-        postedAt
-        rating
-        review
-        images
     }
 }
 `
