@@ -25,14 +25,12 @@ const router = createBrowserRouter([
         element: <Landing />
       },
       {
-        path:"Locations/:city/:state",
-        element: <CityRentals />,
-        children: [
-          {
-            path: "rental/:rentalId",
-            element: <RentalReviews />
-          }
-        ]
+        path:"locations/:city/:state",
+        element: <CityRentals />
+      },
+      {
+        path: "rentals/:address",
+        element: <RentalReviews />
       }
     ]
   },

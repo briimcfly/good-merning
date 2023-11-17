@@ -41,6 +41,7 @@ const typeDefs = `
 
         rentals(city: String!, state: String!): [Rental]
         review(id: ID!): Review
+        reviews(address: String!): [Review]
     }
 
     type Mutation {

@@ -27,6 +27,7 @@ const CityRentals = () => {
     const rentals = data.rentals;
 
     return (
+    <>
         <Box padding="4">
             <Stack direction='row' spacing={4}>
                 <Button leftIcon={<ArrowBackIcon />} colorScheme="teal" as={Link} to="/" mt={1}>
@@ -45,6 +46,7 @@ const CityRentals = () => {
                 ))}         
           </SimpleGrid>
         </Box>
+    </>
       );
 }
 
