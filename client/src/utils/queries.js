@@ -46,34 +46,37 @@ query GetRentals($city: String!, $state: String!) {
 export const QUERY_REVIEWS = gql`
 query Reviews($address: String!) {
     reviews(address: $address) {
-        rating
-        user {
-          username
-        }
+        images
+        comment
         landLordScore {
-            responsiveness
             attitude
-            maintenance
             leaseManagement
+            maintenance
+            responsiveness
         }
-        propertyScore {
-            condition
-            amenities
-            safety
-        }
+        address
         areaScore {
-            location
-            noiseLevel
+            condition
             neighborhood
+            noiseLevel
         }
+        city
         financialAspects {
             rentFairness
             rentIncreases
             value
         }
         postedAt
-        comment
-        images
-    }
+        propertyScore {
+            amenities
+            condition
+            safety
+        }
+        rating
+        state
+        user {
+            username
+        }
+        }
 }
 `

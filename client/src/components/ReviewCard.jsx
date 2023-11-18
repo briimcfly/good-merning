@@ -17,6 +17,8 @@ const ReviewCard = ({review}) => {
             </Stack>
             <Stack direction="row" mt={2}>
                 <StarRating rating={review.rating} />
+                <StarRating rating={review.financialAspects.rentFairness} />
+
             </Stack>
             <Text mt={2}>{review.comment}</Text>
             <Text mt={2} color ="grey">Posted on {formattedDate}</Text>
