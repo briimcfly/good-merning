@@ -20,6 +20,9 @@ const typeDefs = `
 
     type Review {
         user: User
+        address: String
+        city: String
+        state: String
         postedAt: String
         rating: Float
         comment: String
