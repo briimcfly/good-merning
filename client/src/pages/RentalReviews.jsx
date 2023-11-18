@@ -32,7 +32,7 @@ const RentalReviews = () => {
                     Reviews for {address}
                 </Heading>  
             </Stack>
-          <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing="8">
+          <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
             {data.reviews.map(review => (
               <ReviewCard key={review._id} review={review} />
             ))}

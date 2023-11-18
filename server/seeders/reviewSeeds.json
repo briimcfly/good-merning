@@ -6,9 +6,7 @@
       "username": "PaulAtreides",
       "postedAt": "2023-06-01T07:00:00.000Z",
       "rating": 4,
-      "images": [
-        "https://via.placeholder.com/400x300?text=Listing+1"
-      ],
+      "images": [],
       "comment": "Great place in the heart of the city with a fantastic view of the Capitol."
     },
     {
@@ -18,9 +16,7 @@
       "username": "JessicaBeneGesserit",
       "postedAt": "2023-05-15T07:00:00.000Z",
       "rating": 5,
-      "images": [
-        "https://storage.googleapis.com/dwellex/kstreet1.jpeg"
-      ],
+      "images": [],
       "comment": "Modern amenities and close to great dining options. Highly recommended!"
     },
     {
@@ -40,9 +36,7 @@
       "username": "GurneyHalleck",
       "postedAt": "2023-03-30T07:00:00.000Z",
       "rating": 2,
-      "images": [
-        "https://via.placeholder.com/400x300?text=Listing+3"
-    ],
+      "images": [],
       "comment": "The location is convenient but the building is quite old and needs renovation."
     },
     {
@@ -92,7 +86,7 @@
       "username": "LetoAtreides",
       "postedAt": "2023-05-20T07:00:00.000Z",
       "rating": 2,
-      "images": [],
+      "images": ["https://storage.googleapis.com/dwellex/16.jpeg"],
       "comment": "The place is quite dated and needs serious maintenance. Only advantage is the central location."
     },
     {
@@ -102,7 +96,7 @@
       "username": "AliaAtreides",
       "postedAt": "2023-05-05T07:00:00.000Z",
       "rating": 4,
-      "images": [],
+      "images": ["https://storage.googleapis.com/dwellex/15.jpg"],
       "comment": "A cozy spot with a lot of character, though a bit noisy at night. Great for weekend getaways."
     },
     {
@@ -112,7 +106,7 @@
       "username": "PiterDeVries",
       "postedAt": "2023-08-10T07:00:00.000Z",
       "rating": 3,
-      "images": [],
+      "images": ["https://storage.googleapis.com/dwellex/14.jpeg"],
       "comment": "The area is quiet and the rooms are spacious, but it lacks modern amenities."
     },
     {
@@ -122,7 +116,7 @@
       "username": "LadyFenring",
       "postedAt": "2023-07-25T07:00:00.000Z",
       "rating": 5,
-      "images": [],
+      "images": ["https://storage.googleapis.com/dwellex/13.jpeg"],
       "comment": "Excellent location with breathtaking views. The service was top-notch."
     },
     {
@@ -132,7 +126,7 @@
       "username": "ShaddamIV",
       "postedAt": "2023-07-15T07:00:00.000Z",
       "rating": 2,
-      "images": [],
+      "images": ["https://storage.googleapis.com/dwellex/12.jpeg"],
       "comment": "Convenient location but the building is very old and needs repairs."
     },
     {
@@ -142,7 +136,11 @@
       "username": "IrulanCorrino",
       "postedAt": "2023-06-30T07:00:00.000Z",
       "rating": 4,
-      "images": ["https://storage.googleapis.com/dwellex/kstreet4.jpeg","https://storage.googleapis.com/dwellex/kstreet5.jpeg"],
+      "images": [
+      "https://storage.googleapis.com/dwellex/kstreet1.jpeg",
+      "https://storage.googleapis.com/dwellex/kstreet4.jpeg",
+      "https://storage.googleapis.com/dwellex/kstreet5.jpeg"
+    ],
       "comment": "Great for foodies, as it's close to several top-rated restaurants. The room was comfortable."
     },
     {
@@ -152,7 +150,7 @@
       "username": "LietKynes",
       "postedAt": "2023-06-25T07:00:00.000Z",
       "rating": 3,
-      "images": [],
+      "images": ["https://storage.googleapis.com/dwellex/11.jpeg"],
       "comment": "Average accommodation but very accessible to public transport. Suitable for budget travelers."
     }
 ]

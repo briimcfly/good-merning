@@ -3,6 +3,7 @@ import {Box, Text, Flex, Stack} from '@chakra-ui/react';
 import { formatDate } from '../utils/date';
 import { useNavigate } from 'react-router-dom';
 import StarRating from './Stars';
+import ImageCarousel from './ImageCarousel';
 
 const RentalCard = ({rental}) => {
     const lastReviewDate = formatDate(rental.reviews[0].postedAt);
@@ -14,8 +15,14 @@ const RentalCard = ({rental}) => {
         navigate(`/rentals/${encodedAddress}`)
     }
 
+    const rentalImages = rental.reviews
+    .map(review => review.images)
+    .flat()
+    .filter(image => image);
+
     return (
         <Box p={5} shadow="md" borderWidth="1px" onClick = {handleCardClick}>
+            <ImageCarousel images={rentalImages || []} />
             <Text fontSize="xl" fontWeight="bold">{rental.address}</Text>
             <Stack direction="row" mt={2} align="center">
             <StarRating rating={rental.averageRating.toFixed(1)} />
