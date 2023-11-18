@@ -1,9 +1,11 @@
 import React from 'react';
-import {SimpleGrid, Box, Text, Stack} from '@chakra-ui/react';
+import {SimpleGrid, Box, Text, Stack, Divider} from '@chakra-ui/react';
 import { FaUserCircle } from "react-icons/fa";
 import { formatDate } from '../utils/date';
 import StarRating from './Stars'; 
 import ImageCarousel from './ImageCarousel';
+import LabeledStarRating from './molecules/LabeledStarRating';
+import RatingWrapper from './molecules/RatingWrapper';
 
 const ReviewCard = ({review}) => {
     const formattedDate = formatDate(review.postedAt)
@@ -12,32 +14,82 @@ const ReviewCard = ({review}) => {
         <>
         <Box p={5} shadow="md" borderWidth="1px" bg='white' borderRadius="lg" >
             {/* <ImageCarousel images={review.images || []} /> */}
-            <Stack direction="row" mt={2} mb={8}>
-            <FaUserCircle size={30} />
+            <Stack direction="row" mt={2} mb={2} alignItems='center'>
+            <FaUserCircle size={45} color="teal" />
+            <Stack ml={1} direction ="column">
             <Text fontSize="xl" fontWeight="bold">{review.user.username}</Text>
+            <Text mt={-3}color ="grey">Reviewed: {formattedDate}</Text>
             </Stack>
+            </Stack>
+            <Divider mt={4}/>
+            <Text mb={4} mt={4}>{review.comment}</Text>
+            <Divider mb={4} />
 
-            <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}  >
-                <div>
-            <Text fontSize="md" fontWeight = 'bold'>Landlord Score</Text>
-            <Stack direction="row" mt={2}>
-                <Text fontSize="sm">Rent Fairness</Text>
-                <StarRating rating={review.landLordScore.attitude} />
-            </Stack>
-            <Stack direction="row" mt={2}>
-            <Text fontSize="sm">Lease Management</Text>
-                <StarRating rating={review.landLordScore.leaseManagement} />
-            </Stack>
-            <Stack direction="row" mt={2}>
-            <Text fontSize="sm">Maintenance</Text>
-                <StarRating rating={review.landLordScore.maintenance} />
-            </Stack>
-            <Stack direction="row" mt={2}>
-            <Text fontSize="sm">Responsiveness</Text>
-                <StarRating rating={review.landLordScore.responsiveness} />
-            </Stack>
-            </div>
-            <div>
+            <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={8}>
+                <RatingWrapper title ={'Landlord Score'}>
+                    <LabeledStarRating 
+                        label={'Rent Fairness'}
+                        score={review.landLordScore.attitude}
+                    />
+                    <LabeledStarRating 
+                        label={'Maintenance'}
+                        score={review.landLordScore.maintenance}
+                    />
+                    <LabeledStarRating 
+                        label={'Lease Management'}
+                        score={review.landLordScore.leaseManagement}
+                    />
+                    <LabeledStarRating 
+                        label={'Responsiveness'}
+                        score={review.landLordScore.responsiveness}
+                    />
+                </RatingWrapper>
+                <RatingWrapper title ={'Area Score'}>
+                    <LabeledStarRating 
+                        label={'Location'}
+                        score={review.areaScore.location}
+                    />
+                    <LabeledStarRating 
+                        label={'Neighborhood'}
+                        score={review.areaScore.neighborhood}
+                    />
+                    <LabeledStarRating 
+                        label={'Noise Level'}
+                        score={review.areaScore.noiseLevel}
+                    />
+                </RatingWrapper>
+                <RatingWrapper title ={'Financial Aspects'}>
+                    <LabeledStarRating 
+                        label={'Rent Fairness'}
+                        score={review.financialAspects.rentFairness}
+                    />
+                    <LabeledStarRating 
+                        label={'Rent Increases'}
+                        score={review.financialAspects.rentIncreases}
+                    />
+                    <LabeledStarRating 
+                        label={'Value'}
+                        score={review.financialAspects.value}
+                    />
+                </RatingWrapper>
+                <RatingWrapper title ={'Property Score'}>
+                    <LabeledStarRating 
+                        label={'Amenities'}
+                        score={review.propertyScore.amenities}
+                    />
+                    <LabeledStarRating 
+                        label={'Maintenance'}
+                        score={review.propertyScore.condition}
+                    />
+                    <LabeledStarRating 
+                        label={'Lease Management'}
+                        score={review.propertyScore.safety}
+                    />
+                </RatingWrapper>
+                </SimpleGrid>
+
+
+{/*             
                 <Text fontSize="md" fontWeight = 'bold'>Area Score</Text>
                 <Stack direction="row" mt={2}>
                     <Text fontSize="sm">Location</Text>
@@ -51,8 +103,7 @@ const ReviewCard = ({review}) => {
                 <Text fontSize="sm">Noise Level</Text>
                     <StarRating rating={review.areaScore.noiseLevel} />
                 </Stack>
-            </div>
-            <div>
+      
                 <Text fontSize="md" fontWeight = 'bold'>Property Score</Text>
                 <Stack direction="row" mt={2}>
                     <Text fontSize="sm">Amenities</Text>
@@ -66,8 +117,7 @@ const ReviewCard = ({review}) => {
                 <Text fontSize="sm">Safety</Text>
                     <StarRating rating={review.propertyScore.safety} />
                 </Stack>
-            </div>
-            <div>
+
                 <Text fontSize="md" fontWeight = 'bold'>Financial Aspects</Text>
                 <Stack direction="row" mt={2}>
                     <Text fontSize="sm">Rent Fairness</Text>
@@ -80,12 +130,9 @@ const ReviewCard = ({review}) => {
                 <Stack direction="row" mt={2}>
                 <Text fontSize="sm">Value</Text>
                     <StarRating rating={review.financialAspects.value} />
-                </Stack>
-            </div>
-            </SimpleGrid>
-            <Text mt={8}>{review.comment}</Text>
-            <Text mt={2} color ="grey">Posted on {formattedDate}</Text>
-        </Box> 
+                </Stack> */}
+                </Box>
+        
         </>
     )
 }
