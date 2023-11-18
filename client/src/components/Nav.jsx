@@ -36,8 +36,11 @@ const Nav = () => {
       <HStack>
         {isLoggedIn ? (
           <>
-          <Button onClick={HandleLogOut}>Logout</Button>
-          {/* Add more buttons for logged in users here */}
+          <Button onClick={HandleLogOut} colorScheme="blue"
+                  variant="solid"
+                  type="submit"
+                  padding="0px, 12px, 0px, 12px"
+                  gap="8px">Logout</Button>
           </>
         ) : (
           <>
