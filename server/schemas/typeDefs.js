@@ -32,7 +32,7 @@ const typeDefs = `
     }
 
     type AreaScore {
-        condition: Float
+        location: Float
         noiseLevel: Float
         neighborhood: Float
     }

@@ -56,7 +56,7 @@ query Reviews($address: String!) {
         }
         address
         areaScore {
-            condition
+            location
             neighborhood
             noiseLevel
         }
