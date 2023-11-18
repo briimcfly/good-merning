@@ -19,7 +19,7 @@
       "postedAt": "2023-05-15T07:00:00.000Z",
       "rating": 5,
       "images": [
-        "https://via.placeholder.com/400x300?text=Listing+2"
+        "https://storage.googleapis.com/dwellex/kstreet1.jpeg"
       ],
       "comment": "Modern amenities and close to great dining options. Highly recommended!"
     },
@@ -82,7 +82,7 @@
       "username": "BaronHarkonnen",
       "postedAt": "2023-06-10T07:00:00.000Z",
       "rating": 5,
-      "images": [],
+      "images": ["https://storage.googleapis.com/dwellex/kstreet2.jpeg","https://storage.googleapis.com/dwellex/kstreet3.jpeg"],
       "comment": "Fantastic location with easy access to local attractions. The service was exceptional."
     },
     {
@@ -142,7 +142,7 @@
       "username": "IrulanCorrino",
       "postedAt": "2023-06-30T07:00:00.000Z",
       "rating": 4,
-      "images": [],
+      "images": ["https://storage.googleapis.com/dwellex/kstreet4.jpeg","https://storage.googleapis.com/dwellex/kstreet5.jpeg"],
       "comment": "Great for foodies, as it's close to several top-rated restaurants. The room was comfortable."
     },
     {

@@ -25,6 +25,11 @@ const uploadImageToStorage = (file) => {
             reject('Error occurred during upload' + error.message);
         })
 
+        blobStream.on('finish', () => {
+            const publicUrl = `https://storage.googleapis.com/${bucketName}/${newFileName}`;
+            resolve(publicUrl);
+        });
+
         blobStream.end(file.buffer);
     })
 }
