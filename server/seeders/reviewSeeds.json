@@ -6,7 +6,7 @@
       "username": "PaulAtreides",
       "postedAt": "2023-06-01T07:00:00.000Z",
       "rating": 4,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":5,
         "attitude": 5,
         "maintenance": 5,
@@ -37,7 +37,7 @@
       "username": "JessicaBeneGesserit",
       "postedAt": "2023-05-15T07:00:00.000Z",
       "rating": 5,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":5,
         "attitude": 5,
         "maintenance": 5,
@@ -68,7 +68,7 @@
       "username": "DuncanIdaho",
       "postedAt": "2023-04-20T07:00:00.000Z",
       "rating": 3,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":5,
         "attitude": 5,
         "maintenance": 5,
@@ -99,7 +99,7 @@
       "username": "GurneyHalleck",
       "postedAt": "2023-03-30T07:00:00.000Z",
       "rating": 2,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":5,
         "attitude": 5,
         "maintenance": 5,
@@ -130,7 +130,7 @@
       "username": "ThufirHawat",
       "postedAt": "2023-02-10T07:00:00.000Z",
       "rating": 5,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":5,
         "attitude": 5,
         "maintenance": 5,
@@ -161,7 +161,7 @@
       "username": "StilgarSietch",
       "postedAt": "2023-07-01T07:00:00.000Z",
       "rating": 3,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":5,
         "attitude": 5,
         "maintenance": 5,
@@ -192,7 +192,7 @@
       "username": "ChaniKynes",
       "postedAt": "2023-06-15T07:00:00.000Z",
       "rating": 4,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":5,
         "attitude": 5,
         "maintenance": 5,
@@ -223,7 +223,7 @@
       "username": "BaronHarkonnen",
       "postedAt": "2023-06-10T07:00:00.000Z",
       "rating": 5,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":5,
         "attitude": 5,
         "maintenance": 5,
@@ -254,7 +254,7 @@
       "username": "LetoAtreides",
       "postedAt": "2023-05-20T07:00:00.000Z",
       "rating": 2,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":3,
         "attitude": 5,
         "maintenance": 4,
@@ -285,7 +285,7 @@
       "username": "AliaAtreides",
       "postedAt": "2023-05-05T07:00:00.000Z",
       "rating": 4,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":1,
         "attitude": 2,
         "maintenance": 1,
@@ -316,7 +316,7 @@
       "username": "PiterDeVries",
       "postedAt": "2023-08-10T07:00:00.000Z",
       "rating": 3,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":1,
         "attitude": 5,
         "maintenance": 2,
@@ -347,7 +347,7 @@
       "username": "LadyFenring",
       "postedAt": "2023-07-25T07:00:00.000Z",
       "rating": 5,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":2,
         "attitude": 1,
         "maintenance": 4,
@@ -378,7 +378,7 @@
       "username": "ShaddamIV",
       "postedAt": "2023-07-15T07:00:00.000Z",
       "rating": 2,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":3,
         "attitude": 3,
         "maintenance": 3,
@@ -409,7 +409,7 @@
       "username": "IrulanCorrino",
       "postedAt": "2023-06-30T07:00:00.000Z",
       "rating": 4,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":3,
         "attitude": 4,
         "maintenance": 1,
@@ -444,7 +444,7 @@
       "username": "LietKynes",
       "postedAt": "2023-06-25T07:00:00.000Z",
       "rating": 3,
-      "landlordScore":{
+      "landLordScore":{
         "responsiveness":3,
         "attitude": 2,
         "maintenance": 3,
