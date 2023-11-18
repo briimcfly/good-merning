@@ -6,6 +6,27 @@
       "username": "PaulAtreides",
       "postedAt": "2023-06-01T07:00:00.000Z",
       "rating": 4,
+      "landlordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
       "images": [],
       "comment": "Great place in the heart of the city with a fantastic view of the Capitol."
     },
@@ -16,6 +37,27 @@
       "username": "JessicaBeneGesserit",
       "postedAt": "2023-05-15T07:00:00.000Z",
       "rating": 5,
+      "landlordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
       "images": [],
       "comment": "Modern amenities and close to great dining options. Highly recommended!"
     },
@@ -26,6 +68,27 @@
       "username": "DuncanIdaho",
       "postedAt": "2023-04-20T07:00:00.000Z",
       "rating": 3,
+      "landlordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
       "images": [],
       "comment": "Decent place but noisy due to street traffic. Good for short stays."
     },
@@ -36,6 +99,27 @@
       "username": "GurneyHalleck",
       "postedAt": "2023-03-30T07:00:00.000Z",
       "rating": 2,
+      "landlordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
       "images": [],
       "comment": "The location is convenient but the building is quite old and needs renovation."
     },
@@ -46,6 +130,27 @@
       "username": "ThufirHawat",
       "postedAt": "2023-02-10T07:00:00.000Z",
       "rating": 5,
+      "landlordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
       "images": [],
       "comment": "Fantastic spot! Quiet, cozy, and with a park nearby. Perfect for families."
     },
@@ -56,6 +161,27 @@
       "username": "StilgarSietch",
       "postedAt": "2023-07-01T07:00:00.000Z",
       "rating": 3,
+      "landlordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
       "images": [],
       "comment": "Nice view but the rooms are a bit cramped. Good for business trips."
     },
@@ -66,6 +192,27 @@
       "username": "ChaniKynes",
       "postedAt": "2023-06-15T07:00:00.000Z",
       "rating": 4,
+      "landlordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
       "images": [],
       "comment": "Lovely neighborhood and peaceful environment. The interior could use some updating."
     },
@@ -76,6 +223,27 @@
       "username": "BaronHarkonnen",
       "postedAt": "2023-06-10T07:00:00.000Z",
       "rating": 5,
+      "landlordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
       "images": ["https://storage.googleapis.com/dwellex/kstreet2.jpeg","https://storage.googleapis.com/dwellex/kstreet3.jpeg"],
       "comment": "Fantastic location with easy access to local attractions. The service was exceptional."
     },
@@ -86,6 +254,27 @@
       "username": "LetoAtreides",
       "postedAt": "2023-05-20T07:00:00.000Z",
       "rating": 2,
+      "landlordScore":{
+        "responsiveness":3,
+        "attitude": 5,
+        "maintenance": 4,
+        "leaseManagement": 3
+      },
+      "propertyScore": {
+        "condition": 3,
+        "amenities": 2,
+        "safety": 1
+      },
+      "areaScore": {
+        "location":2,
+        "noiseLevel":4,
+        "neighborhood": 5
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 3,
+        "value": 3
+      },
       "images": ["https://storage.googleapis.com/dwellex/16.jpeg"],
       "comment": "The place is quite dated and needs serious maintenance. Only advantage is the central location."
     },
@@ -96,6 +285,27 @@
       "username": "AliaAtreides",
       "postedAt": "2023-05-05T07:00:00.000Z",
       "rating": 4,
+      "landlordScore":{
+        "responsiveness":1,
+        "attitude": 2,
+        "maintenance": 1,
+        "leaseManagement": 2
+      },
+      "propertyScore": {
+        "condition": 3,
+        "amenities": 2,
+        "safety": 3
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 3,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 4,
+        "rentIncreases": 5,
+        "value": 4
+      },
       "images": ["https://storage.googleapis.com/dwellex/15.jpg"],
       "comment": "A cozy spot with a lot of character, though a bit noisy at night. Great for weekend getaways."
     },
@@ -106,6 +316,27 @@
       "username": "PiterDeVries",
       "postedAt": "2023-08-10T07:00:00.000Z",
       "rating": 3,
+      "landlordScore":{
+        "responsiveness":1,
+        "attitude": 5,
+        "maintenance": 2,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 2,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":5,
+        "noiseLevel": 4,
+        "neighborhood": 2
+      },
+      "financialAspects":{
+        "rentFairness": 4,
+        "rentIncreases": 5,
+        "value": 2
+      },
       "images": ["https://storage.googleapis.com/dwellex/14.jpeg"],
       "comment": "The area is quiet and the rooms are spacious, but it lacks modern amenities."
     },
@@ -116,6 +347,27 @@
       "username": "LadyFenring",
       "postedAt": "2023-07-25T07:00:00.000Z",
       "rating": 5,
+      "landlordScore":{
+        "responsiveness":2,
+        "attitude": 1,
+        "maintenance": 4,
+        "leaseManagement": 2
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 5,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":5,
+        "noiseLevel": 5,
+        "neighborhood": 5
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 5,
+        "value": 5
+      },
       "images": ["https://storage.googleapis.com/dwellex/13.jpeg"],
       "comment": "Excellent location with breathtaking views. The service was top-notch."
     },
@@ -126,6 +378,27 @@
       "username": "ShaddamIV",
       "postedAt": "2023-07-15T07:00:00.000Z",
       "rating": 2,
+      "landlordScore":{
+        "responsiveness":3,
+        "attitude": 3,
+        "maintenance": 3,
+        "leaseManagement": 3
+      },
+      "propertyScore": {
+        "condition": 3,
+        "amenities": 3,
+        "safety": 3
+      },
+      "areaScore": {
+        "location":3,
+        "noiseLevel": 3,
+        "neighborhood": 3
+      },
+      "financialAspects":{
+        "rentFairness": 3,
+        "rentIncreases": 3,
+        "value": 3
+      },
       "images": ["https://storage.googleapis.com/dwellex/12.jpeg"],
       "comment": "Convenient location but the building is very old and needs repairs."
     },
@@ -136,6 +409,27 @@
       "username": "IrulanCorrino",
       "postedAt": "2023-06-30T07:00:00.000Z",
       "rating": 4,
+      "landlordScore":{
+        "responsiveness":3,
+        "attitude": 4,
+        "maintenance": 1,
+        "leaseManagement": 2
+      },
+      "propertyScore": {
+        "condition": 2,
+        "amenities": 4,
+        "safety": 1
+      },
+      "areaScore": {
+        "location":1,
+        "noiseLevel": 2,
+        "neighborhood": 3
+      },
+      "financialAspects":{
+        "rentFairness": 1,
+        "rentIncreases": 1,
+        "value": 1
+      },
       "images": [
       "https://storage.googleapis.com/dwellex/kstreet1.jpeg",
       "https://storage.googleapis.com/dwellex/kstreet4.jpeg",
@@ -150,6 +444,27 @@
       "username": "LietKynes",
       "postedAt": "2023-06-25T07:00:00.000Z",
       "rating": 3,
+      "landlordScore":{
+        "responsiveness":3,
+        "attitude": 2,
+        "maintenance": 3,
+        "leaseManagement": 4
+      },
+      "propertyScore": {
+        "condition": 3,
+        "amenities": 1,
+        "safety": 1
+      },
+      "areaScore": {
+        "location":1,
+        "noiseLevel": 3,
+        "neighborhood": 5
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 1
+      },
       "images": ["https://storage.googleapis.com/dwellex/11.jpeg"],
       "comment": "Average accommodation but very accessible to public transport. Suitable for budget travelers."
     }
