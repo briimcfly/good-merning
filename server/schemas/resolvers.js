@@ -90,23 +90,24 @@ const resolvers = {
             return {token, user};
         },
         //Add a listing
-        addReview: async(_, {address, city, userId, rating, comment, images}) => {
-            //Find the User by username 
-            const user = await User.findOne({userId});
-            if(!user) {
+        addReview: async (_, { address, city, state, username, rating, comment, images }) => {
+            // Find the User by username
+            const user = await User.findOne({ username });
+            if (!user) {
                 throw new Error('User Not Found');
             }
-
+        
             const newReview = new Review({
                 address,
                 city,
                 state,
-                user: userId,
+                user: user._id,
                 postedAt: new Date().toISOString(),
                 rating,
                 comment,
                 images
-            })
+            });
+        
             return await newReview.save();
         }
     }
