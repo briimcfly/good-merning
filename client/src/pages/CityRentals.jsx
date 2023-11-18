@@ -37,7 +37,7 @@ const CityRentals = () => {
                     Listings in {city}, {state}
                 </Heading>  
             </Stack>
-          <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing="8">
+          <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
           {rentals.map(rental => (
                     <RentalCard
                         key={rental.address}
