@@ -25,3 +25,20 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_REVIEW = gql`
+mutation AddReview($address: String!, $city: String!, $state: String!, $username: String!, $rating: Int!, $comment: String!, $images: [String]) {
+  addReview(address: $address, city: $city, state: $state, username: $username, rating: $rating, comment: $comment, images: $images) {
+    rating
+    comment
+    user {
+      username
+    }
+    postedAt
+    address
+    city
+    state
+    images
+  }
+}
+`
