@@ -52,6 +52,7 @@ query Reviews($address: String!) {
         }
         postedAt
         comment
+        images
 
     }
 }
