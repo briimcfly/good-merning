@@ -50,10 +50,30 @@ query Reviews($address: String!) {
         user {
           username
         }
+        landLordScore {
+            responsiveness
+            attitude
+            maintenance
+            leaseManagement
+        }
+        propertyScore {
+            condition
+            amenities
+            safety
+        }
+        areaScore {
+            location
+            noiseLevel
+            neighborhood
+        }
+        financialAspects {
+            rentFairness
+            rentIncreases
+            value
+        }
         postedAt
         comment
         images
-
     }
 }
 `

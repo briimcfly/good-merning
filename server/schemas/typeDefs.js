@@ -18,6 +18,31 @@ const typeDefs = `
         reviews: [Review!]
     }
 
+    type LandLordScore {
+        responsiveness: Float
+        attitude: Float
+        maintenance: Float
+        leaseManagement: Float
+    }
+
+    type PropertyScore {
+        condition: Float
+        amenities: Float
+        safety: Float
+    }
+
+    type AreaScore {
+        condition: Float
+        noiseLevel: Float
+        neighborhood: Float
+    }
+
+    type FinancialAspects {
+        rentFairness: Float
+        rentIncreases: Float
+        value: Float
+    }
+
     type Review {
         user: User
         address: String
@@ -25,6 +50,10 @@ const typeDefs = `
         state: String
         postedAt: String
         rating: Float
+        landLordScore: LandLordScore
+        propertyScore: PropertyScore
+        areaScore: AreaScore
+        financialAspects: FinancialAspects
         comment: String
         images: [String]
     }
