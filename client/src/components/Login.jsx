@@ -19,7 +19,6 @@ import {
   Stack,
 } from '@chakra-ui/react';
 
-
 const Login = ({isOpen,onClose}) => {
 //state to manage form data and errors
   const [formState, setFormState] = useState({
@@ -37,18 +36,24 @@ const Login = ({isOpen,onClose}) => {
   };
 
   //handle form submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formState);
     try{
-      const {data} = login(
+      const {data} = await login(
         {
           variables: {...formState},
         });
+        // handle success case
+        if (data && data.login && data.login.token){
       Auth.login(data.login.token); 
+      onClose(); //Close the modal when cancel button is clicked
+    } else {
+      console.log('no token');
     }
-    catch (e){
-      console.error(e);
+    }
+      catch (e){
+      console.error('Error during login:', e);
     }
 
     //clear form values
