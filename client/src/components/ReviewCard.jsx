@@ -1,5 +1,5 @@
 import React from 'react';
-import {SimpleGrid, Box, Text, Stack, Divider} from '@chakra-ui/react';
+import {SimpleGrid, Box, Text, Stack, Divider, Tooltip} from '@chakra-ui/react';
 import { FaUserCircle } from "react-icons/fa";
 import { formatDate } from '../utils/date';
 import StarRating from './Stars'; 
@@ -28,7 +28,7 @@ const ReviewCard = ({review}) => {
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={8}>
                 <RatingWrapper title ={'Landlord Score'}>
                     <LabeledStarRating 
-                        label={'Rent Fairness'}
+                        label={'Professionalism'}
                         score={review.landLordScore.attitude}
                     />
                     <LabeledStarRating 
@@ -78,59 +78,15 @@ const ReviewCard = ({review}) => {
                         score={review.propertyScore.amenities}
                     />
                     <LabeledStarRating 
-                        label={'Maintenance'}
+                        label={'Condition'}
                         score={review.propertyScore.condition}
                     />
                     <LabeledStarRating 
-                        label={'Lease Management'}
+                        label={'Safety'}
                         score={review.propertyScore.safety}
                     />
                 </RatingWrapper>
                 </SimpleGrid>
-
-
-{/*             
-                <Text fontSize="md" fontWeight = 'bold'>Area Score</Text>
-                <Stack direction="row" mt={2}>
-                    <Text fontSize="sm">Location</Text>
-                    <StarRating rating={review.areaScore.location} />
-                </Stack>
-                <Stack direction="row" mt={2}>
-                <Text fontSize="sm">Neighborhood</Text>
-                    <StarRating rating={review.areaScore.neighborhood} />
-                </Stack>
-                <Stack direction="row" mt={2}>
-                <Text fontSize="sm">Noise Level</Text>
-                    <StarRating rating={review.areaScore.noiseLevel} />
-                </Stack>
-      
-                <Text fontSize="md" fontWeight = 'bold'>Property Score</Text>
-                <Stack direction="row" mt={2}>
-                    <Text fontSize="sm">Amenities</Text>
-                    <StarRating rating={review.propertyScore.amenities} />
-                </Stack>
-                <Stack direction="row" mt={2}>
-                <Text fontSize="sm">Condition</Text>
-                    <StarRating rating={review.propertyScore.condition} />
-                </Stack>
-                <Stack direction="row" mt={2}>
-                <Text fontSize="sm">Safety</Text>
-                    <StarRating rating={review.propertyScore.safety} />
-                </Stack>
-
-                <Text fontSize="md" fontWeight = 'bold'>Financial Aspects</Text>
-                <Stack direction="row" mt={2}>
-                    <Text fontSize="sm">Rent Fairness</Text>
-                    <StarRating rating={review.financialAspects.rentFairness} />
-                </Stack>
-                <Stack direction="row" mt={2}>
-                <Text fontSize="sm">Rent Increases</Text>
-                    <StarRating rating={review.financialAspects.rentIncreases} />
-                </Stack>
-                <Stack direction="row" mt={2}>
-                <Text fontSize="sm">Value</Text>
-                    <StarRating rating={review.financialAspects.value} />
-                </Stack> */}
                 </Box>
         
         </>

@@ -1,4 +1,4 @@
-import {Box, Icon} from '@chakra-ui/react';
+import {Box, Icon, Tooltip} from '@chakra-ui/react';
 import {MdStar, MdStarBorder, MdStarHalf}  from 'react-icons/md';
 
 const getStarIcon = (rating,index) => {

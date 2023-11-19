@@ -4,10 +4,114 @@ import { useParams } from 'react-router-dom';
 import ReviewCard from '../components/ReviewCard';
 import { useQuery } from '@apollo/client';
 import { QUERY_REVIEWS } from '../utils/queries';
-import { Box, SimpleGrid, Heading, Stack, Button, Text, Flex } from '@chakra-ui/react';
-import { ArrowBackIcon } from '@chakra-ui/icons';
-import { Link } from 'react-router-dom';    
+import { Box, SimpleGrid, Heading, Text, Stack, Divider} from '@chakra-ui/react';
 import Loader from '../components/Loader';
+import LabeledStarRating from '../components/molecules/LabeledStarRating';
+import StarRating from '../components/Stars';
+import Legend from '../components/atoms/legend';
+
+const categoryDisplayNames = {
+  landLordScore: "Landlord Score",
+  areaScore: "Area Score",
+  financialAspects: "Financial Aspects",
+  propertyScore: "Property Score",
+};
+
+
+const calcAverages = (reviews) => {
+  const scoreSums = {
+    landLordScore: {
+      attitude: { sum: 0, count: 0 },
+      leaseManagement: { sum: 0, count: 0 },
+      maintenance: { sum: 0, count: 0 },
+      responsiveness: { sum: 0, count: 0 },
+    },
+    areaScore: {
+      location: { sum: 0, count: 0 },
+      neighborhood: { sum: 0, count: 0 },
+      noiseLevel: { sum: 0, count: 0 },
+    },
+    financialAspects: {
+      rentFairness: { sum: 0, count: 0 },
+      rentIncreases: { sum: 0, count: 0 },
+      value: { sum: 0, count: 0 },
+    },
+    propertyScore: {
+      amenities: { sum: 0, count: 0 },
+      condition: { sum: 0, count: 0 },
+      safety: { sum: 0, count: 0 },
+    },
+  };
+
+  reviews.forEach(review => {
+    Object.keys(scoreSums).forEach(category => {
+      Object.keys(scoreSums[category]).forEach(item => {
+        scoreSums[category][item].sum += review[category][item];
+        scoreSums[category][item].count += 1;
+      });
+    });
+  });
+
+  const averages = {};
+  Object.keys(scoreSums).forEach(category => {
+    let categorySum = 0;
+    let itemCount = 0;
+    averages[category] = {};
+    Object.keys(scoreSums[category]).forEach(item => {
+      const { sum, count } = scoreSums[category][item];
+      categorySum += sum;
+      itemCount += count;
+      averages[category][item] = count > 0 ? Math.round((sum / count) * 2) / 2 : 0;
+    });
+  
+    averages[category].overall = itemCount > 0 ? Math.round((categorySum / itemCount) * 2) / 2 : 0;
+  });
+
+  return averages;
+};
+
+
+
+const SummarySection = ({ averages }) => {
+  if (!averages) return null;
+
+  return (
+    <Box p={4} boxShadow="md" >
+      <Heading as="h2" size="lg">Score Breakdown:</Heading>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={8}>
+      {Object.keys(averages).map(categoryKey => {
+        const categoryName = categoryDisplayNames[categoryKey] || categoryKey;
+        return (
+          <Box key={categoryKey} my={2}>
+            <Stack direction = "row">
+            <Text fontWeight="bold" fontSize="lg">{categoryName}</Text>
+            <StarRating rating={averages[categoryKey].overall} />
+            </Stack>
+            <Divider />
+            <Box mt={2}>
+              {Object.keys(averages[categoryKey])
+                .filter(key => key !== 'overall')
+                .map(item => {
+                  const itemName = item.charAt(0).toUpperCase() + item.slice(1);
+                  return (
+                    <>
+                    <Box pb={4}>
+                    <LabeledStarRating key={item} label={itemName} score={averages[categoryKey][item]} />
+                    <Legend category={categoryKey} subcategory={item} score={Math.floor(averages[categoryKey][item])} />
+                    </Box>
+                    </>
+                  );
+              })}
+            </Box>
+          </Box>
+        );
+      })}
+      </SimpleGrid>
+    </Box>
+  );
+};
+
+
 
 const RentalReviews = () => {
     const { address } = useParams();
@@ -20,37 +124,40 @@ const RentalReviews = () => {
     if (loading) return <Loader />;
     if (error) return <p>Error...</p>;
 
-    console.log(data);
+    const averages = data && data.reviews ? calcAverages(data.reviews) : null;
 
     return (
       <>
+        {/* Header */}
         <Box
-        bg="gray.600"
-        color="white"
-        p={10}
-        textAlign="center"
-        >
-        <Heading mb={4}>{address}</Heading>
-        <Text fontSize="xl" mb={8}>
-        See what others are saying about this address.
-        </Text>
+          bg="gray.600"
+          color="white"
+          p={10}
+          textAlign="center"
+          >
+          <Heading mb={4}>{address}</Heading>
+          <Text fontSize="xl" mb={8}>
+          See what others are saying about this address.
+          </Text>
         </Box>
+
+        {/* Summary Section */}
+        <SummarySection averages={averages} />
+
+        {/* Individual Reviews Section */}
         <Box padding="4" bg="gray.100">
-            <Stack direction='row' spacing={4}>
-                <Heading as="h1" mb="8">
-                   
-                </Heading>  
-            </Stack>
-            <Text fontSize="xl" fontWeight='bold' mb={4}>
-              Individual Reviews
-            </Text>
-            <SimpleGrid spacing="8">
+          <Text fontSize="xl" fontWeight='bold' mb={4}>
+            Individual Reviews
+          </Text>
+          
+          <SimpleGrid spacing="8">
             {data.reviews.map(review => (
               <ReviewCard key={review._id} review={review} />
             ))}
           </SimpleGrid>
+
         </Box>
-        </>
+      </>
       );
 };
 
