@@ -13,6 +13,7 @@ const Landing = () => {
     const handleOpenLogin = () => setIsLoginOpen(true);
     const handleCloseLogin = () => setIsLoginOpen(false);
 
+
     //Background Image 
     const backgroundImage = 'url(/images/city-bg.jpg)'
 
