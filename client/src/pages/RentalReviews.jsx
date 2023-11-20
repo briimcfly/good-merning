@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import ReviewCard from '../components/ReviewCard';
 import { useQuery } from '@apollo/client';
 import { QUERY_REVIEWS } from '../utils/queries';
-import { Box, SimpleGrid, Heading, Text, Stack, Divider} from '@chakra-ui/react';
+import { Box, SimpleGrid, Heading, Text, Stack, Divider, Grid, GridItem, Container} from '@chakra-ui/react';
 import Loader from '../components/Loader';
 import LabeledStarRating from '../components/molecules/LabeledStarRating';
 import StarRating from '../components/Stars';
@@ -76,7 +76,7 @@ const SummarySection = ({ averages }) => {
   if (!averages) return null;
 
   return (
-    <Box p={10} boxShadow="md" >
+    <Box p={10} boxShadow="md" bg="white">
       <Heading as="h2" size="lg">Score Breakdown:</Heading>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={24}>
       {Object.keys(averages).map(categoryKey => {
@@ -124,10 +124,16 @@ const RentalReviews = () => {
     if (loading) return <Loader />;
     if (error) return <p>Error...</p>;
 
+    let image1, image2
+    if (data && data.reviews && data.reviews.length > 0) {
+      image1 = data.reviews[0].images[0] ?? '/images/empty-state.png';
+      image2 = data.reviews[0].images[1] ?? '/images/empty-state.png';
+    }
     const averages = data && data.reviews ? calcAverages(data.reviews) : null;
 
     return (
       <>
+      <Box bg="gray.50">
         {/* Header */}
         <Box
           bg="gray.600"
@@ -141,11 +147,24 @@ const RentalReviews = () => {
           </Text>
         </Box>
 
+        <Container maxW = 'container.xl'>
+
+        <Grid
+          h='600px'
+          templateRows ='repeat(2, 1fr)'
+          templateColumns='repeat(5,1fr)'
+          gap={4}
+        >
+          <GridItem rowSpan={2} colSpan={3} bgImage={`url(${image1})`} bgSize="cover" />
+          <GridItem rowSpan={1} colSpan={2} bgImage={`url(${image2})`} bgSize="cover" />
+          <GridItem rowSpan={1} colSpan={2} bg='red' />
+        </Grid>
+
         {/* Summary Section */}
         <SummarySection averages={averages} />
 
         {/* Individual Reviews Section */}
-        <Box padding="4" bg="gray.100">
+        <Box padding="4" >
           <Text fontSize="xl" fontWeight='bold' mb={4}>
             Individual Reviews
           </Text>
@@ -156,6 +175,8 @@ const RentalReviews = () => {
             ))}
           </SimpleGrid>
 
+        </Box>
+        </Container>
         </Box>
       </>
       );
