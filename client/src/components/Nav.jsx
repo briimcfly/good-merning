@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { ArrowRightIcon, ArrowUpIcon } from '@chakra-ui/icons';
 import {  Flex, Button, Heading, Spacer, HStack, Box } from "@chakra-ui/react"
+import {Link} from 'react-router-dom';
 
 import Login from './Login';
 
@@ -28,9 +29,16 @@ const Nav = () => {
   return (
 
     //if Not Logged In
-    <Flex as="nav" width="100vw" height="64px" top="20px" left="20px" justify="space-between" padding="16 24 16 24" alignItems="center" >
+    <Flex as="nav" width="100vw" height="64px" top="20px" left="20px" justify="space-between" pt={10} pb={10} pl={6} pr={6} alignItems="center" >
       <Box gap="32px">
-      <Heading as="h1" font='inter' bg="white" fontWeight="700" size="xl" lineHeight="28px" >Dwellex</Heading>
+
+      {/* Dwellex Logo */}
+      <Link to = '/' style ={{textDecoration: 'none'}}> 
+        <Heading as="h1" fontWeight="700" size="xl" lineHeight="28px" >
+          Dwellex
+        </Heading>
+      </Link>
+
       </Box>
       <Spacer />
       <HStack>

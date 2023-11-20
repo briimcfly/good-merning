@@ -1,0 +1,644 @@
+[
+    {
+      "address": "123 Capitol Mall, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "PaulAtreides",
+      "postedAt": "2023-06-01T07:00:00.000Z",
+      "rating": 4,
+      "landLordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
+      "images": [],
+      "comment": "Great place in the heart of the city with a fantastic view of the Capitol."
+    },
+    {
+      "address": "456 K Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "JessicaBeneGesserit",
+      "postedAt": "2023-05-15T07:00:00.000Z",
+      "rating": 5,
+      "landLordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
+      "images": [],
+      "comment": "Modern amenities and close to great dining options. Highly recommended!"
+    },
+    {
+      "address": "789 L Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "DuncanIdaho",
+      "postedAt": "2023-04-20T07:00:00.000Z",
+      "rating": 3,
+      "landLordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
+      "images": [],
+      "comment": "Decent place but noisy due to street traffic. Good for short stays."
+    },
+    {
+      "address": "101 J Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "GurneyHalleck",
+      "postedAt": "2023-03-30T07:00:00.000Z",
+      "rating": 2,
+      "landLordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
+      "images": [],
+      "comment": "The location is convenient but the building is quite old and needs renovation."
+    },
+    {
+      "address": "202 N Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "ThufirHawat",
+      "postedAt": "2023-02-10T07:00:00.000Z",
+      "rating": 5,
+      "landLordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
+      "images": [],
+      "comment": "Fantastic spot! Quiet, cozy, and with a park nearby. Perfect for families."
+    },
+    {
+      "address": "123 Capitol Mall, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "StilgarSietch",
+      "postedAt": "2023-07-01T07:00:00.000Z",
+      "rating": 3,
+      "landLordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
+      "images": [],
+      "comment": "Nice view but the rooms are a bit cramped. Good for business trips."
+    },
+    {
+      "address": "202 N Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "ChaniKynes",
+      "postedAt": "2023-06-15T07:00:00.000Z",
+      "rating": 4,
+      "landLordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
+      "images": [],
+      "comment": "Lovely neighborhood and peaceful environment. The interior could use some updating."
+    },
+    {
+      "address": "456 K Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "BaronHarkonnen",
+      "postedAt": "2023-06-10T07:00:00.000Z",
+      "rating": 5,
+      "landLordScore":{
+        "responsiveness":5,
+        "attitude": 5,
+        "maintenance": 5,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 2,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 3
+      },
+      "images": ["https://storage.googleapis.com/dwellex/kstreet2.jpeg","https://storage.googleapis.com/dwellex/kstreet3.jpeg"],
+      "comment": "Fantastic location with easy access to local attractions. The service was exceptional."
+    },
+    {
+      "address": "789 L Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "LetoAtreides",
+      "postedAt": "2023-05-20T07:00:00.000Z",
+      "rating": 2,
+      "landLordScore":{
+        "responsiveness":3,
+        "attitude": 5,
+        "maintenance": 4,
+        "leaseManagement": 3
+      },
+      "propertyScore": {
+        "condition": 3,
+        "amenities": 2,
+        "safety": 1
+      },
+      "areaScore": {
+        "location":2,
+        "noiseLevel":4,
+        "neighborhood": 5
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 3,
+        "value": 3
+      },
+      "images": ["https://storage.googleapis.com/dwellex/16.jpeg"],
+      "comment": "The place is quite dated and needs serious maintenance. Only advantage is the central location."
+    },
+    {
+      "address": "101 J Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "AliaAtreides",
+      "postedAt": "2023-05-05T07:00:00.000Z",
+      "rating": 4,
+      "landLordScore":{
+        "responsiveness":1,
+        "attitude": 2,
+        "maintenance": 1,
+        "leaseManagement": 2
+      },
+      "propertyScore": {
+        "condition": 3,
+        "amenities": 2,
+        "safety": 3
+      },
+      "areaScore": {
+        "location":4,
+        "noiseLevel": 3,
+        "neighborhood": 4
+      },
+      "financialAspects":{
+        "rentFairness": 4,
+        "rentIncreases": 5,
+        "value": 4
+      },
+      "images": ["https://storage.googleapis.com/dwellex/15.jpg"],
+      "comment": "A cozy spot with a lot of character, though a bit noisy at night. Great for weekend getaways."
+    },
+    {
+      "address": "202 N Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "PiterDeVries",
+      "postedAt": "2023-08-10T07:00:00.000Z",
+      "rating": 3,
+      "landLordScore":{
+        "responsiveness":1,
+        "attitude": 5,
+        "maintenance": 2,
+        "leaseManagement": 5
+      },
+      "propertyScore": {
+        "condition": 2,
+        "amenities": 3,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":5,
+        "noiseLevel": 4,
+        "neighborhood": 2
+      },
+      "financialAspects":{
+        "rentFairness": 4,
+        "rentIncreases": 5,
+        "value": 2
+      },
+      "images": ["https://storage.googleapis.com/dwellex/14.jpeg"],
+      "comment": "The area is quiet and the rooms are spacious, but it lacks modern amenities."
+    },
+    {
+      "address": "123 Capitol Mall, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "LadyFenring",
+      "postedAt": "2023-07-25T07:00:00.000Z",
+      "rating": 5,
+      "landLordScore":{
+        "responsiveness":2,
+        "attitude": 1,
+        "maintenance": 4,
+        "leaseManagement": 2
+      },
+      "propertyScore": {
+        "condition": 4,
+        "amenities": 5,
+        "safety": 5
+      },
+      "areaScore": {
+        "location":5,
+        "noiseLevel": 5,
+        "neighborhood": 5
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 5,
+        "value": 5
+      },
+      "images": ["https://storage.googleapis.com/dwellex/13.jpeg"],
+      "comment": "Excellent location with breathtaking views. The service was top-notch."
+    },
+    {
+      "address": "101 J Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "ShaddamIV",
+      "postedAt": "2023-07-15T07:00:00.000Z",
+      "rating": 2,
+      "landLordScore":{
+        "responsiveness":3,
+        "attitude": 3,
+        "maintenance": 3,
+        "leaseManagement": 3
+      },
+      "propertyScore": {
+        "condition": 3,
+        "amenities": 3,
+        "safety": 3
+      },
+      "areaScore": {
+        "location":3,
+        "noiseLevel": 3,
+        "neighborhood": 3
+      },
+      "financialAspects":{
+        "rentFairness": 3,
+        "rentIncreases": 3,
+        "value": 3
+      },
+      "images": ["https://storage.googleapis.com/dwellex/12.jpeg"],
+      "comment": "Convenient location but the building is very old and needs repairs."
+    },
+    {
+      "address": "456 K Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "IrulanCorrino",
+      "postedAt": "2023-06-30T07:00:00.000Z",
+      "rating": 4,
+      "landLordScore":{
+        "responsiveness":3,
+        "attitude": 4,
+        "maintenance": 1,
+        "leaseManagement": 2
+      },
+      "propertyScore": {
+        "condition": 2,
+        "amenities": 4,
+        "safety": 1
+      },
+      "areaScore": {
+        "location":1,
+        "noiseLevel": 2,
+        "neighborhood": 3
+      },
+      "financialAspects":{
+        "rentFairness": 1,
+        "rentIncreases": 1,
+        "value": 1
+      },
+      "images": [
+      "https://storage.googleapis.com/dwellex/kstreet1.jpeg",
+      "https://storage.googleapis.com/dwellex/kstreet4.jpeg",
+      "https://storage.googleapis.com/dwellex/kstreet5.jpeg"
+    ],
+      "comment": "Great for foodies, as it's close to several top-rated restaurants. The room was comfortable."
+    },
+    {
+      "address": "789 L Street, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "LietKynes",
+      "postedAt": "2023-06-25T07:00:00.000Z",
+      "rating": 3,
+      "landLordScore":{
+        "responsiveness":3,
+        "attitude": 2,
+        "maintenance": 3,
+        "leaseManagement": 4
+      },
+      "propertyScore": {
+        "condition": 3,
+        "amenities": 1,
+        "safety": 1
+      },
+      "areaScore": {
+        "location":1,
+        "noiseLevel": 3,
+        "neighborhood": 5
+      },
+      "financialAspects":{
+        "rentFairness": 5,
+        "rentIncreases": 2,
+        "value": 1
+      },
+      "images": ["https://storage.googleapis.com/dwellex/11.jpeg"],
+      "comment": "Average accommodation but very accessible to public transport. Suitable for budget travelers."
+    },
+    {
+      "address": "The Falls at Arden Apartments, 2345 Northrop Ave",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "PaulAtreides",
+      "postedAt": "2023-04-08T04:07:27.000Z",
+      "rating": 3,
+      "landLordScore": {
+        "responsiveness": 5,
+        "attitude": 1,
+        "maintenance": 4,
+        "leaseManagement": 4
+        },
+        "propertyScore": {
+              "condition": 2,
+              "amenities": 1,
+              "safety": 3
+        },
+        "areaScore": {
+              "location": 5,
+              "noiseLevel": 4,
+              "neighborhood": 5
+        },
+        "financialAspects": {
+              "rentFairness": 5,
+              "rentIncreases": 1,
+              "value": 3
+        },
+      "images": [
+        "https://storage.googleapis.com/dwellex/falls-bathroom-op.jpg",
+        "https://storage.googleapis.com/dwellex/falls-free-weights-op.jpg",
+        "https://storage.googleapis.com/dwellex/falls-pool-deck-op.jpg"
+      ],
+      "comment": "Wow, the landlord here is super quick to respond to any issues, but man, they could be a bit friendlier. The place itself is okay – not the best I've seen. But the location is awesome, right where you want to be, and the neighborhood is super chill. A decent spot if you're not too picky about the bells and whistles."
+    },
+    {
+      "address": "The Falls at Arden Apartments, 2345 Northrop Ave",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "JessicaBeneGesserit",
+      "postedAt": "2023-02-21T04:07:27.000Z",
+      "rating": 3,
+      "landLordScore": {
+        "responsiveness": 2,
+        "attitude": 4,
+        "maintenance": 4,
+        "leaseManagement": 3
+        },
+        "propertyScore": {
+              "condition": 2,
+              "amenities": 5,
+              "safety": 4
+        },
+        "areaScore": {
+              "location": 4,
+              "noiseLevel": 5,
+              "neighborhood": 5
+        },
+        "financialAspects": {
+              "rentFairness": 3,
+              "rentIncreases": 5,
+              "value": 3
+        },
+      "images": [
+        "https://storage.googleapis.com/dwellex/Falls-kitchen-cabinets-op.jpg",
+        "https://storage.googleapis.com/dwellex/falls-1-bedroom-dining-op.jpg",
+        "https://storage.googleapis.com/dwellex/falls-spa-op.jpg"
+      ],
+      "comment": "Okay, so here's the deal: the landlord's alright, a bit of a mixed bag. The apartment's got some really cool features, like the kitchen is great, and I feel safe here. But, yikes, the rent hikes are insane! It's in a busy area, which is fun but can get loud. Good for some, not for all."
+    },
+    {
+      "address": "The Falls at Arden Apartments, 2345 Northrop Ave",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "DuncanIdaho",
+      "postedAt": "2023-11-10T04:07:27.000Z",
+      "rating": 3,
+      "landLordScore": {
+        "responsiveness": 2,
+        "attitude": 2,
+        "maintenance": 4,
+        "leaseManagement": 4
+  },
+  "propertyScore": {
+        "condition": 5,
+        "amenities": 1,
+        "safety": 2
+  },
+  "areaScore": {
+        "location": 5,
+        "noiseLevel": 4,
+        "neighborhood": 4
+  },
+  "financialAspects": {
+        "rentFairness": 2,
+        "rentIncreases": 1,
+        "value": 2
+  },
+      "images": [
+        "https://storage.googleapis.com/dwellex/2020-10-23%20(5).jpg",
+        "https://storage.googleapis.com/dwellex/2020-10-23.jpg"
+      ],
+      "comment": "Landlord's a bit meh – not too friendly, not too helpful. The apartment's in great shape though, really clean and nice. It's in a good part of town, but don't expect peace and quiet. Rent's a bit steep for what you get, but guess that's the price for living in a decent area."
+    },
+    {
+      "address": "The Falls at Arden Apartments, 2345 Northrop Ave",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "GurneyHalleck",
+      "postedAt": "2022-12-04T04:07:27.000Z",
+      "rating": 3,
+      "landLordScore": {
+        "responsiveness": 3,
+        "attitude": 4,
+        "maintenance": 1,
+        "leaseManagement": 1
+  },
+  "propertyScore": {
+        "condition": 2,
+        "amenities": 3,
+        "safety": 3
+  },
+  "areaScore": {
+        "location": 2,
+        "noiseLevel": 1,
+        "neighborhood": 1
+  },
+  "financialAspects": {
+        "rentFairness": 2,
+        "rentIncreases": 5,
+        "value": 1
+  },
+      "images": ["https://storage.googleapis.com/dwellex/2020-10-23%20(4).jpg"],
+      "comment": "Landlord's decent enough, but they really need to step up their game in fixing things. The place is just average – nothing special. It’s super quiet around here, almost too quiet, you know? Rent doesn't feel too bad, but they do bump it up often. It's an okay place if you like a quieter life."
+    },
+    {
+      "address": "The Falls at Arden Apartments, 2345 Northrop Ave",
+      "city": "Sacramento",
+      "state": "CA",
+      "username": "ThufirHawat",
+      "postedAt": "2023-10-16T04:07:27.000Z",
+      "rating": 3,
+      "landLordScore": {
+        "responsiveness": 2,
+        "attitude": 4,
+        "maintenance": 2,
+        "leaseManagement": 4
+  },
+  "propertyScore": {
+        "condition": 4,
+        "amenities": 4,
+        "safety": 1
+  },
+  "areaScore": {
+        "location": 4,
+        "noiseLevel": 5,
+        "neighborhood": 4
+  },
+  "financialAspects": {
+        "rentFairness": 1,
+        "rentIncreases": 2,
+        "value": 2
+  },
+      "images": [
+        "https://storage.googleapis.com/dwellex/2020-10-23%20(1).jpg",
+        "https://storage.googleapis.com/dwellex/2020-10-23%20(2).jpg",
+        "https://storage.googleapis.com/dwellex/2020-10-23%20(3).jpg"
+      ],
+      "comment": "The landlord's alright – not the best I've had but does the job. The apartment's pretty solid – love the living space and the amenities. But it’s not the safest feeling at night. The area's got its perks, lively and all, but it gets loud. Rent's a bit much, especially with the increases, but it's manageable."
+    }
+    
+]
+
+

@@ -8,7 +8,9 @@ import { ChakraProvider } from '@chakra-ui/react'
 import App from './App.jsx'
 import Landing from './pages/Landing'
 import Error from './pages/Error'
-import ListingPage from './pages/ListingPage.jsx'
+import CityRentals from './pages/CityRentals'
+import RentalReviews from './pages/RentalReviews'
+
 
 //Router
 const router = createBrowserRouter([
@@ -23,8 +25,12 @@ const router = createBrowserRouter([
         element: <Landing />
       },
       {
-        path:"listings/:city/:state",
-        element: <ListingPage />
+        path:"locations/:city/:state",
+        element: <CityRentals />
+      },
+      {
+        path: "rentals/:address",
+        element: <RentalReviews />
       }
     ]
   },

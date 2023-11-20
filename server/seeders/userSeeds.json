@@ -48,6 +48,31 @@
       "username": "AliaAtreides",
       "email": "alia.atreides@arrakis.dev",
       "password": "Abomination"
+    },
+    {
+      "username": "PiterDeVries",
+      "email": "piter.devries@harkonnen.dev",
+      "password": "MentatTwist"
+    },
+    {
+      "username": "LadyFenring",
+      "email": "lady.fenring@bene-gesserit.dev",
+      "password": "FenringSecrets"
+    },
+    {
+      "username": "ShaddamIV",
+      "email": "shaddam.iv@corrin.dev",
+      "password": "EmperorS4"
+    },
+    {
+      "username": "IrulanCorrino",
+      "email": "princess.irulan@corrin-royal.dev",
+      "password": "CorrinoHeiress"
+    },
+    {
+      "username": "LietKynes",
+      "email": "liet.kynes@ecologist.dev",
+      "password": "ArrakisEcology"
     }
   ]
   

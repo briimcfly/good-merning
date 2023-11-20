@@ -1,5 +1,5 @@
 //Import Models 
-const {User, Listing} = require('../models');
+const {User, Review} = require('../models');
 //Import Utilities 
 const { signToken, AuthenticationError } = require('../utils/auth');
 
@@ -21,16 +21,51 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
-        //Fetch all Listings
-        listings: async(_, {city, state}) => {
-            return await Listing.find({
-                city: new RegExp(city, 'i'),
-                state: new RegExp(state, 'i')
-            }).populate('user');
+        reviews: async (_, { address }) => {
+            try {
+                return await Review.find({ 
+                    address: new RegExp(address, 'i') 
+                }).populate('user');
+            } catch (e) {
+                console.error('Error fetching reviews:', e);
+                throw new Error('Failed to fetch reviews');
+            }
         },
-        //Fetch a listing
-        listing: async(_, {id}) => {
-            return await Listing.findById(id);
+        //Fetch all Rentals
+        rentals: async(_, {city, state}) => {
+            try {
+                const rentals = await Review.aggregate([
+                    {
+                        $match: {
+                            city: new RegExp(city, 'i'),
+                            state: new RegExp(state,'i')
+                        }
+                    },
+                    {
+                        $group: {
+                            _id: '$address',
+                            city: {$first: '$city'},
+                            state: {$first: '$state'},
+                            averageRating: { $avg: '$rating' },
+                            reviews: { $push: '$$ROOT' },
+                            count: { $sum: 1 }
+                        }
+                    },
+                    {$sort: {_id:1}}
+                ]);
+                return rentals.map(rental=> ({
+                    address: rental._id,
+                    city: rental.city,
+                    state: rental.state,
+                    averageRating: rental.averageRating,
+                    reviews: rental.reviews,
+                    count: rental.count
+                }))
+
+            } catch (e){
+                console.error(e);
+                throw new Error('Error fetching listings')
+            }
         }
     },
 
@@ -55,24 +90,25 @@ const resolvers = {
             return {token, user};
         },
         //Add a listing
-        addListing: async(_, {address, city, userId, rating, review, images}) => {
-            //Find the User by username 
-            const user = await User.findOne({userId});
-            if(!user) {
+        addReview: async (_, { address, city, state, username, rating, comment, images }) => {
+            // Find the User by username
+            const user = await User.findOne({ username });
+            if (!user) {
                 throw new Error('User Not Found');
             }
-
-            const newListing = new Listing({
+        
+            const newReview = new Review({
                 address,
                 city,
                 state,
-                user: userId,
+                user: user._id,
                 postedAt: new Date().toISOString(),
                 rating,
-                review,
+                comment,
                 images
-            })
-            return await newListing.save();
+            });
+        
+            return await newReview.save();
         }
     }
 };

@@ -21,21 +21,62 @@ query User($username: String!) {
   }
 `
 
-//Fetch Listings 
-export const QUERY_LISTINGS = gql`
-query GetListings($city: String!, $state: String!) {
-    listings(city: $city, state: $state) {
-        _id
+// Fetch Listings with aggregated data
+export const QUERY_RENTALS = gql`
+query GetRentals($city: String!, $state: String!) {
+    rentals(city: $city, state: $state) {
         address
         city
+        state
+        averageRating
+        count
+        reviews {
+            postedAt
+            rating
+            comment
+            user {
+                username
+            }
+            images
+        }
+    }
+}
+`
+//Fetch Individual Reviews by Address
+export const QUERY_REVIEWS = gql`
+query Reviews($address: String!) {
+    reviews(address: $address) {
+        images
+        comment
+        landLordScore {
+            attitude
+            leaseManagement
+            maintenance
+            responsiveness
+        }
+        address
+        areaScore {
+            location
+            neighborhood
+            noiseLevel
+        }
+        city
+        financialAspects {
+            rentFairness
+            rentIncreases
+            value
+        }
+        postedAt
+        propertyScore {
+            amenities
+            condition
+            safety
+        }
+        rating
         state
         user {
             username
         }
-        postedAt
-        rating
-        review
-        images
-    }
+        }
 }
 `
