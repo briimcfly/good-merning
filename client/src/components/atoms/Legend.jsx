@@ -12,7 +12,7 @@ const Legend = ({ category, subcategory, score }) => {
     // Access the description using the category and subcategory
     const description = ratingDescription[category][subcategory][score];
     return (
-          <Text fontSize="sm">{description}</Text>
+          <Text pt={1} fontSize="sm">{description}</Text>
     );
 };
 

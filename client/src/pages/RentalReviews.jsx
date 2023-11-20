@@ -76,11 +76,11 @@ const SummarySection = ({ averages }) => {
   if (!averages) return null;
 
   return (
-    <Box p={4} boxShadow="md" >
+    <Box p={10} boxShadow="md" >
       <Heading as="h2" size="lg">Score Breakdown:</Heading>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={8}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={24}>
       {Object.keys(averages).map(categoryKey => {
-        const categoryName = categoryDisplayNames[categoryKey] || categoryKey;
+        const categoryName = categoryDisplayNames[categoryKey];
         return (
           <Box key={categoryKey} my={2}>
             <Stack direction = "row">
@@ -88,21 +88,21 @@ const SummarySection = ({ averages }) => {
             <StarRating rating={averages[categoryKey].overall} />
             </Stack>
             <Divider />
-            <Box mt={2}>
+            <SimpleGrid columns={2}>
               {Object.keys(averages[categoryKey])
                 .filter(key => key !== 'overall')
                 .map(item => {
                   const itemName = item.charAt(0).toUpperCase() + item.slice(1);
                   return (
                     <>
-                    <Box pb={4}>
+                    <Box p={4}>
                     <LabeledStarRating key={item} label={itemName} score={averages[categoryKey][item]} />
                     <Legend category={categoryKey} subcategory={item} score={Math.floor(averages[categoryKey][item])} />
                     </Box>
                     </>
                   );
               })}
-            </Box>
+            </SimpleGrid>
           </Box>
         );
       })}
