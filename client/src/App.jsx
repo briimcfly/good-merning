@@ -12,8 +12,8 @@ function App() {
   return (
     <ChakraProvider>
       <ApolloProvider client={client}>
-        <Nav />
-        <Outlet />
+        <Nav />  
+          <Outlet />
       </ApolloProvider>
     </ChakraProvider>
 

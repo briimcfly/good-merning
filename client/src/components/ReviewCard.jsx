@@ -1,5 +1,5 @@
 import React from 'react';
-import {SimpleGrid, Box, Text, Stack, Divider, Tooltip} from '@chakra-ui/react';
+import {SimpleGrid, Box, Text, Stack, Divider, Image} from '@chakra-ui/react';
 import { FaUserCircle } from "react-icons/fa";
 import { formatDate } from '../utils/date';
 import StarRating from './Stars'; 
@@ -23,6 +23,14 @@ const ReviewCard = ({review}) => {
             </Stack>
             <Divider mt={4}/>
             <Text mb={4} mt={4}>{review.comment}</Text>
+            {/* Images - Only show if there are images */}
+            {review.images && review.images.length > 0 && (
+                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} my={4}>
+                    {review.images.map((image, index) => (
+                        <Image key={index} src={image} alt={`Image ${index + 1}`} borderRadius="md" />
+                    ))}
+                </SimpleGrid>
+            )}
             <Divider mb={4} />
 
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={8}>
