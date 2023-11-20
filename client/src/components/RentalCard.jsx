@@ -1,5 +1,6 @@
 import React from 'react';
 import {Box, Text, Flex, Stack, Button} from '@chakra-ui/react';
+import {ViewIcon} from '@chakra-ui/icons'
 import { formatDate } from '../utils/date';
 import { useNavigate } from 'react-router-dom';
 import StarRating from './Stars';
@@ -29,8 +30,10 @@ const RentalCard = ({rental}) => {
             <Text color="grey" fontSize="sm">Last Update: {lastReviewDate}</Text>
             </Stack>
             {/* Images and other listing details can go here */}
+            <Flex mt={3} justifyContent="space-between">
             <Button></Button>
-            <Button onClick = {handleCardClick}>View {rental.reviews.length} Reviews </Button>
+            <Button color="blue.500" leftIcon={<ViewIcon/>} onClick = {handleCardClick}>View {rental.reviews.length} Reviews </Button>
+            </Flex>
         </Box>
     );
 }
