@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Text, Flex, Stack, Button} from '@chakra-ui/react';
+import {Box, Text, Flex, Stack, Button, Link} from '@chakra-ui/react';
 import {ViewIcon} from '@chakra-ui/icons'
 import { formatDate } from '../utils/date';
 import { useNavigate } from 'react-router-dom';
@@ -25,14 +25,14 @@ const RentalCard = ({rental}) => {
         <Box p={5} shadow="md" borderWidth="1px" >
             <ImageCarousel images={rentalImages || []} />
             <Text fontSize="xl" fontWeight="bold">{rental.address}</Text>
-            <Stack direction="row" mt={2} align="center">
+            <Stack direction="column" mt={2}>
             <StarRating rating={rental.averageRating.toFixed(1)} />
-            <Text color="grey" fontSize="sm">Last Update: {lastReviewDate}</Text>
+            <Text color="grey" fontSize="sm">Last Updated: {lastReviewDate}</Text>
             </Stack>
             {/* Images and other listing details can go here */}
-            <Flex mt={3} justifyContent="space-between">
-            <Button></Button>
-            <Button color="blue.500" leftIcon={<ViewIcon/>} onClick = {handleCardClick}>View {rental.reviews.length} Reviews </Button>
+            <Flex pt={6} justifyContent="space-between" alignItems='center'>
+                <Link color ='blue.500'>Add Review</Link>
+                <Button color="blue.500" leftIcon={<ViewIcon/>} onClick = {handleCardClick}>View {rental.reviews.length} Reviews </Button>
             </Flex>
         </Box>
     );
