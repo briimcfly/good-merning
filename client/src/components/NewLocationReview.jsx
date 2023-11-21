@@ -12,6 +12,7 @@ import { FormControl, FormLabel, Modal, ModalOverlay, ModalContent, ModalHeader,
 // import Signup from './Signup';
 import { useDisclosure } from "@chakra-ui/react"
 import {Alert, AlertIcon, AlertTitle, AlertDescription, } from "@chakra-ui/react";
+import Legend from './atoms/Legend';
 
 
 const NewLocationReview = ({isOpen,onClose}) => {
@@ -95,20 +96,22 @@ const NewLocationReview = ({isOpen,onClose}) => {
 					<ModalBody>
 						<FormControl>
 							<FormLabel>Rating</FormLabel>
-							<Input placeholder="Please enter your rating" />
+							<Legend
+                                name="rating"
+                                onChange={handleChange}
+                            />
 						</FormControl>
 					</ModalBody>
 
 					<form onSubmit={handleSubmit}>
 						<Stack spacing={4}>
-							<FormControl>
-								<FormLabel>Review</FormLabel>
-								<Input
-									placeholder="Please enter your review"
-									name="review"
-									onChange={handleChange}
-								/>
-							</FormControl>
+                        <FormControl>
+                            <FormLabel>Review</FormLabel>
+                            <Input
+                                name="review"
+                                onChange={handleChange}
+                            />
+                        </FormControl>
 							<ButtonGroup variant="outline" spacing="6">
 								<Button
 									colorScheme="blue"
