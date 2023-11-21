@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { ArrowRightIcon, ArrowUpIcon } from '@chakra-ui/icons';
-import {  Flex, Button, Heading, Spacer, HStack, Box } from "@chakra-ui/react"
+import {  Flex, Button, Heading, Spacer, HStack, Box, Input } from "@chakra-ui/react"
 import {Link} from 'react-router-dom';
-
+import Auth from '../utils/auth';
 import Login from './Login';
 
 const Nav = () => {
@@ -15,16 +15,11 @@ const Nav = () => {
   const handleCloseLogin = () => setIsLoginOpen(false);
 
   const handleLogin = () => {
-    // Implement your login logic here
+    isLoggedIn()
     // If login is successful, set isLoggedIn to true
     setIsLoggedIn(true);
   };
 
-  const handleLogout = () => {
-    // Implement your logout logic here
-    // If logout is successful, set isLoggedIn to false
-    setIsLoggedIn(false);
-  };
 
   return (
 
@@ -38,13 +33,17 @@ const Nav = () => {
           Dwellex
         </Heading>
       </Link>
+      <Box>
+        <Input placeholder="enter a new city" />
+        <Button>Find</Button>
+      </Box>
 
       </Box>
       <Spacer />
       <HStack>
-        {isLoggedIn ? (
+        {Auth.loggedIn() ? (
           <>
-          <Button onClick={HandleLogOut} colorScheme="blue"
+          <Button onClick={() => Auth.logout()} colorScheme="blue"
                   variant="solid"
                   type="submit"
                   padding="0px, 12px, 0px, 12px"
