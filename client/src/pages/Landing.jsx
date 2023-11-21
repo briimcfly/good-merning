@@ -39,7 +39,7 @@ const Landing = () => {
                     shadow="md"
                     textAlign="center"
                     fontSize="xl"
-                    maxWidth="lg"
+                    maxWidth="xl"
                 >
                     {/* Heading */}
                     <Text fontSize="3xl" fontWeight="bold" mb={4} mt={8}>Dwellex</Text>
@@ -47,7 +47,7 @@ const Landing = () => {
                     <Text fontSize="lg" mb={6}>Find and review rentals in your city.</Text>
                     {/* City Search */}
                     <Box>
-                        <Text fontSize="lg" mb={4}>Search for a city:</Text>
+                        <Text fontSize="xs"  mb={4}>Search for a city:</Text>
                         <CitySearch />
                     </Box>
                     
