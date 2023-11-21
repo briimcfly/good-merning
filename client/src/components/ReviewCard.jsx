@@ -13,7 +13,7 @@ const ReviewCard = ({review}) => {
     return (
         <>
         <Box p={5} shadow="md" borderWidth="1px" bg='white' borderRadius="lg" >
-              {/* <ImageCarousel images={review.images || []} /> */}
+              <ImageCarousel images={review.images || []} />
                 <Stack direction="row" mt={2} mb={2} alignItems='center'>
             
                 <FaUserCircle size={45} color="teal" />
