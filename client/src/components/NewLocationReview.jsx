@@ -5,25 +5,28 @@ import {LOGIN_USER} from '../utils/mutations';
 import Auth from '../utils/auth';
 import { Input, Button, Box } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import CityRentals from '../pages/CityRentals';
+//import { ADD_LOCATION_REVIEW } from '../utils/mutations';
+import { FormControl, FormLabel, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, Stack } from "@chakra-ui/react"
+import Login from './Login';
 
 
-import {
-    Box,
-    Button,
-    Center,
-    FormControl,
-    FormLabel,
-    Heading,
-    Input,
-    Modal,
-    ModalBody,
-    ModalContent,
-    ModalHeader,
-    ModalOverlay,
-    Stack,
-  } from '@chakra-ui/react';
+const NewLocationReview = () => {
 
-const NewLocationReview = ({isOpen,onClose}) => {
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const handleOpenLogin = () => setIsLoginOpen(true);
+    const handleCloseLogin = () => setIsLoginOpen(false);
+
+    const handleLogin = () => {
+        setIsLoggedIn(true);
+    };
+
+    const handleLogout = () => {
+        setIsLoggedIn(false);
+    };
+
 
     const navigate = useNavigate();
     let autocomplete;
@@ -89,12 +92,13 @@ const NewLocationReview = ({isOpen,onClose}) => {
       };
 
     return (
+        <HStack>
         <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
             <ModalHeader textAlign="left" borderBottomWidth="1px">
                 <Box fontSize="lg">Address</Box>
-                <Button
+                <ModalCloseButton
                     onClick={onClose}
                     variant="unstyled"
                     fontSize="lg"
@@ -103,7 +107,7 @@ const NewLocationReview = ({isOpen,onClose}) => {
                     top="0.5rem"
                 >
                     X
-                </Button>
+                </ModalCloseButton>
             </ModalHeader>
             <Box textAlign="center" mt="4">
                 <Input ref={inputRef} placeholder="Enter address" />
@@ -146,7 +150,7 @@ const NewLocationReview = ({isOpen,onClose}) => {
                 w="100%"
                 type="submit"
               >
-                Sumbmit
+                Submit
               </Button>
             <Button
                 onClick={handleCancel}
@@ -164,6 +168,7 @@ const NewLocationReview = ({isOpen,onClose}) => {
         </ModalContent>
         <ModalOverlay />
         </Modal>
+        </HStack>
     );
 }   
 
