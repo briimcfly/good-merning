@@ -24,6 +24,12 @@ const Nav = () => {
   const handleOpenSignup = () => setIsSignupOpen(true); 
   const handleCloseSignup = () => setIsSignupOpen(false);
 
+  const handleSignup = () => {
+    isLoggedIn()
+    // If signup is successful, set isLoggedIn to true
+    setIsLoggedIn(true);
+  }
+
   return (
 
     //if Not Logged In
