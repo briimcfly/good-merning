@@ -33,14 +33,13 @@ const CitySearch = () => {
     }, []);
 
     return (
-        <Box textAlign="center" mt="4">
+        <Box textAlign="center" mt="4" justifyContent="space-between" display="flex">
             <Input ref={inputRef} placeholder="Enter a city" />
             <Button
-                mt="4"
                 colorScheme="blue"
                 onClick={handlePlaceSelect}
             >
-                Search
+                Go
             </Button>
         </Box>
     );
