@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import {useState} from 'react';
 import {useMutation} from '@apollo/client';
 import {LOGIN_USER} from '../utils/mutations';
@@ -13,19 +13,19 @@ import Login from './Login';
 
 const NewLocationReview = () => {
 
-    const [isLoginOpen, setIsLoginOpen] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    // const [isLoginOpen, setIsLoginOpen] = useState(false);
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const handleOpenLogin = () => setIsLoginOpen(true);
-    const handleCloseLogin = () => setIsLoginOpen(false);
+    // const handleOpenLogin = () => setIsLoginOpen(true);
+    // const handleCloseLogin = () => setIsLoginOpen(false);
 
-    const handleLogin = () => {
-        setIsLoggedIn(true);
-    };
+    // const handleLogin = () => {
+    //     setIsLoggedIn(true);
+    // };
 
-    const handleLogout = () => {
-        setIsLoggedIn(false);
-    };
+    // const handleLogout = () => {
+    //     setIsLoggedIn(false);
+    // };
 
 
     const navigate = useNavigate();
