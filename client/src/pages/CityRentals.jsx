@@ -39,7 +39,7 @@ const CityRentals = () => {
     return (
 			<>
 				<Box padding="4">
-					<Stack direction="row" spacing={4}>
+					<Stack direction="row" spacing={4} justify="space-between" >
 						<Button
 							leftIcon={<ArrowBackIcon />}
 							colorScheme="teal"
@@ -52,14 +52,15 @@ const CityRentals = () => {
 						<Heading as="h1" mb="8">
 							Listings in {city}, {state}
 						</Heading>
-						<Flex alignItems="left">
+						<Box alignItems="left">
 							<Button
 								leftIcon={<PlusSquareIcon />}
 								colorScheme="teal"
 								onClick={onOpen}
+
 							>Add a New Listing
 							</Button>
-						</Flex>
+						</Box>
 					</Stack>
 					<SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
 						{rentals.map((rental) => (
