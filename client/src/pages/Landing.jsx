@@ -41,10 +41,10 @@ const Landing = () => {
                     fontSize="xl"
                     maxWidth="lg"
                 >
-                    {/* <Heading */}
+                    {/* Heading */}
                     <Text fontSize="3xl" fontWeight="bold" mb={4} mt={8}>Dwellex</Text>
-                        
-                    <Text mb={4}>We'll update this page as we go, but for now it's going to be a router of sorts...</Text>
+                    {/* Description */} 
+                    <Text fontSize="lg" mb={6}>Find and review rentals in your city...</Text>
                     <VStack>
                         <Button colorScheme="green" onClick={handleOpenLogin}>Open Login Component</Button>
                         <Button colorScheme="yellow">Open Signup Component</Button>
