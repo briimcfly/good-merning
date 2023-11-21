@@ -44,7 +44,7 @@ const Landing = () => {
                     {/* Heading */}
                     <Text fontSize="3xl" fontWeight="bold" mb={4} mt={8}>Dwellex</Text>
                     {/* Description */} 
-                    <Text fontSize="lg" mb={6}>Find and review rentals in your city...</Text>
+                    <Text fontSize="lg" mb={6}>Find and review rentals in your city</Text>
                     {/* Search Bar */}
                     <Box mb={6} width="100%">
                         <Input
@@ -54,15 +54,9 @@ const Landing = () => {
                             borderRadius="md"
                             mr={2}
                         />
+                        <Button colorScheme="blue" size="md">Search</Button>
 
                     </Box>
-                    <VStack>
-                        <Button colorScheme="green" onClick={handleOpenLogin}>Open Login Component</Button>
-                        <Button colorScheme="yellow">Open Signup Component</Button>
-                        <Button colorScheme="red" as={Link} to="/1325">Open Error Page</Button>
-                        <CitySearch />
-                    </VStack>
-                    <Login isOpen={isLoginOpen} onClose={handleCloseLogin} />
                 </Box>
             </VStack>
         </Box>
