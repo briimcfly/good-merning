@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { VStack, Box, Text, Button } from '@chakra-ui/react';
+import { VStack, Box, Text, Button, Input, } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 import Login from '../components/Login';
@@ -39,17 +39,18 @@ const Landing = () => {
                     shadow="md"
                     textAlign="center"
                     fontSize="xl"
-                    maxWidth="lg"
+                    maxWidth="xl"
                 >
-                    <Text mb={4} mt={8}>This is where the users will land</Text>
-                    <Text mb={4}>We'll update this page as we go, but for now it's going to be a router of sorts...</Text>
-                    <VStack>
-                        <Button colorScheme="green" onClick={handleOpenLogin}>Open Login Component</Button>
-                        <Button colorScheme="yellow">Open Signup Component</Button>
-                        <Button colorScheme="red" as={Link} to="/1325">Open Error Page</Button>
+                    {/* Heading */}
+                    <Text fontSize="3xl" fontWeight="bold" mb={4} mt={8}>Dwellex</Text>
+                    {/* Description */} 
+                    <Text fontSize="lg" mb={6}>Find and review rentals in your city.</Text>
+                    {/* City Search */}
+                    <Box>
+                        <Text fontSize="xs"  mb={4}>Search for a city:</Text>
                         <CitySearch />
-                    </VStack>
-                    <Login isOpen={isLoginOpen} onClose={handleCloseLogin} />
+                    </Box>
+                    
                 </Box>
             </VStack>
         </Box>
