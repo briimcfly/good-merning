@@ -5,11 +5,13 @@ import {  Flex, Button, Heading, Spacer, HStack, Box, Input } from "@chakra-ui/r
 import {Link} from 'react-router-dom';
 import Auth from '../utils/auth';
 import Login from './Login';
+import Signup from './Signup';
 
 const Nav = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   //Test this line
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isSignupOpen, setIsSignupOpen] = useState(false);
 
   const handleOpenLogin = () => setIsLoginOpen(true);
   const handleCloseLogin = () => setIsLoginOpen(false);
@@ -19,7 +21,8 @@ const Nav = () => {
     // If login is successful, set isLoggedIn to true
     setIsLoggedIn(true);
   };
-
+  const handleOpenSignup = () => setIsSignupOpen(true); 
+  const handleCloseSignup = () => setIsSignupOpen(false);
 
   return (
 
