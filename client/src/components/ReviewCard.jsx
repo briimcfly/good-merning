@@ -1,5 +1,5 @@
 import React from 'react';
-import {SimpleGrid, Box, Text, Stack, Divider, Image} from '@chakra-ui/react';
+import {SimpleGrid, Box, Text, Stack, Divider, Image, flexbox} from '@chakra-ui/react';
 import { FaUserCircle } from "react-icons/fa";
 import { formatDate } from '../utils/date';
 import StarRating from './Stars'; 
@@ -13,24 +13,31 @@ const ReviewCard = ({review}) => {
     return (
         <>
         <Box p={5} shadow="md" borderWidth="1px" bg='white' borderRadius="lg" >
-            {/* <ImageCarousel images={review.images || []} /> */}
-            <Stack direction="row" mt={2} mb={2} alignItems='center'>
-            <FaUserCircle size={45} color="teal" />
-            <Stack ml={1} direction ="column">
-            <Text fontSize="xl" fontWeight="bold">{review.user.username}</Text>
-            <Text mt={-3}color ="grey">Reviewed: {formattedDate}</Text>
-            </Stack>
-            </Stack>
+              {/* <ImageCarousel images={review.images || []} /> */}
+                <Stack direction="row" mt={2} mb={2} alignItems='center'>
+            
+                <FaUserCircle size={45} color="teal" />
+                <Box mt="4" mb="4">
+                    <Text fontSize="xl" fontWeight="bold" mb="2">{review.user.username}</Text>
+                    <Text mt={-3} color ="grey" >Reviewed: {formattedDate}</Text>
+                </Box>
+
+                <Box direction="row" w="100%"  >
+                    <Stack ml={1} justifyContent="flex-end" direction="row">
+                    {/* Images - Only show if there are images */}
+                    {review.images && review.images.length > 0 && (
+                        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} my={4}>
+                           <> {review.images.map((image, index) => (
+                                <Image key={index} src={image} alt={`Image ${index + 1}`} borderRadius="sm" boxSize="100px" objectFit='cover'/>
+                            ))}</>
+                        </SimpleGrid>
+                    )}
+                    </Stack>
+                </Box>
+                </Stack>
             <Divider mt={4}/>
             <Text mb={4} mt={4}>{review.comment}</Text>
-            {/* Images - Only show if there are images */}
-            {review.images && review.images.length > 0 && (
-                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} my={4}>
-                    {review.images.map((image, index) => (
-                        <Image key={index} src={image} alt={`Image ${index + 1}`} borderRadius="md" />
-                    ))}
-                </SimpleGrid>
-            )}
+            
             <Divider mb={4} />
 
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={8}>

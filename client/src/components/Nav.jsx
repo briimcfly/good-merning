@@ -5,6 +5,7 @@ import {  Flex, Button, Heading, Spacer, HStack, Box, Input } from "@chakra-ui/r
 import {Link} from 'react-router-dom';
 import Auth from '../utils/auth';
 import Login from './Login';
+import CitySearch from './CitySearch';
 
 const Nav = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -33,12 +34,8 @@ const Nav = () => {
           Dwellex
         </Heading>
       </Link>
-      <Box>
-        <Input placeholder="enter a new city" />
-        <Button>Find</Button>
       </Box>
-
-      </Box>
+      <CitySearch />
       <Spacer />
       <HStack>
         {Auth.loggedIn() ? (
