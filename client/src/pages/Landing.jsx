@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { VStack, Box, Text, Button } from '@chakra-ui/react';
+import { VStack, Box, Text, Button, Input, } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 import Login from '../components/Login';
@@ -41,7 +41,9 @@ const Landing = () => {
                     fontSize="xl"
                     maxWidth="lg"
                 >
-                    <Text mb={4} mt={8}>This is where the users will land</Text>
+                    {/* <Heading */}
+                    <Text fontSize="3xl" fontWeight="bold" mb={4} mt={8}>Dwellex</Text>
+                        
                     <Text mb={4}>We'll update this page as we go, but for now it's going to be a router of sorts...</Text>
                     <VStack>
                         <Button colorScheme="green" onClick={handleOpenLogin}>Open Login Component</Button>
