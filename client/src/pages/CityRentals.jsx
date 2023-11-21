@@ -1,7 +1,7 @@
 //This Page will be all the addresses in a city that have one or many reviews. 
 //Reviews will be compiled into one listing with an average rating. 
 
-import React, {useState, useEffect }  from 'react';
+import React, {useState }  from 'react';
 import { useQuery } from '@apollo/client';
 import {Stack, Button, Box, Heading, SimpleGrid} from '@chakra-ui/react';
 import { ArrowBackIcon, PlusSquareIcon } from '@chakra-ui/icons';
@@ -10,10 +10,17 @@ import RentalCard from '../components/RentalCard';
 import {useParams} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loader from '../components/Loader';
+import onOpen from '../components/NewLocationReview';
 import NewLocationReview from '../components/NewLocationReview';
 import { Flex } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react"
+
+
+
 
 const CityRentals = () => {
+    //const [isOpen, setIsOpen] = useState(false);
+    const { isOpen, onOpen, onClose } = useDisclosure();
     const {city, state} = useParams();
 
     const { loading, error, data } = useQuery(QUERY_RENTALS, {
@@ -27,6 +34,7 @@ const CityRentals = () => {
     }
 
     const rentals = data.rentals;
+   
 
     return (
 			<>
@@ -48,7 +56,7 @@ const CityRentals = () => {
 							<Button
 								leftIcon={<PlusSquareIcon />}
 								colorScheme="teal"
-								onClick={NewLocationReview}
+								onClick={onOpen}
 							>Add a New Listing
 							</Button>
 						</Flex>
@@ -59,6 +67,7 @@ const CityRentals = () => {
 						))}
 					</SimpleGrid>
 				</Box>
+                <NewLocationReview isOpen={isOpen} onClose={onClose} />
 			</>
 		);
 }
