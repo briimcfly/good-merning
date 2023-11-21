@@ -44,19 +44,13 @@ const Landing = () => {
                     {/* Heading */}
                     <Text fontSize="3xl" fontWeight="bold" mb={4} mt={8}>Dwellex</Text>
                     {/* Description */} 
-                    <Text fontSize="lg" mb={6}>Find and review rentals in your city</Text>
-                    {/* Search Bar */}
-                    <Box mb={6} width="100%">
-                        <Input
-                            placeholder="Search for a city or neighborhood..."
-                            variant = "filled"
-                            size="md"
-                            borderRadius="md"
-                            mr={2}
-                        />
-                        <Button colorScheme="blue" size="md">Search</Button>
-
+                    <Text fontSize="lg" mb={6}>Find and review rentals in your city.</Text>
+                    {/* City Search */}
+                    <Box>
+                        <Text fontSize="lg" mb={4}>Search for a city:</Text>
+                        <CitySearch />
                     </Box>
+                    
                 </Box>
             </VStack>
         </Box>
