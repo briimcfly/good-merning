@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import Auth from '../utils/auth';
 import Login from './Login';
 import CitySearch from './CitySearch';
+import Signup from './Signup';
 
 const Nav = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -54,6 +55,7 @@ const Nav = () => {
                   type="submit"
                   padding="0px, 12px, 0px, 12px"
                   gap="8px"
+                  onClick={handleOpenSignup}
            >Sign Up</Button>
          </>
        )}
