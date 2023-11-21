@@ -28,7 +28,9 @@ const Nav = () => {
     isLoggedIn()
     // If signup is successful, set isLoggedIn to true
     setIsLoggedIn(true);
-  }
+    // If signup is successful, close the signup modal
+    handleCloseSignup();
+  };
 
   return (
 
@@ -66,11 +68,12 @@ const Nav = () => {
                   type="submit"
                   padding="0px, 12px, 0px, 12px"
                   gap="8px"
-           >Sign Up</Button>
+                  onClick={handleOpenSignup}>Sign Up</Button>
          </>
        )}
      </HStack>
      <Login isOpen={isLoginOpen} onClose={handleCloseLogin} onLogin={handleLogin} />
+    {isSignupOpen && <Signup isOpen={isSignupOpen} onClose={handleCloseSignup} onSignup={handleSignup} />}
    </Flex>
  );
 };
