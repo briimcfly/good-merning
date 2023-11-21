@@ -45,6 +45,17 @@ const Landing = () => {
                     <Text fontSize="3xl" fontWeight="bold" mb={4} mt={8}>Dwellex</Text>
                     {/* Description */} 
                     <Text fontSize="lg" mb={6}>Find and review rentals in your city...</Text>
+                    {/* Search Bar */}
+                    <Box mb={6} width="100%">
+                        <Input
+                            placeholder="Search for a city or neighborhood..."
+                            variant = "filled"
+                            size="md"
+                            borderRadius="md"
+                            mr={2}
+                        />
+
+                    </Box>
                     <VStack>
                         <Button colorScheme="green" onClick={handleOpenLogin}>Open Login Component</Button>
                         <Button colorScheme="yellow">Open Signup Component</Button>
