@@ -1,6 +1,6 @@
 const {Storage} = require('@google-cloud/storage');
 const fs = require('fs');  
-const pathToCreds = './googleCloudStorage.json';
+const pathToCreds = './utils/googleCredentials.json';
 
 const credentials = JSON.parse(fs.readFileSync(pathToCreds, 'utf8'));
 
