@@ -1,12 +1,10 @@
 const {Storage} = require('@google-cloud/storage');
-const fs = require('fs');  
-const pathToCreds = './utils/googleCredentials.json';
 
-const credentials = JSON.parse(fs.readFileSync(pathToCreds, 'utf8'));
-
-const bucketName = 'dwellex';
-
+const bucketName = process.env.GCLOUD_STORAGE_BUCKET;
+const credentials = process.env.GOOGLE_APPLICATION_CREDENTIALS? JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS) : null;
 const storage = new Storage({ credentials: credentials });
+
+
 const bucket = storage.bucket(bucketName)
 
 const uploadImageToStorage = (file) => {
