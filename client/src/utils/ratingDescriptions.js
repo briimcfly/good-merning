@@ -54,7 +54,7 @@ export const ratingDescription = {
     },
     areaScore: {
         location: {
-            1: "Inconvenient location with few services or transportation options",
+            1: "Inconvenient location with few services or transportation options.",
             2: "Somewhat inconvenient; services and transport are a bit far.",
             3: "Average location; services and transport are accessible.",
             4: "Good location with many services and transport options.",
@@ -92,10 +92,10 @@ export const ratingDescription = {
         },
         value: {
             1: "Poor value; high rent with many issues and few amenities.",
-            2: "Below-average value; rent is somewhat high compared to what is offered",
+            2: "Below-average value; rent is somewhat high compared to what is offered.",
             3: "Average value for money; rent corresponds to the market and property features.",
             4: "Good value for money; reasonable rent for the quality and features of the property.",
-            5: "Excellent value for the money; rent is very reasonable for the hih quality and features of the property."
+            5: "Excellent value for the money; rent is very reasonable for the high quality and features of the property."
         },
     }
 }
