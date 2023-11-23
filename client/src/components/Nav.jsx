@@ -19,7 +19,7 @@ import CitySearch from "./CitySearch";
 import React from 'react';
 import { useState } from 'react';
 import { ArrowRightIcon, ArrowUpIcon } from '@chakra-ui/icons';
-import {  Flex, Button, Heading, Spacer, HStack, Stack, Input } from "@chakra-ui/react"
+import {  Flex, Button, Heading, Spacer, HStack, Box, Input } from "@chakra-ui/react"
 import {Link} from 'react-router-dom';
 import Auth from '../utils/auth';
 import Login from './Login';
@@ -53,7 +53,6 @@ const Nav = () => {
 	};
 
   return (
-    <Box boxShadow='base' position='sticky' top='0' bg='white' zIndex='sticky'>
     <Box boxShadow='base' position='sticky' top='0' bg='white' zIndex='sticky'>
     <Flex as="nav" width="100vw" height="64px" top="20px" left="20px" justify="space-between" pt={10} pb={10} pl={6} pr={6} alignItems="center" >
       <Flex gap="32px" alignItems="center">
@@ -93,7 +92,6 @@ const Nav = () => {
      <Login isOpen={isLoginOpen} onClose={handleCloseLogin} onLogin={handleLogin} />
     {isSignupOpen && <Signup isOpen={isSignupOpen} onClose={handleCloseSignup} onSignup={handleSignup} />}
    </Flex>
-   </Box>
    </Box>
  );
 };
