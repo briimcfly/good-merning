@@ -43,10 +43,10 @@ const Landing = () => {
                 >
                     {/* Heading Adjusts font size responsively based on screen breakpoints (base and md)*/}
                     <Text fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold" mb={6} mt={12}>Dwellex</Text>
-                    {/* Descriptio Adjusts font size responsively based on screen breakpoints (base and md) */} 
+                    {/* Description, Adjusts font size responsively based on screen breakpoints (base and md) */} 
                     <Text fontSize={{ base: "xl", md: "2xl" }} mb={8}> Explore top rentals, share reviews, and choose wisely for your next home sweet home. Discover, Review, Decide.</Text>
                     {/* City Search */}
-                    <Box mb={6}>
+                    <Box mb={4}>
                         <Text mb={4} mr={2} display="flex">Search for a city:</Text>
                         <CitySearch />
                     </Box>
