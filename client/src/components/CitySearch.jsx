@@ -35,25 +35,16 @@ const CitySearch = () => {
 	}, []);
 
     return (
-			<Box
-				textAlign="center"
-				mt="4"
-				justifyContent="space-between"
-				display="flex"
-			>
-				<Input ref={inputRef} placeholder="Enter a city" />
-				<Autocomplete
-					apiKey="AIzaSyC0YDeEjH5putpeGTAh8sxwAvqF56vfyVI"
-					onPlaceSelected={handlePlaceSelect}
-					options={{
-						types: ["(cities)"],
-					}}
-				/>
-				<Button colorScheme="blue" onClick={handlePlaceSelect}>
-					Go
-				</Button>
-			</Box>
-		);
+        <Box textAlign="center" justifyContent="space-between" display="flex" gap={2}>
+            <Input ref={inputRef} placeholder="Search for a city" />
+            <Button
+                colorScheme="blue"
+                onClick={handlePlaceSelect}
+            >
+                Search
+            </Button>
+        </Box>
+    );
 };
 
 

@@ -7,7 +7,7 @@ import {
 	Heading,
 	Spacer,
 	HStack,
-	Box,
+	Stack,
 	Input,
 	Stack,
 } from "@chakra-ui/react";
@@ -16,6 +16,7 @@ import Auth from "../utils/auth";
 import Login from "./Login";
 import Signup from "./Signup";
 import CitySearch from "./CitySearch";
+import CitySearch from './CitySearch';
 
 const Nav = () => {
 	const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -42,88 +43,48 @@ const Nav = () => {
 		handleCloseSignup();
 	};
 
-	return (
-		//if Not Logged In
-		<Flex
-			as="nav"
-			width="100vw"
-			height="64px"
-			top="20px"
-			left="20px"
-			justify="space-between"
-			pt={10}
-			pb={10}
-			pl={6}
-			pr={6}
-			alignItems="center"
-		>
-			<Box gap="32px">
-				{/* Dwellex Logo */}
-				<Stack direction="row" spacing={4}>
-					<Link to="/" style={{ textDecoration: "none" }}>
-						<Heading as="h1" fontWeight="700" size="xl" lineHeight="28px">
-							Dwellex
-						</Heading>
-					</Link>
-					<Box>
-						<CitySearch />
-					</Box>
-				</Stack>
-			</Box>
-			<Spacer />
-			<HStack>
-				{Auth.loggedIn() ? (
-					<>
-						<Button
-							onClick={() => Auth.logout()}
-							colorScheme="blue"
-							variant="solid"
-							type="submit"
-							padding="0px, 12px, 0px, 12px"
-							gap="8px"
-						>
-							Logout
-						</Button>
-					</>
-				) : (
-					<>
-						<Button
-							border="1px"
-							leftIcon={<ArrowRightIcon />}
-							variant="outline"
-							color="blue.500"
-							onClick={handleOpenLogin}
-						>
-							Login
-						</Button>
-						<Button
-							leftIcon={<ArrowUpIcon />}
-							colorScheme="blue"
-							variant="solid"
-							type="submit"
-							padding="0px, 12px, 0px, 12px"
-							gap="8px"
-							onClick={handleOpenSignup}
-						>
-							Sign Up
-						</Button>
-					</>
-				)}
-			</HStack>
-			<Login
-				isOpen={isLoginOpen}
-				onClose={handleCloseLogin}
-				onLogin={handleLogin}
-			/>
-			{isSignupOpen && (
-				<Signup
-					isOpen={isSignupOpen}
-					onClose={handleCloseSignup}
-					onSignup={handleSignup}
-				/>
-			)}
-		</Flex>
-	);
+  return (
+
+    //if Not Logged In
+    <Flex as="nav" width="100vw" height="64px" top="20px" left="20px" justify="space-between" pt={10} pb={10} pl={6} pr={6} alignItems="center" >
+      <Flex gap="32px" alignItems="center">
+
+      {/* Dwellex Logo */}
+      <Link to = '/' style ={{textDecoration: 'none'}}> 
+        <Heading as="h1" fontWeight="700" size="xl" >
+          Dwellex
+        </Heading>
+      </Link>
+
+      <CitySearch/>
+
+      </Flex>
+      <Spacer />
+      <HStack>
+        {Auth.loggedIn() ? (
+          <>
+          <Button onClick={() => Auth.logout()} colorScheme="blue"
+                  variant="solid"
+                  type="submit"
+                  padding="0px, 12px, 0px, 12px"
+                  gap="8px">Logout</Button>
+          </>
+        ) : (
+          <>
+          <Button border="1px" leftIcon={ < ArrowRightIcon /> } variant="outline" color="blue.500" onClick={handleOpenLogin}>Login</Button>
+           <Button leftIcon={ <ArrowUpIcon/> } colorScheme="blue"
+                  variant="solid"
+                  type="submit"
+                  padding="0px, 12px, 0px, 12px"
+                  gap="8px"
+                  onClick={handleOpenSignup}>Sign Up</Button>
+         </>
+       )}
+     </HStack>
+     <Login isOpen={isLoginOpen} onClose={handleCloseLogin} onLogin={handleLogin} />
+    {isSignupOpen && <Signup isOpen={isSignupOpen} onClose={handleCloseSignup} onSignup={handleSignup} />}
+   </Flex>
+ );
 };
 
 export default Nav;
