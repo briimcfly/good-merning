@@ -1,5 +1,5 @@
 import React from 'react';
-import {SimpleGrid, Box, Text, Stack, Divider, Image, flexbox} from '@chakra-ui/react';
+import {SimpleGrid, Box, Text, Stack, Divider, Image} from '@chakra-ui/react';
 import { FaUserCircle } from "react-icons/fa";
 import { formatDate } from '../utils/date';
 import LabeledStarRating from './molecules/LabeledStarRating';
