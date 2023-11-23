@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import { ArrowRightIcon, ArrowUpIcon } from '@chakra-ui/icons';
-import {  Flex, Button, Heading, Spacer, HStack, Box, Input } from "@chakra-ui/react"
+import {  Flex, Button, Heading, Spacer, HStack, Stack, Input } from "@chakra-ui/react"
 import {Link} from 'react-router-dom';
 import Auth from '../utils/auth';
 import Login from './Login';
 import Signup from './Signup';
+import CitySearch from './CitySearch';
 
 const Nav = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -36,20 +37,18 @@ const Nav = () => {
 
     //if Not Logged In
     <Flex as="nav" width="100vw" height="64px" top="20px" left="20px" justify="space-between" pt={10} pb={10} pl={6} pr={6} alignItems="center" >
-      <Box gap="32px">
+      <Flex gap="32px" alignItems="center">
 
       {/* Dwellex Logo */}
       <Link to = '/' style ={{textDecoration: 'none'}}> 
-        <Heading as="h1" fontWeight="700" size="xl" lineHeight="28px" >
+        <Heading as="h1" fontWeight="700" size="xl" >
           Dwellex
         </Heading>
       </Link>
-      <Box>
-        <Input placeholder="enter a new city" />
-        <Button>Find</Button>
-      </Box>
 
-      </Box>
+      <CitySearch/>
+
+      </Flex>
       <Spacer />
       <HStack>
         {Auth.loggedIn() ? (
