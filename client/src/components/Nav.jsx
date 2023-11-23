@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 import Login from "./Login";
 import Signup from "./Signup";
-import CitySearchNav from "./CitySearchNav";
+import CitySearch from "./CitySearch";
 
 const Nav = () => {
 	const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -66,7 +66,7 @@ const Nav = () => {
 						</Heading>
 					</Link>
 					<Box>
-						<CitySearchNav />
+						<CitySearch />
 					</Box>
 				</Stack>
 			</Box>
