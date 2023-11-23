@@ -76,3 +76,7 @@ const Main = () => {
 //Root element render
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Main />);
+
+//Root element render
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Main />);
