@@ -1,6 +1,7 @@
 const {Storage} = require('@google-cloud/storage');
 
 const bucketName = process.env.GCLOUD_STORAGE_BUCKET;
+console.log(bucketName);
 const credentials = process.env.GOOGLE_APPLICATION_CREDENTIALS? JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS) : null;
 const storage = new Storage({ credentials: credentials });
 
