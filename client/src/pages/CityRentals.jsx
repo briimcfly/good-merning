@@ -4,11 +4,13 @@
 import React, {useState, useEffect }  from 'react';
 import { useQuery } from '@apollo/client';
 import {Flex, Stack, Button, Box, Heading, SimpleGrid, useDisclosure} from '@chakra-ui/react';
+import {Button, Box, Heading, SimpleGrid, Flex} from '@chakra-ui/react';
 import { QUERY_RENTALS } from '../utils/queries';
 import RentalCard from '../components/RentalCard';
 import {useParams} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loader from '../components/Loader';
+import { FaPlusSquare } from 'react-icons/fa';
 import NewLocationReview  from "../components/NewLocationReview";
 import PageHeader from '../components/molecules/PageHeader';
 
