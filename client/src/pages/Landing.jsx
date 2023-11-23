@@ -33,21 +33,21 @@ const Landing = () => {
                 height="100vh"
             >
                 <Box
-                    p={4}
-                    bg="white"
-                    borderRadius="md"
-                    boxShadow="md"
-                    textAlign="center"
-                    width={{ base: "90%", md: "70%", lg: "50%" }} // Adjust the width responsively
+                    p={4} // Padding around the content inside the box
+                    bg="white" // Background color of the box
+                    borderRadius="md" // Rounded corners for the box
+                    boxShadow="md" // Adding a shadow effect to the box
+                    textAlign="center" // Center-aligning the content inside the box
+                    width={{ base: "90%", md: "70%", lg: "50%" }} // Responsive width of the box for different screen sizes
                     maxW="800px" // Limiting maximum width for larger screens
                 >
-                    {/* Heading */}
+                    {/* Heading Adjusts font size responsively based on screen breakpoints (base and md)*/}
                     <Text fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold" mb={6} mt={12}>Dwellex</Text>
-                    {/* Description */} 
-                    <Text fontSize={{ base: "xl", md: "2xl" }} mb={8}> Explore top rentals, share reviews, and choose wisely for your next home sweet home. Discover, Review, Decide..</Text>
+                    {/* Descriptio Adjusts font size responsively based on screen breakpoints (base and md) */} 
+                    <Text fontSize={{ base: "xl", md: "2xl" }} mb={8}> Explore top rentals, share reviews, and choose wisely for your next home sweet home. Discover, Review, Decide.</Text>
                     {/* City Search */}
-                    <Box>
-                        <Text mb={4}>Search for a city:</Text>
+                    <Box mb={6}>
+                        <Text mb={4} mr={2} display="flex">Search for a city:</Text>
                         <CitySearch />
                     </Box>
                     
