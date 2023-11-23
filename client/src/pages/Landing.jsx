@@ -27,27 +27,27 @@ const Landing = () => {
             bgSize="cover"
         >
             <VStack
-                spacing={4}
+                spacing={6}
                 justifyContent="center"
                 alignItems="center"
                 height="100vh"
             >
                 <Box
-                    p={5}
+                    p={4}
                     bg="white"
                     borderRadius="md"
-                    shadow="md"
+                    boxShadow="md"
                     textAlign="center"
-                    fontSize="xl"
-                    maxWidth="xl"
+                    width={{ base: "90%", md: "70%", lg: "50%" }} // Adjust the width responsively
+                    maxW="800px" // Limiting maximum width for larger screens
                 >
                     {/* Heading */}
-                    <Text fontSize="3xl" fontWeight="bold" mb={4} mt={8}>Dwellex</Text>
+                    <Text fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold" mb={6} mt={12}>Dwellex</Text>
                     {/* Description */} 
-                    <Text fontSize="lg" mb={6}>Find and review rentals in your city.</Text>
+                    <Text fontSize={{ base: "xl", md: "2xl" }} mb={8}> Explore top rentals, share reviews, and choose wisely for your next home sweet home. Discover, Review, Decide..</Text>
                     {/* City Search */}
                     <Box>
-                        <Text fontSize="xs"  mb={4}>Search for a city:</Text>
+                        <Text mb={4}>Search for a city:</Text>
                         <CitySearch />
                     </Box>
                     
