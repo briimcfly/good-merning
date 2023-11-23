@@ -33,13 +33,15 @@ const CitySearch = () => {
     }, []);
 
     return (
+    nav-component
         <Box textAlign="center" display="flex" gap="10px" >
             <Input ref={inputRef} placeholder="Enter a city" marginLeft="10px"/>
             <Button
                 colorScheme="gray"
+
                 onClick={handlePlaceSelect}
             >
-                Search
+                Go
             </Button>
         </Box>
     );

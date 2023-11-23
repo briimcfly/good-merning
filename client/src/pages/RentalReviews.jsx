@@ -7,8 +7,9 @@ import { QUERY_REVIEWS } from '../utils/queries';
 import { Box, SimpleGrid, Heading, Text, Stack, Divider, Grid, GridItem, Container} from '@chakra-ui/react';
 import Loader from '../components/Loader';
 import LabeledStarRating from '../components/molecules/LabeledStarRating';
+import Legend from '../components/atoms/Legend';
 import StarRating from '../components/Stars';
-import Legend from '../components/atoms/legend';
+
 
 const categoryDisplayNames = {
   landLordScore: "Landlord Score",
