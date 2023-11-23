@@ -78,7 +78,7 @@ export const ratingDescription = {
     financialAspects: {
         rentFairness: {
             1: "Rent is significantly higher than comparable properties in the area.",
-            2: "Rent is somewhat higher than average for the area nad property condition.",
+            2: "Rent is somewhat higher than average for the area and property condition.",
             3: "Rent is average for the area and property condition.",
             4: "Rent is a good value considering the area and property condition.",
             5: "Rent is an excellent value, below average for the area and property condition."

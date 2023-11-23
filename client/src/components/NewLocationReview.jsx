@@ -29,7 +29,8 @@ import {
 	AccordionIcon,
 	Radio,
 	RadioGroup, 
-    Text,
+ Text,
+ IconButton,
 } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 // import CityRentals from '../pages/CityRentals';
@@ -38,6 +39,8 @@ import { useNavigate } from 'react-router-dom';
 // import Signup from './Signup';
 import Legend from './atoms/Legend';
 import { ratingDescription } from '../utils/ratingDescriptions';
+import CitySearch from './CitySearch';
+//import uploadImageToStorage from '../../../server/utils/googleCloudStorage';
 
 
 
@@ -114,23 +117,9 @@ const NewLocationReview = ({isOpen,onClose}) => {
 				<ModalContent>
 					<ModalHeader textAlign="left" borderBottomWidth="1px">
 						<Box fontSize="lg">Address</Box>
-						<ModalCloseButton
-							onClick={onClose}
-							variant="unstyled"
-							fontSize="lg"
-							position="absolute"
-							right="1rem"
-							top="0.5rem"
-						>
-							X
-						</ModalCloseButton>
+						<CitySearch />
 					</ModalHeader>
-					<Box textAlign="center" mt="4">
-						<Input ref={inputRef} placeholder="Enter address" />
-						<Button mt="4" colorScheme="blue" onClick={handlePlaceSelect}>
-							Search
-						</Button>
-					</Box>
+
 					<ModalBody>
 						<FormControl>
 							<FormLabel fontSize="lg">Rating</FormLabel>
@@ -679,7 +668,7 @@ const NewLocationReview = ({isOpen,onClose}) => {
 													selectedRadio !== null && selectedRadio !== "2"
 												}
 											>
-												Rent is somewhat higher than average for the area nad
+												Rent is somewhat higher than average for the area and
 												property condition.
 											</Radio>
 											<Radio
@@ -815,14 +804,24 @@ const NewLocationReview = ({isOpen,onClose}) => {
 
 					<form onSubmit={handleSubmit}>
 						<Stack spacing={4}>
-							<FormControl>
-								<FormLabel>Review</FormLabel>
-								<Input
-									name="review"
-									onChange={handleChange}
-									placeholder="Enter your comments here..."
-								/>
-							</FormControl>
+							<Box>
+								<FormControl>
+									<FormLabel fontSize="lg">Review</FormLabel>
+									<Input
+										name="review"
+										onChange={handleChange}
+										placeholder="Enter your comments here..."
+									/>
+								</FormControl>
+							</Box>
+							<Box>
+								<FormControl>
+									<FormLabel fontSize="lg">Add Pictures</FormLabel>
+									<IconButton colorScheme="blue" aria-label="Add Picture" icon="Add" />
+										<input type="image" onChange={uploadImageToStorage} />
+								</FormControl>
+							</Box>
+
 							<ButtonGroup variant="outline" spacing="6">
 								<Button
 									colorScheme="blue"
