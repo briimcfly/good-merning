@@ -15,6 +15,7 @@ import NewLocationReview from "../components/NewLocationReview";
 import { Flex } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import Auth from '../utils/auth';
+import { FaPlusSquare } from 'react-icons/fa';
 
 const CityRentals = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,43 +34,35 @@ const CityRentals = () => {
     const rentals = data.rentals;
 
     return (
-			<>
-				<Box padding="4">
-					<Stack direction="row" spacing={4} justify={'space-between'}>
-						<Button
-							leftIcon={<ArrowBackIcon />}
-							colorScheme="teal"
-							as={Link}
-							to="/"
-							mt={1}
-						>
-							Go Back
-						</Button>
-						<Heading as="h1" mb="8">
-							Listings in {city}, {state}
-						</Heading>
-						{Auth.loggedIn() && (
+    <>
+        <Box padding="4">
+            <Flex justifyContent="space-between" p={2}>
+                <Heading as="h1" mb="8">
+                    Listings in {city}, {state}
+                </Heading>
+					{Auth.loggedIn() && (
 							<Box alignItems="right">
 								<Button
-									leftIcon={<PlusSquareIcon />}
-									colorScheme="teal"
+									leftIcon={<FaPlusSquare />} colorScheme="teal" as={Link} to="/" mt={1}
 									onClick={onOpen}
 								>
-									Add a New Listing
+									Add Review
 								</Button>
 							</Box>
 						)
 						}
-					</Stack>
-					<SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
-						{rentals.map((rental) => (
-							<RentalCard key={rental.address} rental={rental} />
-						))}
-					</SimpleGrid>
-				</Box>
-				<NewLocationReview isOpen={isOpen} onClose={onClose} />
-			</>
-		);
+            </Stack>
+          <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
+          {rentals.map(rental => (
+                    <RentalCard
+                        key={rental.address}
+                        rental = {rental}
+                    />
+                ))}         
+          </SimpleGrid>
+        </Box>
+    </>
+      );
 }
 
 export default CityRentals;
