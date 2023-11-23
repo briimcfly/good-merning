@@ -3,13 +3,13 @@
 
 import React, {useState, useEffect }  from 'react';
 import { useQuery } from '@apollo/client';
-import {Stack, Button, Box, Heading, SimpleGrid} from '@chakra-ui/react';
-import { ArrowBackIcon } from '@chakra-ui/icons';
+import {Button, Box, Heading, SimpleGrid, Flex} from '@chakra-ui/react';
 import { QUERY_RENTALS } from '../utils/queries';
 import RentalCard from '../components/RentalCard';
 import {useParams} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loader from '../components/Loader';
+import { FaPlusSquare } from 'react-icons/fa';
 
 const CityRentals = () => {
     const {city, state} = useParams();
@@ -29,14 +29,16 @@ const CityRentals = () => {
     return (
     <>
         <Box padding="4">
-            <Stack direction='row' spacing={4}>
-                <Button leftIcon={<ArrowBackIcon />} colorScheme="teal" as={Link} to="/" mt={1}>
-                    Go Back
-                </Button>
+            <Flex justifyContent="space-between" p={2}>
+
                 <Heading as="h1" mb="8">
                     Listings in {city}, {state}
                 </Heading>  
-            </Stack>
+
+                <Button leftIcon={<FaPlusSquare />} colorScheme="teal" as={Link} to="/" mt={1}>
+                    Add Review
+                </Button>
+            </Flex>
           <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
           {rentals.map(rental => (
                     <RentalCard
