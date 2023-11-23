@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 //imported the createBrowserRouter from react-router-dom to assist with routing
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -33,7 +34,9 @@ const Main = () => {
     document.body.appendChild(script); 
 
 
+
   }, []);
+
 
   //Router
   const router = createBrowserRouter([
@@ -64,6 +67,7 @@ const Main = () => {
     return <Loader/>;
   }
 
+
   ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
       <ChakraProvider>
@@ -72,8 +76,8 @@ const Main = () => {
         </GoogleMapsAPIContext.Provider>
       </ChakraProvider>
     </React.StrictMode>
-  )
-};
+  );
+
 
 //Root element render
 const root = ReactDOM.createRoot(document.getElementById('root'))
