@@ -12,6 +12,18 @@ import CityRentals from './pages/CityRentals'
 import RentalReviews from './pages/RentalReviews'
 
 
+
+//Google Maps API 
+const mapKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+console.log(import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
+
+const script = document.createElement('script');
+script.src = `https://maps.googleapis.com/maps/api/js?key=${mapKey}&libraries=places&callback=initMap`;
+script.async = true;
+script.defer = true;
+document.body.appendChild(script);  
+
+
 //Router
 const router = createBrowserRouter([
   {
