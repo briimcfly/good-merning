@@ -50,6 +50,15 @@ const Signup = ({isOpen, onClose}) => {
             console.error(e); //log any encountered errors during signup
         }
     };
+    //handle cancel button
+    const handleCancel = () => {
+        setFormState({
+            username: '',
+            email: '',
+            password: '',
+        });
+        onClose();
+    };
 
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
