@@ -193,7 +193,9 @@ const RentalReviews = () => {
     return (
       <>
       <Box p ={4} bg="gray.50">
+      <Box p ={4} bg="gray.50">
         {/* Header */}
+        <PageHeader address={address} titlePrefix='Reviews for '/>
         <PageHeader address={address} titlePrefix='Reviews for '/>
 
         <Container maxW = 'container.xl'>

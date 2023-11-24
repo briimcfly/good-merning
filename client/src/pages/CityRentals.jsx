@@ -11,7 +11,6 @@ import {useParams} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loader from '../components/Loader';
 import { FaPlusSquare } from 'react-icons/fa';
-import NewLocationReview  from "../components/NewLocationReview";
 import PageHeader from '../components/molecules/PageHeader';
 
 const CityRentals = () => {
@@ -35,17 +34,20 @@ const CityRentals = () => {
     const rentals = data.rentals;
 
     return (
-			<>
-				<Box padding="4">
-					<PageHeader city={city} state={state} titlePrefix="Rentals in " />
-					<SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
-						{rentals.map((rental) => (
-							<RentalCard key={rental.address} rental={rental} />
-						))}
-					</SimpleGrid>
-				</Box>
-			</>
-		);
+        <>
+            <Box padding="4">
+                <PageHeader city={city} state={state} titlePrefix="Rentals in " />
+                <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
+                    {rentals.map(rental => (
+                        <RentalCard
+                            key={rental.address}
+                            rental = {rental}
+                        />
+                    ))}         
+                </SimpleGrid>
+            </Box>
+        </>
+    );
 }
 
 export default CityRentals;
