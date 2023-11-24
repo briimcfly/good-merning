@@ -9,6 +9,7 @@ import Loader from '../components/Loader';
 import LabeledStarRating from '../components/molecules/LabeledStarRating';
 import Legend from '../components/atoms/Legend';
 import StarRating from '../components/Stars';
+import PageHeader from '../components/molecules/PageHeader';
 
 
 const categoryDisplayNames = {
@@ -134,19 +135,9 @@ const RentalReviews = () => {
 
     return (
       <>
-      <Box bg="gray.50">
+      <Box p ={4} bg="gray.50">
         {/* Header */}
-        <Box
-          bg="gray.600"
-          color="white"
-          p={10}
-          textAlign="center"
-          >
-          <Heading mb={4}>{address}</Heading>
-          <Text fontSize="xl" mb={8}>
-          See what others are saying about this address.
-          </Text>
-        </Box>
+        <PageHeader address={address} titlePrefix='Reviews for '/>
 
         <Container maxW = 'container.xl'>
 
