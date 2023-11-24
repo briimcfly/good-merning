@@ -5,6 +5,7 @@ import { formatDate } from '../utils/date';
 import { useNavigate } from 'react-router-dom';
 import StarRating from './Stars';
 import ImageCarousel from './ImageCarousel';
+import AuthService from '../utils/auth';
 
 const RentalCard = ({rental}) => {
     
@@ -25,6 +26,7 @@ const RentalCard = ({rental}) => {
     .flat()
     .filter(image => image);
 
+    const isLoggedIn = AuthService.loggedIn();
     return (
         <Box p={5} shadow="md" borderWidth="1px" >
 
@@ -42,7 +44,9 @@ const RentalCard = ({rental}) => {
 
             {/* Button Group */}
             <Flex pt={6} justifyContent="space-between" alignItems='center'>
-                <Link color ='blue.500'>Add Review</Link>
+            {isLoggedIn && (
+            <Link color="blue.500" href="#">Add Review</Link>
+            )}
                 {/* Navigate to Rental Reviews Page */}
                 <Button color="blue.500" leftIcon={<ViewIcon/>} onClick = {handleCardClick}>View {rental.reviews.length} Reviews </Button>
             </Flex>
