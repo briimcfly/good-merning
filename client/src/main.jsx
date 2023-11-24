@@ -24,7 +24,6 @@ const Main = () => {
     window.initMap = () => setGoogleMapsLoaded(true);
 
     //Create & Append the Google Maps script to index.html
-
     const mapKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
     const script = document.createElement('script');
