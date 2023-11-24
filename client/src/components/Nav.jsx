@@ -53,15 +53,15 @@ const Nav = () => {
           Dwellex
         </Heading>
       </Link>
-      //
+      {/* Responsive input field and button */}
       <Box>
-        <Input placeholder="enter a new city" />
+        <Input placeholder="enter a new city" mr={2}/>
         <Button>Find</Button>
       </Box>
 
       </Box>
       <Spacer />
-      <HStack>
+      <HStack spacing ={4}>
         {Auth.loggedIn() ? (
           <>
           <Button onClick={() => Auth.logout()} colorScheme="blue"
