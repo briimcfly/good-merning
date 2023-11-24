@@ -30,9 +30,6 @@ const CityRentals = () => {
     <>
         <Box padding="4">
             <Stack direction='row' spacing={4}>
-                <Button leftIcon={<ArrowBackIcon />} colorScheme="teal" as={Link} to="/" mt={1}>
-                    Go Back
-                </Button>
                 <Heading as="h1" mb="8">
                     Listings in {city}, {state}
                 </Heading>  
