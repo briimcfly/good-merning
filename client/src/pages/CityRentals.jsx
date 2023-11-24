@@ -14,6 +14,7 @@ import onOpen from "../components/NewLocationReview";
 import NewLocationReview from "../components/NewLocationReview";
 import { Flex } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
+import Auth from '../utils/auth';
 
 const CityRentals = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -47,15 +48,18 @@ const CityRentals = () => {
 						<Heading as="h1" mb="8">
 							Listings in {city}, {state}
 						</Heading>
-						<Box alignItems="left">
-							<Button
-								leftIcon={<PlusSquareIcon />}
-								colorScheme="teal"
-								onClick={onOpen}
-							>
-								Add a New Listing
-							</Button>
-						</Box>
+						{Auth.loggedIn() && (
+							<Box alignItems="right">
+								<Button
+									leftIcon={<PlusSquareIcon />}
+									colorScheme="teal"
+									onClick={onOpen}
+								>
+									Add a New Listing
+								</Button>
+							</Box>
+						)
+						}
 					</Stack>
 					<SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
 						{rentals.map((rental) => (

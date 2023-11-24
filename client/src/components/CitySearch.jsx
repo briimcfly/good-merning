@@ -24,13 +24,13 @@ const CitySearch = () => {
         }
     };
 
-    useEffect(() => {
-        autocomplete = new window.google.maps.places.Autocomplete(
-            inputRef.current,
-            { types: ['(cities)'] }
-        );
-        autocomplete.addListener('place_changed', handlePlaceSelect);
-    }, []);
+  useEffect(() => {
+		autocomplete = new window.google.maps.places.Autocomplete(
+			inputRef.current,
+			{ types: ["(cities)"] }
+		);
+		autocomplete.addListener("place_changed", handlePlaceSelect);
+	}, []);
 
     return (
         <Box textAlign="center" mt="4" justifyContent="space-between" display="flex">

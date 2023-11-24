@@ -4,33 +4,7 @@ import {useMutation} from '@apollo/client';
 import {LOGIN_USER} from '../utils/mutations';
 import Auth from '../utils/auth';
 import {
-	Input,
-	Button,
-	Box,
-	ButtonGroup,
-	FormControl,
-	FormLabel,
-	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
-	ModalBody,
-	ModalCloseButton,
-	Stack,
-	useDisclosure,
-	Alert,
-	AlertIcon,
-	AlertTitle,
-	AlertDescription,
-	Accordion,
-	AccordionItem,
-	AccordionButton,
-	AccordionPanel,
-	AccordionIcon,
-	Radio,
-	RadioGroup, 
- Text,
- IconButton,
+	Input,	Button,	Box,	ButtonGroup,	FormControl,	FormLabel,	Modal,	ModalOverlay,	ModalContent,	ModalHeader,	ModalBody,	ModalCloseButton,	Stack,	useDisclosure,	Alert,	AlertIcon,	AlertTitle,	AlertDescription,	Accordion,	AccordionItem,	AccordionButton,	AccordionPanel,	AccordionIcon,	Radio,	RadioGroup, Text, IconButton,
 } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 // import CityRentals from '../pages/CityRentals';
@@ -40,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import Legend from './atoms/Legend';
 import { ratingDescription } from '../utils/ratingDescriptions';
 import CitySearch from './CitySearch';
-//import uploadImageToStorage from '../../../server/utils/googleCloudStorage';
+//import { uploadImageToStorage } from '../../../server/utils/googleCloudStorage';
 
 
 
@@ -52,6 +26,7 @@ const NewLocationReview = ({isOpen,onClose}) => {
         location: "",
         review: "",
         rating: "",
+        image: null,
     });
        
     const handlePlaceSelect = () => {
@@ -78,6 +53,14 @@ const NewLocationReview = ({isOpen,onClose}) => {
             [name]: value,
         });
     };
+
+        const handleFileChange = (e) => { 
+					const { name, files } = e.target;
+					setFormState({
+						...formState,
+						[name]: files,
+					});
+				};
     
     const handleCheck =() => {
         setSelectedRadio(value);
@@ -85,16 +68,9 @@ const NewLocationReview = ({isOpen,onClose}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!isLoggedIn) {
-            // Display the warning alert
-            return;
-        }
         try {
-            const { data } = await loginUser({
-                variables: { ...formState },
-            });
-            Auth.login(data.loginUser.token);
-            setIsLoggedIn(true);
+        // const image = await uploadImageToStorage(formState.image);
+         console.log(formState);
         } catch (e) {
             console.error(e);
         }
@@ -103,6 +79,7 @@ const NewLocationReview = ({isOpen,onClose}) => {
             location: "",
             review: "",
             rating: "",
+            image: null,
         });
     };
 
@@ -817,8 +794,12 @@ const NewLocationReview = ({isOpen,onClose}) => {
 							<Box>
 								<FormControl>
 									<FormLabel fontSize="lg">Add Pictures</FormLabel>
-									<IconButton colorScheme="blue" aria-label="Add Picture" icon="Add" />
-										<input type="image" onChange={uploadImageToStorage} />
+									 {/* <IconButton colorScheme="blue" aria-label="Add Picture" icon="Add" /> */}
+										<Input 
+          name="image"
+           type="file" 
+           multiple 
+           onChange={handleFileChange} /> 
 								</FormControl>
 							</Box>
 
@@ -831,14 +812,14 @@ const NewLocationReview = ({isOpen,onClose}) => {
 								>
 									Submit
 								</Button>
-								{!setIsLoggedIn && (
+								{/* {!setIsLoggedIn && (
 									<>
 										<Alert status="warning">
 											<AlertIcon />
 											You must be logged in to submit a review.
 										</Alert>
 									</>
-								)}
+								)} */}
 
 								<Button
 									onClick={handleCancel}
