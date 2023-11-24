@@ -23,8 +23,8 @@ const Main = () => {
 		//A callback function that triggers when Google Maps loads ...
 		window.initMap = () => setGoogleMapsLoaded(true);
 
-		//Create & Append the Google Maps script to index.html
-		const mapKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+    //Create & Append the Google Maps script to index.html
+    const mapKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 		const script = document.createElement("script");
 		script.src = `https://maps.googleapis.com/maps/api/js?key=${mapKey}&libraries=places&callback=initMap`;
