@@ -12,11 +12,40 @@ import StarRating from '../components/Stars';
 import PageHeader from '../components/molecules/PageHeader';
 
 
-const categoryDisplayNames = {
-  landLordScore: "Landlord Score",
-  areaScore: "Area Score",
-  financialAspects: "Financial Aspects",
-  propertyScore: "Property Score",
+const displayNames = {
+  landLordScore: {
+    displayName: "Landlord Score",
+    items: {
+      attitude: "Attitude",
+      leaseManagement: "Lease Management",
+      maintenance: "Maintenance",
+      responsiveness: "Responsiveness"
+    }
+  },
+  areaScore: {
+    displayName: "Area Score",
+    items: {
+      location: "Location",
+      neighborhood: "Neighborhood",
+      noiseLevel: "Noise Level",
+    }
+  },
+  financialAspects: {
+    displayName: "Financial Aspects",
+    items: {
+      rentFairness: "Rent Fairness",
+      rentIncreases: "Rent Increases",
+      value: "Value"
+    }
+  },
+  propertyScore: {
+    displayName: "Property Score",
+    items: {
+      amenities: "Amenities",
+      condition: "Condition",
+      safety: "Safety"
+    }
+  },
 };
 
 
@@ -82,7 +111,7 @@ const SummarySection = ({ averages }) => {
       <Heading as="h2" size="lg">Score Breakdown:</Heading>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={24}>
       {Object.keys(averages).map(categoryKey => {
-        const categoryName = categoryDisplayNames[categoryKey];
+        const categoryName = displayNames[categoryKey].displayName;
         return (
           <Box key={categoryKey} my={2}>
             <Stack direction = "row">
@@ -94,7 +123,7 @@ const SummarySection = ({ averages }) => {
               {Object.keys(averages[categoryKey])
                 .filter(key => key !== 'overall')
                 .map(item => {
-                  const itemName = item.charAt(0).toUpperCase() + item.slice(1);
+                  const itemName = displayNames[categoryKey].items[item];
                   return (
                     <>
                     <Box p={4}>
