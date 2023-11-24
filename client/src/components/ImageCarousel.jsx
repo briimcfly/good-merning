@@ -18,7 +18,7 @@ const ImageCarousel = ({images}) => {
 
     if (images.length === 0) {
         return (
-            <Box display='flex' alignItems='center' justifyContent='center'  width ='full' maxH='275px' overflow='hidden'>
+            <Box display='flex' alignItems='center' justifyContent='center'  width ='full'  overflow='hidden'>
                 <Image 
                 src={emptyState} 
                 alt ="No Image Available"
@@ -30,13 +30,13 @@ const ImageCarousel = ({images}) => {
     }
 
     return (
-        <Box display='flex' alignItems='center' justifyContent='center'  width ='full' maxH='275px' position='relative' overflow='hidden' >
+        <Box display='flex' alignItems='center' justifyContent='center'  width ='full'  position='relative' overflow='hidden' >
             <Image 
             src = {images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
             width='full'
             height='full'
-            objectFit='cover'
+            objectFit='contain'
             />
             {images.length > 1 && (
                 <HStack justify = 'space-between' position='absolute' top='50%' width ='full' px={1}>

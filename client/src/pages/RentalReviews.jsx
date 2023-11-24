@@ -1,16 +1,35 @@
 // Rental Reviews 
-import React from 'react';
+import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import ReviewCard from '../components/ReviewCard';
 import { useQuery } from '@apollo/client';
 import { QUERY_REVIEWS } from '../utils/queries';
-import { Box, SimpleGrid, Heading, Text, Stack, Divider, Grid, GridItem, Container} from '@chakra-ui/react';
+import { 
+        Box,
+        SimpleGrid,
+        Heading, 
+        Text, 
+        Stack,
+        Divider, 
+        Grid,
+        GridItem, 
+        Container,
+        Image,
+        Modal,
+        ModalOverlay,
+        ModalHeader,
+        ModalCloseButton,
+        ModalBody,
+        ModalContent
+    } 
+from '@chakra-ui/react';
 import Loader from '../components/Loader';
 import LabeledStarRating from '../components/molecules/LabeledStarRating';
 import Legend from '../components/atoms/Legend';
 import StarRating from '../components/Stars';
 import PageHeader from '../components/molecules/PageHeader';
 import Map from '../components/atoms/Map';
+import ImageCarousel from '../components/ImageCarousel';
 
 
 const displayNames = {
@@ -146,6 +165,16 @@ const SummarySection = ({ averages }) => {
 
 
 const RentalReviews = () => {
+
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    //Handle Image Modal 
+    const handleImageClick = (image) => {
+      setSelectedImage(image);
+      setModalOpen(true);
+    }
+
     const { address } = useParams();
     const decodedAddress = decodeURIComponent(address);
 
@@ -156,11 +185,9 @@ const RentalReviews = () => {
     if (loading) return <Loader />;
     if (error) return <p>Error...</p>;
 
-    let image1, image2
-    if (data && data.reviews && data.reviews.length > 0) {
-      image1 = data.reviews[0].images[0] ?? '/images/empty-state.png';
-      image2 = data.reviews[0].images[1] ?? '/images/empty-state.png';
-    }
+    let images = data && data.reviews ? data.reviews.flatMap(review=>review.images) : [];
+    //have map span all if no images
+    let mapItemSpan = images.length === 0 ? 5 : 2 
     const averages = data && data.reviews ? calcAverages(data.reviews) : null;
 
     return (
@@ -171,18 +198,47 @@ const RentalReviews = () => {
 
         <Container maxW = 'container.xl'>
 
+        {/* Image Section */}
         <Grid
           h='600px'
-          templateRows ='repeat(2, 1fr)'
+          templateRows='repeat(2, 1fr)'
           templateColumns='repeat(5,1fr)'
           gap={4}
         >
-          <GridItem rowSpan={2} colSpan={3} bgImage={`url(${image1})`} bgSize="cover" />
-          <GridItem rowSpan={1} colSpan={2} bgImage={`url(${image2})`} bgSize="cover" />
-          <GridItem rowSpan={1} colSpan={2} bg='red'>
-            <Map address={address}/>
-          </GridItem>
+          {images.length === 0 ? (
+            // If there are no images, map takes up the entire space
+            <GridItem rowSpan={2} colSpan={5} bg='gray.50'>
+              <Map address={address} />
+            </GridItem>
+          ) : (
+            <>
+              {/* If there's at least one image...*/}
+              <GridItem rowSpan={2} colSpan={3} bgImage={`url(${images[0]})`} bgSize="cover" onClick={() => handleImageClick(images[0])} />
+              {/* If there's more than one image...*/}
+              {images.length > 1 && (
+                <GridItem rowSpan={1} colSpan={2} bgImage={`url(${images[1]})`} bgSize="cover" onClick={() => handleImageClick(images[1])} />
+              )}
+              {/* If there's only one image, the map takes up the space of the second image */}
+              <GridItem rowSpan={images.length > 1 ? 1 : 2} colSpan={2} bg='gray.50'>
+                <Map address={address} />
+              </GridItem>
+            </>
+          )}
         </Grid>
+
+        {/* Modal  */}
+        <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} size="5xl">
+          <ModalOverlay />
+          <ModalContent m={6}>
+            <ModalHeader>View All Images</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody overflow="hidden">
+              <Box width="full" height="full">
+                <ImageCarousel images={images} />
+              </Box>
+            </ModalBody>
+          </ModalContent>
+        </Modal>
 
         {/* Summary Section */}
         <SummarySection averages={averages} />
