@@ -10,6 +10,7 @@ import LabeledStarRating from '../components/molecules/LabeledStarRating';
 import Legend from '../components/atoms/Legend';
 import StarRating from '../components/Stars';
 import PageHeader from '../components/molecules/PageHeader';
+import Map from '../components/atoms/Map';
 
 
 const displayNames = {
@@ -178,7 +179,9 @@ const RentalReviews = () => {
         >
           <GridItem rowSpan={2} colSpan={3} bgImage={`url(${image1})`} bgSize="cover" />
           <GridItem rowSpan={1} colSpan={2} bgImage={`url(${image2})`} bgSize="cover" />
-          <GridItem rowSpan={1} colSpan={2} bg='red' />
+          <GridItem rowSpan={1} colSpan={2} bg='red'>
+            <Map address={address}/>
+          </GridItem>
         </Grid>
 
         {/* Summary Section */}
