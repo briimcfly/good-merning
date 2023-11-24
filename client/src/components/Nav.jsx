@@ -34,8 +34,17 @@ const Nav = () => {
 
   return (
 
-    //if Not Logged In
-    <Flex as="nav" width="100vw" height="64px" top="20px" left="20px" justify="space-between" pt={10} pb={10} pl={6} pr={6} alignItems="center" >
+    //if Not Logged In 
+    //responsive navbar 
+    <Flex
+      as="nav"
+      width="100%"
+      height="64px"
+      px={6}
+      py={4}
+      alignItems="center"
+      justifyContent="space-between"
+    >
       <Box gap="32px">
 
       {/* Dwellex Logo */}
@@ -44,6 +53,7 @@ const Nav = () => {
           Dwellex
         </Heading>
       </Link>
+      //
       <Box>
         <Input placeholder="enter a new city" />
         <Button>Find</Button>
