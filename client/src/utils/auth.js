@@ -38,7 +38,7 @@ class AuthService {
   // Method to store the token in local storage upon user login
   login(idToken) {
     localStorage.setItem("id_token", idToken); // Sets the token in local storage
-    window.location.assign("/"); // Redirects the user to the home page after login
+    window.location.reload(); // Reloads the current page after login
   }
 
   // Method to remove the token from local storage and reload the page upon user logout
