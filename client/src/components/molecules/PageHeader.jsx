@@ -1,6 +1,10 @@
 import React from 'react';
 import {Flex, Stack, Button, Heading} from '@chakra-ui/react';
 import { FaPlusSquare } from 'react-icons/fa';
+import AuthService from '../../utils/auth';
+
+//auth service 
+const isLoggedIn = AuthService.loggedIn();
 
 const PageHeader = ({city, state, address, titlePrefix}) => {
     const displayText = address ? address: `${city}, ${state}`;
@@ -24,9 +28,11 @@ const PageHeader = ({city, state, address, titlePrefix}) => {
                     {titleSecondLine}
                 </Heading>
             </Stack>
-            <Button leftIcon={<FaPlusSquare/>}colorScheme="teal" to="/add-review" mt={{ base: 4, md: 0 }} >
-                Add Review
-            </Button>
+            {isLoggedIn && (
+                <Button leftIcon={<FaPlusSquare/>}colorScheme="teal" to="/add-review" mt={{ base: 4, md: 0 }} >
+                    Add Review
+                </Button>
+            )}
         </Flex>
     )
 }
