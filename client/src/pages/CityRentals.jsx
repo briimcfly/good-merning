@@ -36,31 +36,30 @@ const CityRentals = () => {
 
     return (
 			<>
-				<Box padding="4">
-					<PageHeader city={city} state={state} titlePrefix="Rentals in " />
-					<Flex justifyContent="space-between" p={2}>
-						<Heading as="h1" mb="8">
-							Listings in {city}, {state}
-						</Heading>
-
-						<Button
-							leftIcon={<FaPlusSquare />}
-							colorScheme="teal"
-							as={Link}
-							to="/"
-							mt={1}
-						>
-							Add Review
-						</Button>
-					</Flex>
-					<SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
-						{rentals.map((rental) => (
-							<RentalCard key={rental.address} rental={rental} />
-						))}
-					</SimpleGrid>
-				</Box>
-			</>
-		);
+			<Box padding="4">
+				<PageHeader city={city} state={state} titlePrefix="Rentals in " />
+					{Auth.loggedIn() && (
+							<Box alignItems="right">
+								<Button
+									leftIcon={<FaPlusSquare />} colorScheme="teal" as={Link} to="/" mt={1}
+									onClick={onOpen}
+								>
+									Add Review
+								</Button>
+							</Box>
+						)
+						}
+          <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
+          {rentals.map(rental => (
+                    <RentalCard
+                        key={rental.address}
+                        rental = {rental}
+                    />
+                ))}         
+          </SimpleGrid>
+        </Box>
+    </>
+      );
 }
 
 export default CityRentals;

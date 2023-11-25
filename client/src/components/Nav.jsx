@@ -16,7 +16,6 @@ import Auth from "../utils/auth";
 import Login from "./Login";
 import Signup from "./Signup";
 import CitySearch from "./CitySearch";
-import CitySearch from './CitySearch';
 
 const Nav = () => {
 	const [isLoginOpen, setIsLoginOpen] = useState(false);
