@@ -3,19 +3,13 @@
 
 import React, {useState, useEffect }  from 'react';
 import { useQuery } from '@apollo/client';
-import {Stack, Button, Box, Heading, SimpleGrid} from '@chakra-ui/react';
-import { ArrowBackIcon, PlusSquareIcon } from '@chakra-ui/icons';
+import {Flex, Stack, Button, Box, Heading, SimpleGrid, useDisclosure} from '@chakra-ui/react';
 import { QUERY_RENTALS } from '../utils/queries';
 import RentalCard from '../components/RentalCard';
 import {useParams} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loader from '../components/Loader';
-import onOpen from "../components/NewLocationReview";
-import NewLocationReview from "../components/NewLocationReview";
-import { Flex } from "@chakra-ui/react";
-import { useDisclosure } from "@chakra-ui/react";
-import Auth from '../utils/auth';
-import { FaPlusSquare } from 'react-icons/fa';
+import NewLocationReview  from "../components/NewLocationReview";
 import PageHeader from '../components/molecules/PageHeader';
 
 const CityRentals = () => {
@@ -32,34 +26,24 @@ const CityRentals = () => {
       return <p>Error...</p>;
     }
 
+	 const handleClick = () => {
+			console.log("Button clicked");
+		};
+
     const rentals = data.rentals;
 
     return (
 			<>
-			<Box padding="4">
-				<PageHeader city={city} state={state} titlePrefix="Rentals in " />
-					{Auth.loggedIn() && (
-							<Box alignItems="right">
-								<Button
-									leftIcon={<FaPlusSquare />} colorScheme="teal" as={Link} to="/" mt={1}
-									onClick={onOpen}
-								>
-									Add Review
-								</Button>
-							</Box>
-						)
-						}
-          <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
-          {rentals.map(rental => (
-                    <RentalCard
-                        key={rental.address}
-                        rental = {rental}
-                    />
-                ))}         
-          </SimpleGrid>
-        </Box>
-    </>
-      );
+				<Box padding="4">
+					<PageHeader city={city} state={state} titlePrefix="Rentals in " />
+					<SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="8">
+						{rentals.map((rental) => (
+							<RentalCard key={rental.address} rental={rental} />
+						))}
+					</SimpleGrid>
+				</Box>
+			</>
+		);
 }
 
 export default CityRentals;
