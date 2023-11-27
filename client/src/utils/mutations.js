@@ -27,62 +27,39 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-mutation AddReview(
-  $address: String!,
-  $city: String!,
-  $state: String!,
-  $username: String!,
-  $rating: Int!,
-  $comment: String!,
-  $images: [String],
-  $landLordScore: LandLordScoreInput,
-  $propertyScore: PropertyScoreInput,
-  $areaScore: AreaScoreInput,
-  $financialAspects: FinancialAspectsInput
-  ) {
-  addReview(
-    address: $address,
-    city: $city,
-    state: $state,
-    username: $username,
-    rating: $rating,
-    comment: $comment,
-    images: $images,
-    landLordScore: $landLordScore,
-    propertyScore: $propertyScore,
-    areaScore: $areaScore,
-    financialAspects: $financialAspects
-    ) {
-    rating
-    comment
+mutation AddReview( $city: String!, $state: String!, $username: String!, $comment: String!, $landLordScore: LandLordScoreInput, $address: String!, $images: [String], $propertyScore: PropertyScoreInput, $areaScore: AreaScoreInput, $financialAspects: FinancialAspectsInput, $rating: Float) {
+  addReview(city: $city, state: $state, username: $username, comment: $comment, landLordScore: $landLordScore, address: $address, images: $images, propertyScore: $propertyScore, areaScore: $areaScore, financialAspects: $financialAspects, rating: $rating) {
     user {
       username
     }
-    postedAt
     address
     city
     state
-    images
+    postedAt
     landLordScore {
       attitude
       leaseManagement
       maintenance
       responsiveness
     }
-    propertyScore {
-      amenities
-      condition
-      safety
+    comment
+    images
+    financialAspects {
+      rentFairness
+      rentIncreases
+      value
     }
     areaScore {
       location
       neighborhood
       noiseLevel
     }
-    financialAspects {
-      rentFairness
-      rentIncreases
-      value
+    propertyScore {
+      amenities
+      condition
+      safety
+    }
+    rating
   }
 }
 `
