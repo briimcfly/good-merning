@@ -27,8 +27,32 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-mutation AddReview($address: String!, $city: String!, $state: String!, $username: String!, $rating: Int!, $comment: String!, $images: [String]) {
-  addReview(address: $address, city: $city, state: $state, username: $username, rating: $rating, comment: $comment, images: $images) {
+mutation AddReview(
+  $address: String!,
+  $city: String!,
+  $state: String!,
+  $username: String!,
+  $rating: Int!,
+  $comment: String!,
+  $images: [String],
+  $landLordScore: LandLordScoreInput,
+  $propertyScore: PropertyScoreInput,
+  $areaScore: AreaScoreInput,
+  $financialAspects: FinancialAspectsInput
+  ) {
+  addReview(
+    address: $address,
+    city: $city,
+    state: $state,
+    username: $username,
+    rating: $rating,
+    comment: $comment,
+    images: $images,
+    landLordScore: $landLordScore,
+    propertyScore: $propertyScore,
+    areaScore: $areaScore,
+    financialAspects: $financialAspects
+    ) {
     rating
     comment
     user {
@@ -39,6 +63,26 @@ mutation AddReview($address: String!, $city: String!, $state: String!, $username
     city
     state
     images
+    landLordScore {
+      attitude
+      leaseManagement
+      maintenance
+      responsiveness
+    }
+    propertyScore {
+      amenities
+      condition
+      safety
+    }
+    areaScore {
+      location
+      neighborhood
+      noiseLevel
+    }
+    financialAspects {
+      rentFairness
+      rentIncreases
+      value
   }
 }
 `
