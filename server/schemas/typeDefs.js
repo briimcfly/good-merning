@@ -91,7 +91,36 @@ const typeDefs = `
             rating: Int!
             comment: String!
             images: [String]
+            landLordScore: LandLordScoreInput
+            propertyScore: PropertyScoreInput
+            areaScore: AreaScoreInput
+            financialAspects: FinancialAspectsInput
             ) : Review
+    }
+
+    input LandLordScoreInput {
+        responsiveness: Int
+        attitude: Int
+        maintenance: Int
+        leaseManagement: Int
+    }
+
+    input PropertyScoreInput {
+        condition: Int
+        amenities: Int
+        safety: Int
+    }
+
+    input AreaScoreInput {
+        location: Int
+        noiseLevel: Int
+        neighborhood: Int
+    }
+
+    input FinancialAspectsInput {
+        rentFairness: Int
+        rentIncreases: Int
+        value: Int
     }
 `;
 
