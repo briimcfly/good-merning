@@ -90,7 +90,10 @@ const resolvers = {
             return {token, user};
         },
         //Add a listing
-        addReview: async (_, { address, city, state, username, rating, comment, images }) => {
+        addReview: async (_, { 
+            address, city, state, username, rating, comment, images,
+            landLordScore, propertyScore, areaScore, financialAspects
+        }) => {
             // Find the User by username
             const user = await User.findOne({ username });
             if (!user) {
@@ -105,7 +108,11 @@ const resolvers = {
                 postedAt: new Date().toISOString(),
                 rating,
                 comment,
-                images
+                images,
+                landLordScore,
+                propertyScore,
+                areaScore,
+                financialAspects
             });
         
             return await newReview.save();
