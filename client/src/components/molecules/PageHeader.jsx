@@ -6,7 +6,6 @@ import handleClick from '../NewLocationReview';
 import NewLocationReview from '../NewLocationReview';
 
 
-
 const PageHeader = ({city, state, address, titlePrefix}) => {
     const displayText = address ? address: `${city}, ${state}`;
     //Split Header Text into two parts 

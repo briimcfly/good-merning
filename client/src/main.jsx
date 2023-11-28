@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react'
-import React, { createContext, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 //imported the createBrowserRouter from react-router-dom to assist with routing
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -33,10 +32,7 @@ const Main = () => {
     script.defer = true;
     document.body.appendChild(script); 
 
-
-
   }, []);
-
 
   //Router
   const router = createBrowserRouter([
@@ -66,7 +62,6 @@ const Main = () => {
   if (!isGoogleMapsLoaded) {
     return <Loader/>;
   }
-
 
   ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
