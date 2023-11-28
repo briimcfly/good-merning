@@ -16,16 +16,8 @@ import Auth from "../utils/auth";
 import Login from "./Login";
 import Signup from "./Signup";
 import CitySearch from "./CitySearch";
-import React from 'react';
-import { useState } from 'react';
-import { ArrowRightIcon, ArrowUpIcon } from '@chakra-ui/icons';
-import {  Flex, Button, Heading, Spacer, HStack, Box, Input } from "@chakra-ui/react"
-import {Link} from 'react-router-dom';
-import Auth from '../utils/auth';
-import Login from './Login';
-import Signup from './Signup';
-import CitySearch from './CitySearch';
-import CitySearch from './CitySearch';
+
+
 
 const Nav = () => {
 	const [isLoginOpen, setIsLoginOpen] = useState(false);

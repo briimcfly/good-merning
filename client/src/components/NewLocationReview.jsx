@@ -9,12 +9,12 @@ import CitySearch from './CitySearch';
 import RentalReviews from "../pages/RentalReviews";
 import CityRentals from "../pages/CityRentals";
 //import { uploadImageToStorage } from '../../../server/utils/googleCloudStorage';
-
+//import multer from "multer";
 
 const NewLocationReview = (isOpen, onClose) => {
 	//const { isOpen, onOpen, onClose } = useDisclosure();
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
- const [selectedRadio, setSelectedRadio] = useState(null);
+	const [selectedRadio, setSelectedRadio] = useState(null);
 	const [formState, setFormState] = useState({
 		location: "",
 		review: "",
@@ -57,45 +57,49 @@ const NewLocationReview = (isOpen, onClose) => {
 		setSelectedRadio(null);
 	};
 
-	const multer = require("multer");
-	const storage = multer.diskStorage({
-		destination: function (req, file, cb) {
-			cb(null, "/tmp/my-uploads");
-		},
-		filename: function (req, file, cb) {
-			cb(null, file.fieldname + "-" + Date.now());
-		},
-	});
-	const upload = multer({ storage: storage });
+
+	// const storage = multer.diskStorage({
+	// 	destination: function (req, file, cb) {
+	// 		cb(null, "/tmp/my-uploads");
+	// 	},
+	// 	filename: function (req, file, cb) {
+	// 		cb(null, file.fieldname + "-" + Date.now());
+	// 	},
+	// });
+	// const upload = multer({ storage: storage });
 
 	const handleCancel = () => {
 		onClose();
 	};
 
- const handleClick = () => {
-		onOpen();
-		console.log("Button clicked");
+	const handleCheck = (e) => {
+		//setSelectedRadio(e);
 	};
+
+	// const handleClick = () => {
+	// 	onOpen();
+	// 	console.log("Button clicked");
+	// };
 
 	return (
 		<>
 			<Modal isOpen={isOpen} onClose={onClose}>
 				<ModalOverlay />
-     <ModalContent>
-      <ModalHeader textAlign="left" borderBottomWidth="1px">
-       <Box fontSize="lg">Address</Box>
-       <ModalCloseButton
-        onClick={onClose}
-        variant="unstyled"
-        fontSize="lg"
-        position="absolute"
-        right="1rem"
-        top="0.5rem"
-       >
-        X
-       </ModalCloseButton>
-       <CitySearch />
-      </ModalHeader>
+				<ModalContent>
+					<ModalHeader textAlign="left" borderBottomWidth="1px">
+						<Box fontSize="lg">Address</Box>
+						<ModalCloseButton
+							onClick={onClose}
+							variant="unstyled"
+							fontSize="lg"
+							position="absolute"
+							right="1rem"
+							top="0.5rem"
+						>
+							X
+						</ModalCloseButton>
+						<CitySearch />
+					</ModalHeader>
 
 					<ModalBody>
 						<FormControl>
@@ -850,13 +854,13 @@ const NewLocationReview = (isOpen, onClose) => {
 							<Box>
 								<FormControl>
 									<FormLabel fontSize="lg">Add Pictures</FormLabel>
-									<Input
+									{/* <Input
 										name="image"
 										type="file"
 										multiple
 										onChange={handleFileChange}
 										storageRef={firebase.storage().ref("images")}
-									/>
+									/> */}
 								</FormControl>
 							</Box>
 							<ModalFooter>
