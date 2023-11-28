@@ -1,16 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Flex, Stack, Button, Heading} from '@chakra-ui/react';
 import { FaPlusSquare } from 'react-icons/fa';
 import AuthService from '../../utils/auth';
+import ReviewForm from '../ReviewForm';
 
 //auth service 
 const isLoggedIn = AuthService.loggedIn();
 
 const PageHeader = ({city, state, address, titlePrefix}) => {
+    const [isReviewOpen, setIsReviewOpen] = useState(false);
+    const handleOpenReview = () => setIsReviewOpen(true);
+    const handleCloseReview = () => setIsReviewOpen(false);
+
     const displayText = address ? address: `${city}, ${state}`;
     //Split Header Text into two parts 
     const titleFirstLine = titlePrefix || 'Listings in ';
     const titleSecondLine = displayText
+
+    const authInfo = AuthService.loggedIn();
+    console.log(authInfo);
+    const loggedInUser = authInfo ? authInfo.username : null;
+    console.log(loggedInUser);
 
     return (
         <Flex
@@ -29,10 +39,11 @@ const PageHeader = ({city, state, address, titlePrefix}) => {
                 </Heading>
             </Stack>
             {isLoggedIn && (
-                <Button leftIcon={<FaPlusSquare/>}colorScheme="teal" to="/add-review" mt={{ base: 4, md: 0 }} >
+                <Button leftIcon={<FaPlusSquare/>}colorScheme="teal" onClick={handleOpenReview} mt={{ base: 4, md: 0 }} >
                     Add Review
                 </Button>
             )}
+            <ReviewForm isOpen={isReviewOpen} onClose={handleCloseReview} city={city} state={state} username={loggedInUser}/>
         </Flex>
     )
 }

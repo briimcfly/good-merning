@@ -12,8 +12,13 @@ class AuthService {
   loggedIn() {
     const token = this.getToken(); // Retrieves the token from local storage
 
-    // Checks if the token exists and is not expired by calling isTokenExpired method
-    return token && !this.isTokenExpired(token) ? true : false;
+    if (token) {
+      const decoded = decode(token); // Decode the token 
+      const username = decoded.authenticatedUser.username; 
+
+      // Checks if the token exists and is not expired by calling isTokenExpired method
+      return { isLoggedIn: !this.isTokenExpired(token), username };
+    }
   }
 
   // Method to check if the token is expired
