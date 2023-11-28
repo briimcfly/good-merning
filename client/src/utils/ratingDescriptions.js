@@ -95,7 +95,7 @@ export const ratingDescription = {
             2: "Below-average value; rent is somewhat high compared to what is offered.",
             3: "Average value for money; rent corresponds to the market and property features.",
             4: "Good value for money; reasonable rent for the quality and features of the property.",
-            5: "Excellent value for the money; rent is very reasonable for the high quality and features of the property."
+            5: "Excellent value for the money."
         },
     }
 }

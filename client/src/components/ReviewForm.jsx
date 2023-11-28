@@ -232,14 +232,14 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
 
     return (
         <Modal isOpen={isOpen} onClose={onClose} size="3xl">
-          <ModalOverlay />
+          <ModalOverlay bg='blackAlpha.300' backdropFilter='blur(10px)' />
           <ModalContent as="form" onSubmit={handleSubmit}>
             <ModalHeader>Add a New Review</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
 
                 {/* Address */}
-              <FormControl isRequired>
+              <FormControl isRequired mb={8}>
                 <FormLabel htmlFor="address">Address</FormLabel>
                 <AddressSearch 
                 city={city}
@@ -306,8 +306,10 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
               </FormControl>
             </ModalBody>
             <ModalFooter>
-              <Button onClick={onClose}>Cancel</Button>
-              <Button type="submit" >Submit Review</Button>
+                <Stack direction="row" gap={4}>
+                    <Button onClick={onClose}>Cancel</Button>
+                    <Button type="submit" colorScheme="teal">Submit Review</Button>
+                </Stack>
             </ModalFooter>
           </ModalContent>
         </Modal>
