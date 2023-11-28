@@ -16,7 +16,8 @@ Dwellex is a web application that empowers renters to rate and review their rent
 
 ## User Story
 
-```As a potential renter, I seek a platform enabling location-based residency searches with ratings, detailed reviews covering maintenance, business practices, and landlord responsiveness. I aim to access authentic photos and videos for a holistic understanding of potential residencies. Additionally, I desire a platform facilitating landlord responses to reviews, ensuring transparency, and furthering my informed decision-making process.
+```
+As a potential renter, I seek a platform enabling location-based residency searches with ratings, detailed reviews covering maintenance, business practices, and landlord responsiveness. I aim to access authentic photos and videos for a holistic understanding of potential residencies. Additionally, I desire a platform facilitating landlord responses to reviews, ensuring transparency, and furthering my informed decision-making process.
 ```
 
 ## Technologies
