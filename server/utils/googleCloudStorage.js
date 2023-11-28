@@ -36,4 +36,4 @@ const uploadImageToStorage = (file) => {
   });
 };
 
-module.exports = uploadImageToStorage;
+module.exports = {uploadImageToStorage};

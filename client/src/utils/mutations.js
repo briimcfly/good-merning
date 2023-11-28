@@ -27,7 +27,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-mutation AddReview( $city: String!, $state: String!, $username: String!, $comment: String!, $landLordScore: LandLordScoreInput, $address: String!, $images: [String], $propertyScore: PropertyScoreInput, $areaScore: AreaScoreInput, $financialAspects: FinancialAspectsInput, $rating: Float) {
+mutation AddReview( $city: String!, $state: String!, $username: String!, $comment: String!, $landLordScore: LandLordScoreInput, $address: String!, $images: [String], $propertyScore: PropertyScoreInput, $areaScore: AreaScoreInput, $financialAspects: FinancialAspectsInput, $rating: Float!) {
   addReview(city: $city, state: $state, username: $username, comment: $comment, landLordScore: $landLordScore, address: $address, images: $images, propertyScore: $propertyScore, areaScore: $areaScore, financialAspects: $financialAspects, rating: $rating) {
     user {
       username

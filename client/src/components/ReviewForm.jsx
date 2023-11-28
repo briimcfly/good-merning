@@ -14,7 +14,8 @@ import {
     Text,
     FormControl,
     FormLabel,
-    Textarea
+    Textarea,
+    Input
 } from '@chakra-ui/react';
 import AddressSearch from './AddressSearch';
 import { ratingDescription } from '../utils/ratingDescriptions';
@@ -23,13 +24,13 @@ import { displayNames } from '../utils/DisplayNames';
 import { useMutation } from '@apollo/client';
 import { ADD_REVIEW } from '../utils/mutations';
 
-
-//Radio Group Component 
+//Radio Group Component for handling different Ratings.. 
 const RatingRadioGroup =({category, categoryName, handleCategoryChange}) => {
     const description = ratingDescription[category];
     const displayName = displayNames[category]?.displayName || 'Unknown Category';
     const subCategoryNames = displayNames[category]?.items
 
+    //Just in case we have a missing description
     if (!description) {
     console.error(`No description found for category: ${categoryName}`);
     return <Text>Error: Description not found for {categoryName}</Text>;
@@ -60,7 +61,18 @@ const RatingRadioGroup =({category, categoryName, handleCategoryChange}) => {
       );
 }
 
+//The full review form component ... 
 const ReviewForm = ({isOpen, onClose, city, state, username}) => {
+    //State for selected images 
+    const [selectedImages, setSelectedImages] = useState([]);
+
+    //Handle the image selection
+    const handleImageSelect = (event) => {
+        const files = event.target.files;
+        const selected = Array.from(files).slice(0, 3); // Limit to a maximum of 3 images
+        setSelectedImages(selected);
+    };
+
     //Form State
     const[formState, setFormState] = useState({
         address: '',
@@ -92,6 +104,7 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
         rating:5
     });
 
+    //Handle Input Changes 
     const handleInputChange = (event) => {
         const {name, value} = event.target;
         console.log(formState)
@@ -102,6 +115,7 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
         }))
     }
 
+    //Handle Category Changes (Ratings)
     const handleCategoryChange = (categoryName, subCategoryName, value) => {
         setFormState(prevState => ({
             ...prevState,
@@ -112,6 +126,7 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
         }));
     };
 
+    //Handle address selection from the AddressSearch component
     const handleAddressSelect = (addressComponents) => {
         const address = {
             address: '',
@@ -138,6 +153,7 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
         }));
     };
 
+    //Apollo Mutation for adding reviews 
     const [addReview] = useMutation(ADD_REVIEW, {
         onCompleted: () => {
             window.location.reload();
@@ -147,14 +163,38 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
         }
     });
       
-
+    //Handle form submission
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        try{
+            const uploadedImageUrls = [];
+
+            const formData = new FormData();
+            selectedImages.forEach(image=> {
+                formData.append('image',image);
+            })
+
+            const imageUploadResponse = await fetch('http://localhost:3001/upload-image', { // Adjust the URL if necessary
+                method: 'POST',
+                body: formData,
+            });
+
+            const uploadResults = await imageUploadResponse.json();
+
+            if(!imageUploadResponse.ok) {
+                throw new Error(uploadResults.message || "Error uploading photos")
+            }
+
+            console.log(uploadResults);
+
+            uploadedImageUrls.push(uploadResults.imageUrl);
+
         const variables = {
             city: formState.city,
             state: formState.state,
             address: formState.address,
-            images: formState.images,
+            images: uploadedImageUrls,
             propertyScore: formState.propertyScore,
             landLordScore: formState.landLordScore,
             areaScore: formState.areaScore,
@@ -164,9 +204,11 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
             rating: formState.rating
         }
 
-        try {
-            await addReview({variables});  
-        } catch (error) {
+        
+            await addReview({variables}); 
+    } 
+         catch (error) {
+            console.error('Submission error', error);
 
         }
     }
@@ -222,6 +264,20 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
                 categoryName="Financial Aspects"
                 handleCategoryChange={handleCategoryChange}
               />
+
+              {/* Images */}
+            <FormControl>
+                <FormLabel htmlFor="images">Add Photos (up to 3)</FormLabel>
+                <Input
+                type="file"
+                id="images"
+                name="images"
+                multiple
+                accept="image/*"
+                onChange={handleImageSelect}
+                />
+            </FormControl>
+
 
               {/* Comment */}
               <FormControl isRequired>
