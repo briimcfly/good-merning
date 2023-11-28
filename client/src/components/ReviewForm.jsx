@@ -25,7 +25,7 @@ import {
 import AddressSearch from './AddressSearch';
 import { ratingDescription } from '../utils/ratingDescriptions';
 import StarRating from './Stars';
-import { displayNames } from '../utils/DisplayNames';
+import { displayNames } from '../utils/displayNames.jsx';
 import { useMutation } from '@apollo/client';
 import { ADD_REVIEW } from '../utils/mutations';
 
