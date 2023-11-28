@@ -36,6 +36,9 @@ const CitySearch = () => {
 
     return (
         <Box textAlign="center" justifyContent="space-between" display="flex" gap={2}>
+                <style>
+                    {`.pac-container { z-index: 9999 !important; }`}
+                 </style>
             <Input ref={inputRef} placeholder="Search for a city" />
             <Button
                 colorScheme="blue"

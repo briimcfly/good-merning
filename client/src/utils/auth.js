@@ -12,8 +12,13 @@ class AuthService {
   loggedIn() {
     const token = this.getToken(); // Retrieves the token from local storage
 
-    // Checks if the token exists and is not expired by calling isTokenExpired method
-    return token && !this.isTokenExpired(token) ? true : false;
+    if (token) {
+      const decoded = decode(token); // Decode the token 
+      const username = decoded.authenticatedUser.username; 
+
+      // Checks if the token exists and is not expired by calling isTokenExpired method
+      return { isLoggedIn: !this.isTokenExpired(token), username };
+    }
   }
 
   // Method to check if the token is expired
@@ -38,7 +43,7 @@ class AuthService {
   // Method to store the token in local storage upon user login
   login(idToken) {
     localStorage.setItem("id_token", idToken); // Sets the token in local storage
-    window.location.assign("/"); // Redirects the user to the home page after login
+    window.location.reload(); // Reloads the current page after login
   }
 
   // Method to remove the token from local storage and reload the page upon user logout

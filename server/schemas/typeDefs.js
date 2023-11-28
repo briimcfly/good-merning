@@ -63,6 +63,31 @@ const typeDefs = `
         user: User
     }
 
+    input LandLordScoreInput {
+        responsiveness: Float
+        attitude: Float
+        maintenance: Float
+        leaseManagement: Float
+    }
+
+    input PropertyScoreInput {
+        condition: Float
+        amenities: Float
+        safety: Float
+    }
+
+    input AreaScoreInput {
+        location: Float
+        noiseLevel: Float
+        neighborhood: Float
+    }
+
+    input FinancialAspectsInput {
+        rentFairness: Float
+        rentIncreases: Float
+        value: Float
+    }
+
     type Query {
         # Return an array of user types 
         users: [User]
@@ -88,9 +113,13 @@ const typeDefs = `
             city: String!
             state: String!
             username: String!
-            rating: Int!
+            rating: Float!
             comment: String!
             images: [String]
+            landLordScore: LandLordScoreInput
+            propertyScore: PropertyScoreInput
+            areaScore: AreaScoreInput
+            financialAspects: FinancialAspectsInput
             ) : Review
     }
 `;

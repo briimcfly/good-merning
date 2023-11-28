@@ -1,5 +1,6 @@
 //Dependencies
 const express = require("express");
+const cors = require('cors');
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 const path = require("path");
@@ -30,6 +31,9 @@ const PORT = process.env.PORT || 3001;
 //Initialize an Express App
 const app = express();
 
+//Enable CORS for all Routes
+app.use(cors());
+
 //Initialize an Apollo Server with GraphQL Schema
 const server = new ApolloServer({
   typeDefs,
@@ -49,8 +53,8 @@ app.post("/upload-image", upload.single("image"), async (req, res) => {
       .status(200)
       .json({ message: "My Dune, the image has been uploaded!", imageUrl });
   } catch (e) {
-    console.error("My Arrakis, Error uploading image:", e);
-    res.status(500).json({ message: "Internal Server Error" });
+    console.error("Error uploading image:", e);
+    res.status(500).json({ message: "Internal Server Error", error: e.message });
   }
 });
 

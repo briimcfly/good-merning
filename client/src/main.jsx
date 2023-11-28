@@ -72,7 +72,7 @@ const Main = () => {
       </ChakraProvider>
     </React.StrictMode>
   );
-
+  };
 
 //Root element render
 const root = ReactDOM.createRoot(document.getElementById('root'))
