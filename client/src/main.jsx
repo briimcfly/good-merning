@@ -1,9 +1,9 @@
 import React, { createContext, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 //imported the createBrowserRouter from react-router-dom to assist with routing
-import { RouterProvider, createBrowserRouter,  } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 //Chakra
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from "@chakra-ui/react";
 //Pages & Components
 import App from './App.jsx'
 import Landing from './pages/Landing'
@@ -31,7 +31,6 @@ const Main = () => {
     script.async = true;
     script.defer = true;
     document.body.appendChild(script); 
-
 
   }, []);
 
@@ -72,8 +71,8 @@ const Main = () => {
         </GoogleMapsAPIContext.Provider>
       </ChakraProvider>
     </React.StrictMode>
-  )
-};
+  );
+
 
 //Root element render
 const root = ReactDOM.createRoot(document.getElementById('root'))

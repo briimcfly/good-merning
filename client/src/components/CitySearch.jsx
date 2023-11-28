@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { Input, Button, Box } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import Autocomplete from "react-google-autocomplete";
+
 
 const CitySearch = () => {
     const inputRef = useRef(null);
@@ -24,13 +26,13 @@ const CitySearch = () => {
         }
     };
 
-    useEffect(() => {
-        autocomplete = new window.google.maps.places.Autocomplete(
-            inputRef.current,
-            { types: ['(cities)'] }
-        );
-        autocomplete.addListener('place_changed', handlePlaceSelect);
-    }, []);
+  useEffect(() => {
+		autocomplete = new window.google.maps.places.Autocomplete(
+			inputRef.current,
+			{ types: ["(cities)"] }
+		);
+		autocomplete.addListener("place_changed", handlePlaceSelect);
+	}, []);
 
     return (
         <Box textAlign="center" justifyContent="space-between" display="flex" gap={2}>
@@ -44,5 +46,7 @@ const CitySearch = () => {
         </Box>
     );
 };
+
+
 
 export default CitySearch;
