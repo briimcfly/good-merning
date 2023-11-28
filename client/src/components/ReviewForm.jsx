@@ -15,7 +15,12 @@ import {
     FormControl,
     FormLabel,
     Textarea,
-    Input
+    Input,
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionIcon,
+    AccordionPanel
 } from '@chakra-ui/react';
 import AddressSearch from './AddressSearch';
 import { ratingDescription } from '../utils/ratingDescriptions';
@@ -37,26 +42,34 @@ const RatingRadioGroup =({category, categoryName, handleCategoryChange}) => {
     }
     return (
         <FormControl as='fieldset' isRequired>
-            <FormLabel fontSize='lg' fontWeight='bold' as='legend'>{displayName}</FormLabel>
-            {Object.entries(description).map(([subCategory, values]) => {
-                const subCategoryDisplayName = subCategoryNames[subCategory] || subCategory;
+            <AccordionItem>
+                <AccordionButton>
+                    <FormLabel fontSize='lg' fontWeight='bold' as='legend'>{displayName}</FormLabel>
+                    <AccordionIcon />
+                </AccordionButton>
+                <AccordionPanel>
+                    {Object.entries(description).map(([subCategory, values]) => {
+                        const subCategoryDisplayName = subCategoryNames[subCategory] || subCategory;
+                        return (
+                            
+                                <RadioGroup key={subCategory} onChange={(value) => handleCategoryChange(category, subCategory, value)} mb={8}>
+                                    <Text fontSize="lg" mb={2}>{subCategoryDisplayName}</Text>
 
-                return (
-                    <RadioGroup key={subCategory} onChange={(value) => handleCategoryChange(category, subCategory, value)} mb={8}>
-                        <Text fontSize="lg" mb={2}>{subCategoryDisplayName}</Text>
-                        <Stack spacing={8}>
-                            {Object.entries(values).map(([score, desc]) => (
-                                <Radio value={score} key={`${subCategory}-${score}`} name={subCategory}>
-                                    <Stack direction='row' alignItems='center'>
-                                        <StarRating rating={score}/>
-                                        <Text fontSize='sm'>{`${desc}`}</Text>
+                                    <Stack spacing={8}>
+                                        {Object.entries(values).map(([score, desc]) => (
+                                            <Radio value={score} key={`${subCategory}-${score}`} name={subCategory}>
+                                                <Stack direction='row' alignItems='center'>
+                                                    <StarRating rating={score}/>
+                                                    <Text fontSize='sm'>{`${desc}`}</Text>
+                                                </Stack>
+                                            </Radio>
+                                        ))}
                                     </Stack>
-                                </Radio>
-                            ))}
-                        </Stack>
-                    </RadioGroup>
-                );
-            })}
+                                </RadioGroup>
+                        );
+                    })}
+                </AccordionPanel>
+            </AccordionItem>
         </FormControl>
       );
 }
@@ -170,25 +183,27 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
         try{
             const uploadedImageUrls = [];
 
-            const formData = new FormData();
-            selectedImages.forEach(image=> {
-                formData.append('image',image);
-            })
-
-            const imageUploadResponse = await fetch('http://localhost:3001/upload-image', { // Adjust the URL if necessary
-                method: 'POST',
-                body: formData,
-            });
-
-            const uploadResults = await imageUploadResponse.json();
-
-            if(!imageUploadResponse.ok) {
-                throw new Error(uploadResults.message || "Error uploading photos")
+            if(selectedImages.length > 0) {
+                const formData = new FormData();
+                selectedImages.forEach(image=> {
+                    formData.append('image',image);
+                })
+    
+                const imageUploadResponse = await fetch('http://localhost:3001/upload-image', { // Adjust the URL if necessary
+                    method: 'POST',
+                    body: formData,
+                });
+    
+                const uploadResults = await imageUploadResponse.json();
+    
+                if(!imageUploadResponse.ok) {
+                    throw new Error(uploadResults.message || "Error uploading photos")
+                }
+    
+                console.log(uploadResults);
+    
+                uploadedImageUrls.push(uploadResults.imageUrl);
             }
-
-            console.log(uploadResults);
-
-            uploadedImageUrls.push(uploadResults.imageUrl);
 
         const variables = {
             city: formState.city,
@@ -233,6 +248,7 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
                 />
               </FormControl>
 
+            <Accordion defaultIndex={[0]}>
               {/* Landlord Score */}
               <RatingRadioGroup
                 name="landLordScore"
@@ -264,7 +280,7 @@ const ReviewForm = ({isOpen, onClose, city, state, username}) => {
                 categoryName="Financial Aspects"
                 handleCategoryChange={handleCategoryChange}
               />
-
+            </Accordion>
               {/* Images */}
             <FormControl>
                 <FormLabel htmlFor="images">Add Photos (up to 3)</FormLabel>
