@@ -94,6 +94,7 @@ const startApolloServer = async () => {
   });
 };
 
+
 //Start Apollo Server
 startApolloServer();
 

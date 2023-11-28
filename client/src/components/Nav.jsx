@@ -9,29 +9,29 @@ import Signup from './Signup';
 import CitySearch from './CitySearch';
 
 const Nav = () => {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-  //Test this line
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isSignupOpen, setIsSignupOpen] = useState(false);
+	const [isLoginOpen, setIsLoginOpen] = useState(false);
+	//Test this line
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [isSignupOpen, setIsSignupOpen] = useState(false);
 
-  const handleOpenLogin = () => setIsLoginOpen(true);
-  const handleCloseLogin = () => setIsLoginOpen(false);
+	const handleOpenLogin = () => setIsLoginOpen(true);
+	const handleCloseLogin = () => setIsLoginOpen(false);
 
-  const handleLogin = () => {
-    isLoggedIn()
-    // If login is successful, set isLoggedIn to true
-    setIsLoggedIn(true);
-  };
-  const handleOpenSignup = () => setIsSignupOpen(true); 
-  const handleCloseSignup = () => setIsSignupOpen(false);
+	const handleLogin = () => {
+		isLoggedIn();
+		// If login is successful, set isLoggedIn to true
+		setIsLoggedIn(true);
+	};
+	const handleOpenSignup = () => setIsSignupOpen(true);
+	const handleCloseSignup = () => setIsSignupOpen(false);
 
-  const handleSignup = () => {
-    isLoggedIn()
-    // If signup is successful, set isLoggedIn to true
-    setIsLoggedIn(true);
-    // If signup is successful, close the signup modal
-    handleCloseSignup();
-  };
+	const handleSignup = () => {
+		isLoggedIn();
+		// If signup is successful, set isLoggedIn to true
+		setIsLoggedIn(true);
+		// If signup is successful, close the signup modal
+		handleCloseSignup();
+	};
 
   return (
     <Box boxShadow='base' position='sticky' top='0' bg='white' zIndex='sticky'>

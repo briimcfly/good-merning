@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import {Box, SimpleGrid} from '@chakra-ui/react';
+import {Button, Box, Heading, SimpleGrid, Flex, useDisclosure} from '@chakra-ui/react';
 import { QUERY_RENTALS } from '../utils/queries';
 import RentalCard from '../components/RentalCard';
 import {useParams} from 'react-router-dom';
@@ -12,6 +12,7 @@ import PageHeader from '../components/molecules/PageHeader';
 import EmptyState from '../components/molecules/EmptyState';
 
 const CityRentals = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
     const {city, state} = useParams();
 
     const { loading, error, data } = useQuery(QUERY_RENTALS, {
@@ -40,6 +41,10 @@ const CityRentals = () => {
       console.error(error);
       return <p>Error...</p>;
     }
+
+	 const handleClick = () => {
+			console.log("Button clicked");
+		};
 
     const rentals = data.rentals;
 
